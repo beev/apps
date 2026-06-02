@@ -29,19 +29,10 @@
     <div class="container header-inner">
 
       <a href="#" class="header-logo" aria-label="Lessons by Neil Beaver — home">
-        <!--
-          APP ICON — HEADER (32px)
-          Replace the placeholder div below with your actual app icon once available:
-
-          <img src="assets/images/app-icon.png"
-               alt=""
-               class="header-logo__icon"
-               width="32" height="32">
-
-          Export a 1024×1024 PNG from your app project.
-          The CSS handles the 32px display size and squircle border-radius.
-        -->
-        <div class="app-icon-placeholder app-icon-placeholder--sm" aria-hidden="true"></div>
+        <img src="assets/images/lessons-icon.png"
+             alt=""
+             class="header-logo__icon"
+             width="32" height="32">
         <span class="header-logo__name">Lessons by Neil Beaver</span>
       </a>
 
@@ -61,7 +52,7 @@
         <div class="hero-content">
           <h1 class="hero-heading">All your driving lesson&nbsp;diagrams, in one&nbsp;app.</h1>
           <p class="hero-subheading">
-            Finally back — and better than ever. Neil Beaver's Learn to Drive series has been completely rewritten from the ground up. Now all bundled into a single app. At last, available on the iPhone as well as the iPad.
+            Finally back, and better than ever. Neil Beaver's Learn to Drive series has been completely rewritten from the ground up. All bundled into a single app. At last, available on the iPhone as well as the iPad.
           </p>
 
           <div class="badge-group">
@@ -118,20 +109,51 @@
         </div>
 
         <div class="hero-device">
-          <!--
-            SCREENSHOT — HERO (iPhone portrait)
-            Replace this placeholder div with your actual screenshot:
+          <div class="device-display">
 
-            <img src="assets/images/screenshot-iphone-hero.webp"
-                 alt="Lessons by Neil Beaver on iPhone — animated roundabout diagram"
-                 class="screenshot screenshot--portrait">
+            <div class="device-switcher" role="group" aria-label="Switch device preview">
+              <button class="device-switcher__btn is-active" data-device="tablet" aria-pressed="true">
+                <svg viewBox="0 0 14 18" width="11" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="1" y="1" width="12" height="16" rx="2"/>
+                  <circle cx="7" cy="14.5" r="0.8" fill="currentColor" stroke="none"/>
+                </svg>
+                iPad
+              </button>
+              <button class="device-switcher__btn" data-device="phone" aria-pressed="false">
+                <svg viewBox="0 0 10 18" width="8" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="1" y="1" width="8" height="16" rx="2.5"/>
+                  <line x1="3.5" y1="15" x2="6.5" y2="15"/>
+                </svg>
+                iPhone
+              </button>
+            </div>
 
-            Recommended: iPhone 15 Pro screenshot at native resolution (1179×2556px).
-            Save as WebP for best performance, or PNG. Add width/height attributes
-            matching the display size for optimal loading.
-          -->
-          <div class="screenshot-placeholder screenshot-placeholder--portrait" aria-hidden="true">
-            <span>iPhone screenshot<br>(portrait)</span>
+            <div class="device-view device-view--tablet">
+              <div class="ipad-mockup ipad-mockup--portrait">
+                <div class="ipad-mockup__shell">
+                  <div class="ipad-mockup__camera" aria-hidden="true"></div>
+                  <div class="ipad-mockup__screen">
+                    <img src="assets/images/iPad1.png"
+                         alt="Lessons by Neil Beaver on iPad"
+                         class="ipad-mockup__screenshot">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="device-view device-view--phone" hidden>
+              <div class="iphone-mockup">
+                <div class="iphone-mockup__shell">
+                  <div class="iphone-mockup__screen">
+                    <img src="assets/images/iPhone1.png"
+                         alt="Lessons by Neil Beaver on iPhone"
+                         class="iphone-mockup__screenshot">
+                  </div>
+                  <div class="iphone-mockup__home-bar" aria-hidden="true"></div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 
@@ -145,22 +167,14 @@
       <div class="container">
 
         <div class="about-icon-wrap">
-          <!--
-            APP ICON (120px display)
-            Replace this placeholder div with your actual app icon:
-
-            <img src="assets/images/app-icon.png"
-                 alt="Lessons by Neil Beaver"
-                 class="app-icon app-icon--lg"
-                 width="120" height="120">
-
-            Export a 1024×1024 PNG from your app project.
-          -->
-          <div class="app-icon-placeholder app-icon-placeholder--lg" aria-hidden="true"></div>
+          <img src="assets/images/lessons-icon.png"
+               alt="Lessons by Neil Beaver"
+               class="app-icon app-icon--lg"
+               width="120" height="120">
         </div>
 
         <div class="section-intro">
-          <h2>Built for driving instructors</h2>
+          <h2>Built by a driving instructor<br />for driving instructors</h2>
           <p>A professional teaching tool — show your learner exactly what happens, before it happens.</p>
         </div>
 
@@ -174,7 +188,7 @@
               </svg>
             </div>
             <h3>Animated diagrams</h3>
-            <p>Not static images. Every manoeuvre plays as a smooth animation — showing road position, signals, mirror checks, and timing, as it really happens.</p>
+            <p>Every lesson is animated — showing road position, routines, signals, blindspots, other road users, the lot!</p>
           </div>
 
           <div class="card">
@@ -187,7 +201,7 @@
               </svg>
             </div>
             <h3>Designed for instructors</h3>
-            <p>Used by ADIs and trainees across the UK, Ireland, Cyprus and Malta. Works on your phone or tablet for lesson briefings and debriefs.</p>
+            <p>Tried and tested by ADIs and PDIs across the UK. Works on your phone or tablet for lesson briefings and debriefs.</p>
           </div>
 
           <div class="card">
@@ -200,7 +214,7 @@
               </svg>
             </div>
             <h3>One app, every topic</h3>
-            <p>Previously sold as separate apps. Now every module is bundled into a single subscription — with more content added regularly at no extra cost.</p>
+            <p>Previously sold separately. Now every component is bundled together in one big, easy-to-navigate app.</p>
           </div>
 
         </div>
@@ -402,20 +416,51 @@
 
           </div><!-- /.modules-list -->
 
-          <!--
-            SCREENSHOT — MODULES SECTION (iPad landscape)
-            Replace this placeholder div with your actual screenshot:
+          <div class="device-display">
 
-            <img src="assets/images/screenshot-ipad-modules.webp"
-                 alt="Lessons by Neil Beaver on iPad — animated junction diagram"
-                 class="screenshot screenshot--landscape">
+            <div class="device-switcher" role="group" aria-label="Switch device preview">
+              <button class="device-switcher__btn is-active" data-device="tablet" aria-pressed="true">
+                <svg viewBox="0 0 14 18" width="11" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="1" y="1" width="12" height="16" rx="2"/>
+                  <circle cx="7" cy="14.5" r="0.8" fill="currentColor" stroke="none"/>
+                </svg>
+                iPad
+              </button>
+              <button class="device-switcher__btn" data-device="phone" aria-pressed="false">
+                <svg viewBox="0 0 10 18" width="8" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="1" y="1" width="8" height="16" rx="2.5"/>
+                  <line x1="3.5" y1="15" x2="6.5" y2="15"/>
+                </svg>
+                iPhone
+              </button>
+            </div>
 
-            Recommended: iPad screenshot in landscape orientation.
-            Export at full iPad resolution (e.g. 2388×1668 for iPad Pro 11").
-            Save as WebP or PNG.
-          -->
-          <div class="screenshot-placeholder screenshot-placeholder--landscape" aria-hidden="true">
-            <span>iPad screenshot<br>(landscape)</span>
+            <div class="device-view device-view--tablet">
+              <div class="ipad-mockup ipad-mockup--portrait">
+                <div class="ipad-mockup__shell">
+                  <div class="ipad-mockup__camera" aria-hidden="true"></div>
+                  <div class="ipad-mockup__screen">
+                    <img src="assets/images/iPad2.png"
+                         alt="Lessons by Neil Beaver on iPad — module view"
+                         class="ipad-mockup__screenshot">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="device-view device-view--phone" hidden>
+              <div class="iphone-mockup">
+                <div class="iphone-mockup__shell">
+                  <div class="iphone-mockup__screen">
+                    <img src="assets/images/iPhone2.png"
+                         alt="Lessons by Neil Beaver on iPhone — module view"
+                         class="iphone-mockup__screenshot">
+                  </div>
+                  <div class="iphone-mockup__home-bar" aria-hidden="true"></div>
+                </div>
+              </div>
+            </div>
+
           </div>
 
         </div><!-- /.modules-layout -->
@@ -472,7 +517,7 @@
         </div><!-- /.coming-soon-grid -->
 
         <div class="coming-soon-android">
-          <p>Android version also on the way.</p>
+          <p>Android version coming soon</p>
           <span class="badge badge--play badge--disabled" aria-label="Get it on Google Play — Coming Soon">
             <span class="badge__icon" aria-hidden="true">
               <svg viewBox="0 0 512 512" width="20" height="20" fill="currentColor" aria-hidden="true">
@@ -506,7 +551,7 @@
         -->
 
         <h2>Ready to transform how you teach?</h2>
-        <p>Subscription includes all current and future modules.</p>
+        <p>Free one month trial subscription. £3.99 per month thereafter.</p>
 
         <!--
           Update href="#" with your App Store URL — same as the hero badge above.
@@ -523,6 +568,8 @@
           </span>
         </a>
 
+        <p class="contact-note">Questions or feedback? <a href="#" class="js-email" data-u="ebobfbhynccf" data-d="tznvy.pbz">Send us an email</a></p>
+
       </div>
     </section>
 
@@ -535,19 +582,13 @@
     <div class="container footer-inner">
 
       <div class="footer-brand">
-        <!--
-          APP ICON — FOOTER (32px)
-          Replace this placeholder div with your app icon:
-
-          <img src="assets/images/app-icon.png"
-               alt=""
-               class="app-icon app-icon--sm"
-               width="32" height="32">
-        -->
-        <div class="app-icon-placeholder app-icon-placeholder--sm" aria-hidden="true"></div>
+        <img src="assets/images/lessons-icon.png"
+             alt=""
+             class="app-icon app-icon--sm"
+             width="32" height="32">
         <div>
           <p class="footer-brand__name">Lessons by Neil Beaver</p>
-          <p class="footer-brand__tagline">A driving instructor's teaching aid.</p>
+          <!-- <p class="footer-brand__tagline">A driving instructor's teaching aid.</p> -->
         </div>
       </div>
 
@@ -563,10 +604,11 @@
 
       <div class="footer-legal">
         <p>&copy; 2026 Neil Beaver. All rights reserved.</p>
-        <p>
-          <!-- Replace # with your Privacy Policy URL -->
+        <p><a href="#" class="js-email" data-u="ebobfbhynccf" data-d="tznvy.pbz">Send us an email</a></p>
+        <!-- <p>
+          Replace # with your Privacy Policy URL
           <a href="#">Privacy Policy</a>
-        </p>
+        </p> -->
       </div>
 
     </div>
