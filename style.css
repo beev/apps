@@ -778,7 +778,8 @@ details.module[open] .module__chevron {
 .download-cta {
   background-color: var(--color-surface);
   border-top: 1px solid var(--color-border);
-  padding-block: clamp(4rem, 10vw, 7rem);
+  padding-block-start: clamp(4rem, 10vw, 7rem);
+  padding-block-end: clamp(2.5rem, 6vw, 4.5rem);
   text-align: center;
 }
 
@@ -805,7 +806,6 @@ details.module[open] .module__chevron {
 .contact-note {
   font-size: 0.9375rem;
   margin-top: 2.5rem;
-  margin-bottom: -4.5rem;
 }
 
 .contact-note a {
