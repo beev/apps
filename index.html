@@ -27,6 +27,15 @@
 <body>
 
   <!-- ============================================================
+       SVG SPRITE — shared icon definitions (visually hidden)
+       ============================================================ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="icon-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="4,6 8,10 12,6"/>
+    </symbol>
+  </svg>
+
+  <!-- ============================================================
        STICKY HEADER
        ============================================================ -->
   <header class="site-header" id="site-header">
@@ -253,9 +262,7 @@
                 </svg>
                 <span class="module__title">Controls</span>
                 <span class="module__count">8 topics</span>
-                <svg class="module__chevron" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <polyline points="4,6 8,10 12,6"/>
-                </svg>
+                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
               </summary>
               <ul class="module__topics">
                 <li>Cockpit Drill</li>
@@ -277,9 +284,7 @@
                 </svg>
                 <span class="module__title">Position</span>
                 <span class="module__count">5 topics</span>
-                <svg class="module__chevron" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <polyline points="4,6 8,10 12,6"/>
-                </svg>
+                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
               </summary>
               <ul class="module__topics">
                 <li>Move Off &amp; Stop</li>
@@ -297,9 +302,7 @@
                 </svg>
                 <span class="module__title">Manoeuvres</span>
                 <span class="module__count">3 topics</span>
-                <svg class="module__chevron" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <polyline points="4,6 8,10 12,6"/>
-                </svg>
+                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
               </summary>
               <ul class="module__topics">
                 <li>Pull Up &amp; Reverse</li>
@@ -319,9 +322,7 @@
                 </svg>
                 <span class="module__title">Pedestrian Crossings</span>
                 <span class="module__count">4 topics</span>
-                <svg class="module__chevron" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <polyline points="4,6 8,10 12,6"/>
-                </svg>
+                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
               </summary>
               <ul class="module__topics">
                 <li>Zebra</li>
@@ -339,9 +340,7 @@
                 </svg>
                 <span class="module__title">Junctions</span>
                 <span class="module__count">4 topics</span>
-                <svg class="module__chevron" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <polyline points="4,6 8,10 12,6"/>
-                </svg>
+                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
               </summary>
               <ul class="module__topics">
                 <li>Turn Left</li>
@@ -361,9 +360,7 @@
                 </svg>
                 <span class="module__title">Traffic Lights</span>
                 <span class="module__count">6 topics</span>
-                <svg class="module__chevron" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <polyline points="4,6 8,10 12,6"/>
-                </svg>
+                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
               </summary>
               <ul class="module__topics">
                 <li>Crossroads</li>
@@ -384,9 +381,7 @@
                 </svg>
                 <span class="module__title">Roundabouts</span>
                 <span class="module__count">5 topics</span>
-                <svg class="module__chevron" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <polyline points="4,6 8,10 12,6"/>
-                </svg>
+                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
               </summary>
               <ul class="module__topics">
                 <li>Mini</li>
@@ -407,9 +402,7 @@
                 </svg>
                 <span class="module__title">Dual Carriageways</span>
                 <span class="module__count">4 topics</span>
-                <svg class="module__chevron" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <polyline points="4,6 8,10 12,6"/>
-                </svg>
+                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
               </summary>
               <ul class="module__topics">
                 <li>Slip Road On</li>
@@ -474,52 +467,88 @@
     </section>
 
     <!-- ============================================================
-         COMING SOON
+         FAQ
          ============================================================ -->
-    <section id="coming-soon" class="coming-soon">
+    <section id="faq" class="faq">
       <div class="container">
 
         <div class="section-intro section-intro--light">
-          <h2>More on the way</h2>
-          <p>These modules are in development and will be added via update — included in your subscription at no extra cost.</p>
+          <h2>Frequently asked questions</h2>
         </div>
 
-        <div class="coming-soon-grid">
+        <div class="faq-list">
 
-          <div class="module module--upcoming">
-            <div class="module__header module__header--static">
-              <svg class="module__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="19" y1="20" x2="5" y2="20"/>
-                <path d="M5 20 L5 10 Q8 5 12 8 Q16 11 19 6 L19 20"/>
-              </svg>
-              <span class="module__title">Stopping</span>
-              <span class="badge badge--soon">Coming Soon</span>
+          <details class="module">
+            <summary class="module__header">
+              <span class="module__title">We've been waiting… What took you so long?</span>
+              <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
+            </summary>
+            <div class="faq__answer">
+              <p>A multitude of technical complexities and the prioritisation of family and health over work. It's taken a few years to get things back on track, and I apologise for that. The new apps have been re-written from the ground up in a different programming language to allow for cross-platform compatibility. The images are the same, but not a single line of the original code remains in the new versions.</p>
             </div>
-            <ul class="module__topics">
-              <li>Distance</li>
-              <li>Planning</li>
-              <li>Skidding</li>
-              <li>Controlled Stop</li>
-            </ul>
-          </div>
+          </details>
 
-          <div class="module module--upcoming">
-            <div class="module__header module__header--static">
-              <svg class="module__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M9 18 C9 18 4 15 4 8 Q4 3 9 3 L15 3 Q20 3 20 8 L20 13 Q20 18 15 18 L12 18"/>
-                <polyline points="9,21 12,18 9,15"/>
-              </svg>
-              <span class="module__title">More Manoeuvres</span>
-              <span class="badge badge--soon">Coming Soon</span>
+          <details class="module">
+            <summary class="module__header">
+              <span class="module__title">Are you going to update your old apps?</span>
+              <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
+            </summary>
+            <div class="faq__answer">
+              <p>No. These are gradually being rendered obsolete by Apple's never-ending system updates. I wanted to get these new versions made before the old ones completely disappear.</p>
             </div>
-            <ul class="module__topics">
-              <li>Turn in the Road</li>
-              <li>Reverse Left</li>
-              <li>Reverse Right</li>
-            </ul>
-          </div>
+          </details>
 
-        </div><!-- /.coming-soon-grid -->
+          <details class="module">
+            <summary class="module__header">
+              <span class="module__title">Why subscription? Your old apps only required a one-off payment.</span>
+              <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
+            </summary>
+            <div class="faq__answer">
+              <p>Yes, those were the good old days &#128513; Something I learned the hard way: as apps age, they require ongoing work — while sales steadily decline. This makes the business model unsustainable. When I first realised this, I resisted going subscription-only because I didn't want to inflict it on my customers. When I realised I was just delaying the inevitable, that's when I got things properly moving forward again.</p>
+            </div>
+          </details>
+
+          <details class="module">
+            <summary class="module__header">
+              <span class="module__title">What about Road Pad and Road Board?</span>
+              <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
+            </summary>
+            <div class="faq__answer">
+              <p>These are currently being redeveloped and are coming soon.</p>
+            </div>
+          </details>
+
+          <details class="module">
+            <summary class="module__header">
+              <span class="module__title">What about Routes and DL25 — Mock Test?</span>
+              <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
+            </summary>
+            <div class="faq__answer">
+              <p>It's on my to do list to revisit these apps and see if I can bring them more up-to-date.</p>
+            </div>
+          </details>
+
+          <details class="module">
+            <summary class="module__header">
+              <span class="module__title">The Emergency Stop section is not in the new Lessons app — why?</span>
+              <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
+            </summary>
+            <div class="faq__answer">
+              <p>I'm working on it now and it's coming soon in a free update.</p>
+            </div>
+          </details>
+
+          <details class="module">
+            <summary class="module__header">
+              <span class="module__title">What about Android?</span>
+              <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
+            </summary>
+            <div class="faq__answer">
+              <p>Bringing these apps to Android has been a top priority for me. I'm fighting my way through a few layers of Google bureaucracy right now, and I'll release them on Android as soon as I am able!</p>
+            </div>
+          </details>
+
+        </div><!-- /.faq-list -->
 
         <div class="coming-soon-android">
           <p>Android version coming soon</p>

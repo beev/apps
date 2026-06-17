@@ -716,9 +716,31 @@ details.module[open] .module__chevron {
 /* ============================================================
    COMING SOON SECTION
    ============================================================ */
-.coming-soon {
+.coming-soon,
+.faq {
   background-color: var(--color-primary);
   padding-block: clamp(3rem, 8vw, 5rem);
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 700px;
+  margin-inline: auto;
+  margin-bottom: 3rem;
+}
+
+.faq__answer {
+  padding: 0.875rem 1rem 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.faq__answer p {
+  font-size: 0.9375rem;
+  color: var(--color-muted);
+  line-height: 1.65;
+  margin: 0;
 }
 
 .coming-soon-grid {
@@ -771,7 +793,8 @@ details.module[open] .module__chevron {
 }
 
 /* Adjust play badge colours inside dark section */
-.coming-soon .badge--play {
+.coming-soon .badge--play,
+.faq .badge--play {
   background-color: rgba(255,255,255,0.1);
   color: rgba(255,255,255,0.6);
   border-color: rgba(255,255,255,0.15);
