@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Importing your old files — Roads</title>
+  <meta name="description" content="This process is for users of Road Board who wish to transfer previously saved scenes and images to be used in Roads.">
+  <meta name="theme-color" content="#1A3A5C">
+  <link rel="icon" type="image/x-icon" href="assets/favicons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .import-page {
+      padding-block: clamp(3rem, 8vw, 6rem);
+    }
+    .import-page .container {
+      max-width: 680px;
+    }
+    .import-page h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      color: var(--color-primary);
+      margin-bottom: 0.75rem;
+    }
+    .import-page h2 {
+      font-size: 1.125rem;
+      color: var(--color-primary);
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .import-page p {
+      color: var(--color-text);
+      margin-bottom: 1rem;
+    }
+    .import-page ul,
+    .import-page ol {
+      color: var(--color-text);
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .import-page li {
+      margin-bottom: 0.6rem;
+      line-height: 1.5;
+    }
+    .import-warning {
+      background: var(--color-primary-dim);
+      border-left: 3px solid var(--color-accent);
+      border-radius: var(--radius-sm);
+      padding: 0.9rem 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+    .import-warning p {
+      margin-bottom: 0;
+      color: var(--color-text);
+    }
+    .import-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--color-muted);
+      font-size: 0.875rem;
+      margin-bottom: 2rem;
+    }
+    .import-back:hover {
+      color: var(--color-primary);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="header-logo" aria-label="Roads — home">
+        <img src="assets/images/roads-icon.webp"
+             alt=""
+             class="header-logo__icon"
+             width="32" height="32">
+        <span class="header-logo__name">Roads</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="import-page">
+      <div class="container">
+
+        <a href="index.html" class="import-back">
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="10,4 6,8 10,12"/>
+          </svg>
+          Back
+        </a>
+
+        <h1>Importing your old files</h1>
+        <p>This process is for users of Road Board who wish to transfer previously saved scenes and images to be used in Roads.</p>
+
+        <div class="import-warning">
+          <p>Please be aware that some background images have been modified in this app, which can lead to some sprites being misplaced after the import. The imported scenes are fully interactive, so you can easily re-position the sprites and re-save.</p>
+        </div>
+
+        <h2>What you will need</h2>
+        <ul>
+        <li>A computer, either a Mac or PC</li>
+        <li>Your iPad with Road Board installed and the saved data present</li>
+        <li>A cable to connect the iPad to the computer</li>
+        <li>Third party software for working with files on the iPad</li>
+        </ul>
+
+        <p>The following instructions use software called iMazing, which has been used to successfully carry out this process. Depending on your version of iPad and iOS, mileage may vary (no guarantees everything will work).</p>
+        <p>Other software products are also available and can be used instead. The main thing is you need to be able to export an encrypted backup from your iPad and extract individual app data from that backup.</p>
+
+        <h2>Instructions</h2>
+        <ol>
+        <li>On your computer, install the iMazing app from <a href="https://imazing.com/download" target="_blank" rel="noopener noreferrer">imazing.com/download</a>.</li>
+        <li>Connect your iPad (don't select recovery mode).</li>
+        <li>Select the backup option.</li>
+        <li>Select your device.</li>
+        <li>Enable backup encryption (important — your app data will not be present without an encrypted backup).</li>
+        <li>Back it up (you'll be asked to enter your passcode on the iPad).</li>
+        <li>Once backed up, in iMazing, go to Data &gt; Apps (don't click on Road Board in the apps list).</li>
+        <li>At the bottom of the iMazing window, select Manage Apps.</li>
+        <li>Select Road Board from the list.</li>
+        <li>Click the “3 dots in a circle” menu button at the bottom.</li>
+        <li>Select “Back Up App Data” from the submenu that pops up.</li>
+        <li>The default destination is Desktop. Make sure “Back Up and Extract App Data” is selected.</li>
+        <li>You'll see a warning page — click “OK”.</li>
+        <li>On your iPad, enter the passcode when prompted.</li>
+        <li>The backup will be saved as Road Board.imazingapp — this is the file you need to import.</li>
+        <li>Move that file to your iPad. The easiest ways are: AirDrop (Mac to iPad), drop it into iCloud Drive, or email it to yourself as an attachment. If you email it, open the attachment on the iPad, tap the share icon, and choose “Save to Files” so the importer can find it.</li>
+        <li>Open Roads, go to Settings, and under “Import files” tap the Import button.</li>
+        <li>Select “Choose File”.</li>
+        <li>Browse to wherever you saved the file and select Road Board.imazingapp.</li>
+        <li>Roads unpacks it and imports your scenes and images — they appear in your Saved scenes when it's done.</li>
+        </ol>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+        <img src="assets/images/roads-icon.webp"
+             alt=""
+             class="app-icon app-icon--sm"
+             width="32" height="32">
+        <div>
+          <p class="footer-brand__name">Roads</p>
+        </div>
+      </div>
+
+      <div class="footer-markets">
+        <p class="footer-markets__label">Available in</p>
+        <ul class="footer-markets__list">
+          <li>&#127468;&#127463; United Kingdom</li>
+          <li>&#127470;&#127466; Ireland</li>
+          <li>&#127464;&#127486; Cyprus</li>
+          <li>&#127474;&#127481; Malta</li>
+        </ul>
+      </div>
+
+      <div class="footer-legal">
+        <p>&copy; 2026 Neil Beaver. All rights reserved.</p>
+        <p><a href="privacy.html">Privacy Policy</a></p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
