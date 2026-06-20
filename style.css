@@ -3,6 +3,7 @@
    ============================================================ */
 :root {
   --color-primary:       #1A3A5C;
+  --color-link:          #0B61D6;
   --color-primary-dim:   rgba(26, 58, 92, 0.08);
   --color-accent:        #E8B84B;
   --color-green:         #30A46C;
@@ -60,7 +61,7 @@ ul {
 }
 
 a {
-  color: var(--color-primary);
+  color: var(--color-link);
   text-decoration: none;
 }
 
@@ -862,7 +863,7 @@ details.module[open] .module__chevron {
 }
 
 .contact-note a {
-  color: var(--color-primary);
+  color: var(--color-link);
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 2px;
