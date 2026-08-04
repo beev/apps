@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lessons &amp; Roads by Neil Beaver — Driving Instructor Teaching Aids</title>
-  <meta name="description" content="Animated driving lesson diagrams for driving instructors. Neil Beaver's Learn to Drive series, rebuilt as a single app for iPhone and iPad.">
+  <meta name="description" content="Neil Beaver's teaching aid apps for driving instructors. Lessons: animated Learn to Drive briefings. Roads: Road Board and Road Pad rebuilt. iPhone and iPad.">
 
   <!-- Google Search Console ownership verification. Must stay on the live
        homepage — removing it un-verifies the property. -->
@@ -30,7 +30,7 @@
   <meta property="og:locale" content="en_GB">
   <meta property="og:url" content="https://www.neilbeaver.com/">
   <meta property="og:title" content="Lessons &amp; Roads by Neil Beaver — Driving Instructor Teaching Aids">
-  <meta property="og:description" content="Animated driving lesson diagrams for instructors. iPhone and iPad. Available in the UK, Ireland, Cyprus and Malta.">
+  <meta property="og:description" content="Animated lesson diagrams and road layout teaching aids for driving instructors. iPhone and iPad. Available in the UK, Ireland, Cyprus and Malta.">
   <meta property="og:image" content="https://www.neilbeaver.com/assets/images/og-lessons.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -38,7 +38,7 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Lessons &amp; Roads by Neil Beaver">
-  <meta name="twitter:description" content="Animated driving lesson diagrams for instructors. iPhone and iPad.">
+  <meta name="twitter:description" content="Animated lesson diagrams and road layout teaching aids for driving instructors. iPhone and iPad.">
   <meta name="twitter:image" content="https://www.neilbeaver.com/assets/images/og-lessons.png">
 
   <meta name="theme-color" content="#1A3A5C">
@@ -71,23 +71,13 @@
     <div class="container header-inner">
 
       <!-- ============================================================
-           ROADS IS HIDDEN UNTIL THE APP SHIPS.
+           Lessons is the default tab; the Roads sections carry `hidden`
+           in the markup and are revealed by script.js on tab click.
 
-           TO RE-ENABLE: delete the header-logo link below, uncomment the
-           app-tabs nav, and restore the Roads SoftwareApplication node in
-           the JSON-LD at the foot of this file (search "ROADS SCHEMA").
-           The Roads page sections themselves are untouched — they stay in
-           the markup, already carrying `hidden`, so nothing else changes.
+           Roads has no App Store listing yet, so its badges are the
+           non-interactive "Coming Soon" variants — swap them for the real
+           Apple badge (same markup as the Lessons hero) once it ships.
            ============================================================ -->
-      <a href="index.html" class="header-logo" aria-label="Lessons by Neil Beaver — home">
-        <img src="assets/images/lessons/lessons-icon.png"
-             alt=""
-             class="header-logo__icon"
-             width="32" height="32">
-        <span class="header-logo__name">Lessons by Neil Beaver</span>
-      </a>
-
-      <!--
       <nav class="app-tabs" role="tablist" aria-label="Choose app">
         <button type="button" class="app-tabs__tab is-active" role="tab" aria-selected="true" data-app="lessons">
           <img src="assets/images/lessons/lessons-icon.png"
@@ -104,7 +94,6 @@
           <span class="app-tabs__label">Roads</span>
         </button>
       </nav>
-      -->
 
       <!-- <a href="#appstore-link" class="btn btn--primary btn--sm">Download for iOS</a> -->
 
@@ -1183,10 +1172,9 @@
        Establishes "Neil Beaver" as an entity Google can recognise, and
        describes the Lessons app.
 
-       ROADS SCHEMA — a SoftwareApplication node for Roads was removed
-       while the Roads tab is hidden, since it would describe a product
-       not visible on the page. Restore it alongside the tab; git history
-       has the original (commit b1cfb0f).
+       Roads has its own SoftwareApplication node, deliberately without an
+       `offers` block — it has no App Store listing or price yet. Add both
+       once it ships.
 
        Validate after any edit at:
          https://validator.schema.org/
@@ -1266,6 +1254,24 @@
             "billingIncrement": 1,
             "unitCode": "MON"
           }
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://www.neilbeaver.com/#roads",
+        "name": "Roads by Neil Beaver",
+        "alternateName": ["Road Board", "Road Pad"],
+        "applicationCategory": "EducationalApplication",
+        "applicationSubCategory": "Driving instructor teaching aid",
+        "operatingSystem": "iOS",
+        "inLanguage": "en-GB",
+        "description": "The successor to Road Board and Road Pad, rebuilt as a single app. More than 50 pre-drawn road situations plus detailed satellite imagery, for explaining any road layout to a learner driver.",
+        "screenshot": "https://www.neilbeaver.com/assets/images/og-roads.png",
+        "author": { "@id": "https://www.neilbeaver.com/#neilbeaver" },
+        "publisher": { "@id": "https://www.neilbeaver.com/#neilbeaver" },
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Driving instructors (ADIs and PDIs)"
         }
       },
       {
