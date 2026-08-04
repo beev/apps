@@ -256,16 +256,35 @@ a {
   transform: translateY(-1px);
 }
 
-/* Sized to match Apple's official badge (≈246×82) so the pair is balanced. */
+/* The "Coming Soon" Google Play pill (Roads only — the live Lessons badge is
+   Google's official artwork, see .playstore-badge). Black to match the
+   App Store pill beside it: the sections behind are --color-surface, so a
+   surface-coloured badge would read as a faint outline rather than a peer. */
 .badge--play {
-  background: var(--color-surface);
-  color: var(--color-text);
-  border-color: var(--color-border);
+  background: #000;
+  color: #fff;
+  border-color: transparent;
   width: 156px;
   height: 52px;
   box-sizing: border-box;
   justify-content: center;
   border-radius: 11px;
+  /* Tighter than the base badge so the wordmark fits comfortably at 156px. */
+  padding: 10px 12px;
+  gap: 0.5rem;
+}
+
+.badge--play .badge__text {
+  align-items: flex-start;
+}
+
+.badge--play .badge__eyebrow,
+.badge--play .badge__title {
+  white-space: nowrap;
+}
+
+.badge--play .badge__title {
+  font-size: 1rem;
 }
 
 .badge--disabled {
@@ -326,6 +345,13 @@ a {
   margin-bottom: 1.5rem;
 }
 
+/* Download CTA is centre-aligned, so its badge pair centres too. Spacing
+   there comes from the section's flex gap, not the group's own margin. */
+.badge-group--center {
+  justify-content: center;
+  margin-bottom: 0;
+}
+
 /* Apple's official App Store badge image, at Apple's default proportions
    (≈246×82). The Google Play badge below is sized to match. */
 .appstore-badge {
@@ -341,6 +367,30 @@ a {
 }
 
 .appstore-badge:hover img {
+  opacity: 0.82;
+  transform: translateY(-1px);
+}
+
+/* Google's official Play badge. The supplied artwork is 646×250 but the badge
+   itself only occupies the middle 564×168 — Google bakes its mandatory clear
+   space into the file. Rendering at 77px tall therefore puts the *visible*
+   badge at 52px, matching Apple's. The negative inline margin trims some of
+   that built-in space so the pair sits at a sensible gap; what's left still
+   clears Google's minimum. */
+.playstore-badge {
+  display: inline-block;
+  line-height: 0;
+  margin-inline: -8px;
+}
+
+.playstore-badge img {
+  height: 77px;
+  width: auto;
+  vertical-align: middle;
+  transition: opacity 0.15s, transform 0.12s;
+}
+
+.playstore-badge:hover img {
   opacity: 0.82;
   transform: translateY(-1px);
 }
@@ -860,27 +910,6 @@ details.module[open] .module__chevron {
 
 .module--upcoming .module__topics li::before {
   background-color: rgba(255,255,255,0.25);
-}
-
-.coming-soon-android {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.875rem;
-  text-align: center;
-}
-
-.coming-soon-android p {
-  font-size: 0.9375rem;
-  color: rgba(255,255,255,0.65);
-}
-
-/* Adjust play badge colours inside dark section */
-.coming-soon .badge--play,
-.faq .badge--play {
-  background-color: rgba(255,255,255,0.1);
-  color: rgba(255,255,255,0.6);
-  border-color: rgba(255,255,255,0.15);
 }
 
 /* ============================================================
