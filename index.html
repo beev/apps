@@ -66,6 +66,24 @@
   <header class="site-header" id="site-header">
     <div class="container header-inner">
 
+      <!-- ============================================================
+           ROADS IS HIDDEN UNTIL THE APP SHIPS.
+
+           TO RE-ENABLE: delete the header-logo link below, uncomment the
+           app-tabs nav, and restore the Roads SoftwareApplication node in
+           the JSON-LD at the foot of this file (search "ROADS SCHEMA").
+           The Roads page sections themselves are untouched — they stay in
+           the markup, already carrying `hidden`, so nothing else changes.
+           ============================================================ -->
+      <a href="index.html" class="header-logo" aria-label="Lessons by Neil Beaver — home">
+        <img src="assets/images/lessons/lessons-icon.png"
+             alt=""
+             class="header-logo__icon"
+             width="32" height="32">
+        <span class="header-logo__name">Lessons by Neil Beaver</span>
+      </a>
+
+      <!--
       <nav class="app-tabs" role="tablist" aria-label="Choose app">
         <button type="button" class="app-tabs__tab is-active" role="tab" aria-selected="true" data-app="lessons">
           <img src="assets/images/lessons/lessons-icon.png"
@@ -82,6 +100,7 @@
           <span class="app-tabs__label">Roads</span>
         </button>
       </nav>
+      -->
 
       <!-- <a href="#appstore-link" class="btn btn--primary btn--sm">Download for iOS</a> -->
 
@@ -1159,7 +1178,14 @@
        STRUCTURED DATA (JSON-LD)
 
        Establishes "Neil Beaver" as an entity Google can recognise, and
-       describes both apps. Validate after any edit at:
+       describes the Lessons app.
+
+       ROADS SCHEMA — a SoftwareApplication node for Roads was removed
+       while the Roads tab is hidden, since it would describe a product
+       not visible on the page. Restore it alongside the tab; git history
+       has the original (commit b1cfb0f).
+
+       Validate after any edit at:
          https://validator.schema.org/
          https://search.google.com/test/rich-results
        ============================================================ -->
@@ -1237,24 +1263,6 @@
             "billingIncrement": 1,
             "unitCode": "MON"
           }
-        }
-      },
-      {
-        "@type": "SoftwareApplication",
-        "@id": "https://beev.github.io/apps/#roads",
-        "name": "Roads by Neil Beaver",
-        "alternateName": ["Road Board", "Road Pad"],
-        "applicationCategory": "EducationalApplication",
-        "applicationSubCategory": "Driving instructor teaching aid",
-        "operatingSystem": "iOS",
-        "inLanguage": "en-GB",
-        "description": "The successor to Road Board and Road Pad, rebuilt as a single app. More than 50 pre-drawn road situations plus detailed satellite imagery, for explaining any road layout to a learner driver.",
-        "screenshot": "https://beev.github.io/apps/assets/images/og-roads.png",
-        "author": { "@id": "https://beev.github.io/apps/#neilbeaver" },
-        "publisher": { "@id": "https://beev.github.io/apps/#neilbeaver" },
-        "audience": {
-          "@type": "Audience",
-          "audienceType": "Driving instructors (ADIs and PDIs)"
         }
       },
       {
