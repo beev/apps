@@ -1,0 +1,10 @@
+# NOTE: robots.txt is only read at the root of a host. While the site is
+# served from https://beev.github.io/apps/ this file is ignored, because
+# crawlers look at https://beev.github.io/robots.txt instead. It becomes
+# live automatically once the custom domain is pointed at this repo.
+# Until then, submit sitemap.xml directly in Google Search Console.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://beev.github.io/apps/sitemap.xml
