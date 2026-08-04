@@ -144,6 +144,58 @@ a {
 }
 
 /* ============================================================
+   APP TABS (header) — switch between Lessons and Roads
+   ============================================================ */
+.app-tabs {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.app-tabs__tab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 100px;
+  padding: 0.375rem 0.75rem 0.375rem 0.375rem;
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.app-tabs__tab:hover {
+  background-color: var(--color-primary-dim);
+  color: var(--color-text);
+}
+
+.app-tabs__tab.is-active {
+  background-color: var(--color-primary-dim);
+  color: var(--color-primary);
+}
+
+.app-tabs__icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.app-tabs__label {
+  white-space: nowrap;
+}
+
+/* Elements toggled per-app by script.js. Some (e.g. .footer-brand) set
+   display:flex directly, which would otherwise beat the UA [hidden] rule. */
+.app-view[hidden] {
+  display: none;
+}
+
+/* ============================================================
    BUTTONS
    ============================================================ */
 .btn {
@@ -192,6 +244,11 @@ a {
 .badge--appstore {
   background: #000;
   color: #fff;
+  width: 156px;
+  height: 52px;
+  box-sizing: border-box;
+  justify-content: center;
+  border-radius: 11px;
 }
 
 .badge--appstore:hover {
