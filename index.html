@@ -9,25 +9,25 @@
   <!-- ============================================================
        CANONICAL & SOCIAL
 
-       SITE BASE URL — currently the GitHub Pages address. When the
-       custom domain is live, swap every occurrence in one pass:
+       SITE BASE URL is https://www.neilbeaver.com/ — the www hostname is
+       canonical, and the bare domain 301s to it at the registrar. Keep
+       every absolute URL here on www; mixing the two splits the ranking
+       signal between them.
 
-         grep -rl 'beev.github.io/apps' . \
-           | xargs sed -i '' 's|https://beev.github.io/apps/|https://neilbeaver.co.uk/|g'
-
-       That covers *.html, robots.txt and sitemap.xml. Do it only once
-       the domain resolves — a canonical pointing at a dead host will
+       If the base URL ever changes again, it appears in *.html,
+       robots.txt and sitemap.xml. Change it only once the new host
+       actually resolves — a canonical pointing at a dead host will
        deindex the site.
        ============================================================ -->
-  <link rel="canonical" href="https://beev.github.io/apps/">
+  <link rel="canonical" href="https://www.neilbeaver.com/">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Neil Beaver">
   <meta property="og:locale" content="en_GB">
-  <meta property="og:url" content="https://beev.github.io/apps/">
+  <meta property="og:url" content="https://www.neilbeaver.com/">
   <meta property="og:title" content="Lessons &amp; Roads by Neil Beaver — Driving Instructor Teaching Aids">
   <meta property="og:description" content="Animated driving lesson diagrams for instructors. iPhone and iPad. Available in the UK, Ireland, Cyprus and Malta.">
-  <meta property="og:image" content="https://beev.github.io/apps/assets/images/og-lessons.png">
+  <meta property="og:image" content="https://www.neilbeaver.com/assets/images/og-lessons.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Lessons by Neil Beaver — animated driving lesson diagrams, shown on an iPad.">
@@ -35,7 +35,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Lessons &amp; Roads by Neil Beaver">
   <meta name="twitter:description" content="Animated driving lesson diagrams for instructors. iPhone and iPad.">
-  <meta name="twitter:image" content="https://beev.github.io/apps/assets/images/og-lessons.png">
+  <meta name="twitter:image" content="https://www.neilbeaver.com/assets/images/og-lessons.png">
 
   <meta name="theme-color" content="#1A3A5C">
   <link rel="preload" as="image" href="assets/images/lessons/iPad1.webp" fetchpriority="high">
@@ -1195,20 +1195,20 @@
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": "https://beev.github.io/apps/#website",
-        "url": "https://beev.github.io/apps/",
+        "@id": "https://www.neilbeaver.com/#website",
+        "url": "https://www.neilbeaver.com/",
         "name": "Lessons & Roads by Neil Beaver",
         "description": "Animated driving lesson diagrams and road layout teaching aids for driving instructors.",
         "inLanguage": "en-GB",
-        "publisher": { "@id": "https://beev.github.io/apps/#neilbeaver" }
+        "publisher": { "@id": "https://www.neilbeaver.com/#neilbeaver" }
       },
       {
         "@type": "Person",
-        "@id": "https://beev.github.io/apps/#neilbeaver",
+        "@id": "https://www.neilbeaver.com/#neilbeaver",
         "name": "Neil Beaver",
         "jobTitle": "Driving Instructor",
         "description": "Driving instructor and developer of teaching aid apps for driving instructors, including the Learn to Drive series, Road Board, Road Pad and the current Lessons and Roads apps.",
-        "url": "https://beev.github.io/apps/",
+        "url": "https://www.neilbeaver.com/",
         "sameAs": [
           "https://apps.apple.com/gb/developer/neil-beaver/id412352346"
         ],
@@ -1223,7 +1223,7 @@
       },
       {
         "@type": "SoftwareApplication",
-        "@id": "https://beev.github.io/apps/#lessons",
+        "@id": "https://www.neilbeaver.com/#lessons",
         "name": "Lessons by Neil Beaver",
         "alternateName": "Learn to Drive",
         "applicationCategory": "EducationalApplication",
@@ -1236,9 +1236,9 @@
         "description": "Animated driving lesson diagrams covering controls, position, stopping, manoeuvres, pedestrian crossings, junctions, traffic lights, roundabouts and dual carriageways. All of Neil Beaver's Learn to Drive modules bundled into one app for iPhone and iPad.",
         "url": "https://apps.apple.com/gb/app/lessons-by-neil-beaver/id6768265585",
         "installUrl": "https://apps.apple.com/gb/app/lessons-by-neil-beaver/id6768265585",
-        "screenshot": "https://beev.github.io/apps/assets/images/og-lessons.png",
-        "author": { "@id": "https://beev.github.io/apps/#neilbeaver" },
-        "publisher": { "@id": "https://beev.github.io/apps/#neilbeaver" },
+        "screenshot": "https://www.neilbeaver.com/assets/images/og-lessons.png",
+        "author": { "@id": "https://www.neilbeaver.com/#neilbeaver" },
+        "publisher": { "@id": "https://www.neilbeaver.com/#neilbeaver" },
         "audience": {
           "@type": "Audience",
           "audienceType": "Driving instructors (ADIs and PDIs)"
@@ -1267,7 +1267,7 @@
       },
       {
         "@type": "FAQPage",
-        "@id": "https://beev.github.io/apps/#faq",
+        "@id": "https://www.neilbeaver.com/#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -1306,7 +1306,7 @@
             "name": "How can I import my saved files from Road Board to Roads?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Full step-by-step instructions are available at https://beev.github.io/apps/import.html"
+              "text": "Full step-by-step instructions are available at https://www.neilbeaver.com/import.html"
             }
           },
           {
