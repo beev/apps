@@ -2,27 +2,30 @@
 title: Stopping
 path: stopping
 order: 4
-lastmod: 2016-06-20
-legacy_url: emergencystop
+lastmod: 2026-08-19
 ---
 
-The emergency stop is not a manoeuvre. You may or may not be asked to carry out an emergency stop during your test. If you are asked to do it, the examiner will inform you in advance and will also make sure it is safe to do so before giving the command to stop. The purpose of the exercise is to bring the vehicle to a stop quickly and under full control. The emergency stop may also be referred to as the *controlled stop*.
+Every journey ends with the car stopped, and most of the hazards you meet along
+the way are dealt with by slowing down or stopping in good time. Braking well is
+less about the strength of your right foot than about how early you saw the need
+to use it.
 
-## Stopping
+Three things decide whether a stop is comfortable or alarming: how much room you
+left in front of you, how far ahead you were looking, and how much grip the road
+surface can offer. Get the first two right and the third rarely gets tested.
 
-• Identify the need to stop promptly
-• No mirror check: you should already have a good idea what is behind
-• Quick reaction. Move your right foot from the gas to the brake
-• Keep a firm grip on the steering wheel with both hands while braking
-• Exponentially increase pressure on the brake
-• Push the clutch to the floor shortly before coming to a stop
-• Once fully stopped, secure the car by engaging the handbrake
-• Select neutral and release pedals
+## What this section covers
 
-## Moving off
+[Following Distance](@stopping/following-distance) explains how much room to
+leave in front of you, and how that gap has to grow as your speed rises or the
+weather worsens.
 
-• Prepare: Select 1st gear. Hands and feet ready to move off
-• Observe: Effective all-round observations. Remember blindspots
-• Move: Move off when safe
+[Planning](@stopping/planning) is about reading the road far enough ahead that
+you are easing off the gas while other drivers are still reaching for the brake.
 
-![](graph.png)
+[Skidding](@stopping/skidding) covers what to do on the rare occasion the tyres
+lose their grip, and why the correct response feels wrong.
+
+[Controlled Stop](@stopping/controlled-stop) is the emergency stop you may be
+asked to demonstrate on test: bringing the car to a halt quickly, in a straight
+line, and under full control.
