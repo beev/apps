@@ -19,9 +19,15 @@ Fortunately, there are a few simple tricks to getting spiral roundabouts right:
 
 This is a spiral roundabout:
 
+@map[Aerial view of a spiral roundabout, its lane markings winding outwards towards the exits](https://www.google.com/maps/embed?pb=!1m11!1m8!1m3!1d558.89070924527391!2d-3.291218!3d55.922279!3m2!1i1024!2i768!4f13.1!5e1!6i19)
+
 This is a spiral roundabout:
 
+@map[Aerial view of a second spiral roundabout, seen from a little higher up](https://www.google.com/maps/embed?pb=!1m11!1m8!1m3!1d1117.8597433366333!2d-3.304138!3d55.919563!3m2!1i1024!2i768!4f13.1!5e1!6i18)
+
 This is not a spiral roundabout:
+
+@map[Aerial view of a roundabout whose lane markings run in concentric circles rather than spiralling outwards](https://www.google.com/maps/embed?pb=!1m11!1m8!1m3!1d558.59715296791933!2d-3.293318!3d55.942635!3m2!1i1024!2i768!4f13.1!5e1!6i19)
 
 You can explore these images in greater detail by zooming in or out and panning around. You might have to look quite closely in order to see the difference.
 
@@ -32,6 +38,8 @@ In the third image, the lanes go nowhere. They do not guide you in a spiral form
 For example, look at the black and the white cars entering from the right of the roundabout. The white car has approached in the right lane and the black car in the middle lane. The lane markings on the roundabout help them to maintain the same position as they join the roundabout. Without those guidelines, they might get in the way of each other. 
 
 Take a look at this one:
+
+@map[Aerial view of a roundabout with dotted guide lines at each entry, for you to judge whether it spirals](https://www.google.com/maps/embed?pb=!1m11!1m8!1m3!1d1117.6573509471079!2d-3.308998!3d55.926581!3m2!1i1024!2i768!4f13.1!5e1!6i18)
 
 Spiral or not spiral?
 
@@ -48,7 +56,3 @@ This roundabout has dotted lines at every point of entry. The dots are only for 
 Now that you are on the roundabout and in the correct lane (the one that corresponds to your approach lane), all you need to do is continue following the lane you are in. This is just like lane discipline in normal driving: don't cross the white lines either side of you unless you have a good reason. You will not normally need to change lanes on a spiral roundabout. If you do need to change lanes, make sure you check it is safe before you do so. Signal if necessary.
 
 Once you are following your lane, it should guide you off the roundabout and into the exit you were looking for. As you follow the lane, keep an eye on the road markings to confirm you are still on course for your destination.
-
-<!-- TODO(map): Google Maps embed of the Edinburgh spiral roundabout was
-     dropped in migration - it used the retired http:// embed API. Replace
-     with a modern embed or a static image. -->

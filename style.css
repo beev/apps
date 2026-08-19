@@ -1256,6 +1256,25 @@ details.module[open] .module__chevron {
   background: var(--color-surface);
 }
 
+/* ---------- map embeds ---------- */
+.guide-map { margin: 1.75rem 0; }
+
+.guide-map iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  height: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-dim);
+}
+
+.guide-map figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
 /* ---------- section index ----------
 
    These sit inside .guide-main, so the prose rules above (disc bullets,

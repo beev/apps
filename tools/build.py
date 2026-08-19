@@ -109,6 +109,23 @@ def img_tag(alt, src, page_path):
     return f'<figure class="guide-figure"><img {attrs} loading="lazy" decoding="async"></figure>'
 
 LIST_RE = re.compile(r'^(?:([-•])|(\d+)\.)\s+(.*)$')
+MAP_RE  = re.compile(r'^@map\[([^\]]*)\]\(([^)]+)\)$')
+
+def map_embed(title, url):
+    """A Google Maps embed, as the old RapidWeaver site used.
+
+    These are the keyless share-embed URLs (maps/embed?pb=...), so no API key
+    and no billing account is involved. The resolved pb URL is stored rather
+    than the legacy maps.google.co.uk form, which still works but only by way
+    of a 301 - baking in the target saves the redirect at load time.
+    """
+    if not url.startswith('https://www.google.com/maps/embed?pb='):
+        raise BuildError(f"map embed should be a keyless maps/embed URL: {url[:60]}")
+    return (f'<figure class="guide-map">'
+            f'<iframe src="{html.escape(url, quote=True)}" '
+            f'title="{html.escape(title, quote=True)}" loading="lazy" '
+            f'referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>'
+            f'<figcaption>{html.escape(title)}</figcaption></figure>')
 
 def render(body, pages, where, page_path):
     body = re.sub(r'<!--.*?-->', '', body, flags=re.S)   # editorial notes
@@ -139,7 +156,11 @@ def render(body, pages, where, page_path):
     for line in lines:
         s = line.strip()
         m = LIST_RE.match(s)
-        if s.startswith('### '):
+        mm = MAP_RE.match(s)
+        if mm:
+            flush_para(); flush_list()
+            out.append(map_embed(mm.group(1), mm.group(2)))
+        elif s.startswith('### '):
             flush_para(); flush_list()
             out.append(f'<h3>{inline(s[4:], pages, where, page_path)}</h3>')
         elif s.startswith('## '):
