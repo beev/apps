@@ -1099,3 +1099,228 @@ details.module[open] .module__chevron {
     text-align: right;
   }
 }
+
+/* ============================================================
+   LEARN TO DRIVE GUIDE
+
+   Styles for the generated pages under /lessons/guide/. They reuse
+   the tokens, .container, .site-header and .site-footer above, so
+   the guide reads as part of the same site rather than a bolt-on.
+   ============================================================ */
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 200;
+  padding: 0.75rem 1rem;
+  background: var(--color-surface);
+  border-radius: 0 0 var(--radius-sm) 0;
+}
+.skip-link:focus { left: 0; }
+
+.site-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.site-header__cta {
+  font-weight: 600;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* ---------- breadcrumbs ---------- */
+.breadcrumbs {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  padding-block: 1rem 0;
+}
+.breadcrumbs a { color: var(--color-muted); }
+.breadcrumbs a:hover { color: var(--color-link); text-decoration: underline; }
+.breadcrumbs__sep { padding-inline: 0.45rem; opacity: 0.6; }
+.breadcrumbs [aria-current="page"] { color: var(--color-text); }
+
+/* ---------- layout ---------- */
+.guide-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+  padding-block: 1.5rem 4rem;
+}
+
+@media (min-width: 900px) {
+  .guide-layout { grid-template-columns: 250px minmax(0, 1fr); gap: 3rem; }
+}
+
+/* ---------- sidebar ---------- */
+.guide-nav {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+}
+
+.guide-nav__title {
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+.guide-nav__title::-webkit-details-marker { display: none; }
+.guide-nav__title::after { content: " ▾"; color: var(--color-muted); }
+
+.guide-nav__list { display: grid; gap: 0.15rem; margin-top: 0.75rem; }
+.guide-nav__list a {
+  display: block;
+  padding: 0.35rem 0.5rem;
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  font-size: 0.95rem;
+}
+.guide-nav__list a:hover { background: var(--color-primary-dim); }
+.guide-nav__list a.is-current {
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 600;
+}
+.guide-nav__children {
+  display: grid;
+  gap: 0.1rem;
+  margin: 0.15rem 0 0.5rem 0.75rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid var(--color-border);
+}
+.guide-nav__children a { font-size: 0.9rem; color: var(--color-muted); }
+.guide-nav__children a.is-current { color: #fff; }
+.guide-nav__soon {
+  font-size: 0.7rem;
+  color: var(--color-soon);
+  margin-left: 0.4rem;
+}
+
+/* From tablet up the nav is permanent, so the disclosure is forced open
+   and its summary hidden. Author styles beat the UA rule that hides the
+   contents of a closed <details>. */
+@media (min-width: 900px) {
+  .guide-nav {
+    position: sticky;
+    top: 76px;
+    max-height: calc(100vh - 96px);
+    overflow-y: auto;
+  }
+  .guide-nav > .guide-nav__title { display: none; }
+  .guide-nav > .guide-nav__body { display: block; }
+  .guide-nav__list { margin-top: 0; }
+}
+
+/* ---------- article ---------- */
+.guide-main { max-width: 68ch; }
+.guide-main h1 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+.guide-main h2 {
+  font-size: 1.35rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-border);
+}
+.guide-main h3 {
+  font-size: 1.1rem;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+.guide-main p { margin-bottom: 1.1rem; }
+.guide-main a { text-decoration: underline; text-underline-offset: 2px; }
+.guide-main ul, .guide-main ol { margin: 0 0 1.25rem 1.25rem; }
+.guide-main ul { list-style: disc; }
+.guide-main ol { list-style: decimal; }
+.guide-main li { margin-bottom: 0.4rem; padding-left: 0.25rem; }
+
+.guide-figure {
+  margin: 1.75rem 0;
+  text-align: center;
+}
+.guide-figure img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  background: var(--color-surface);
+}
+
+/* ---------- section index ---------- */
+.guide-cards { margin-top: 3rem; }
+.guide-cards h2 {
+  font-size: 1.35rem;
+  margin-bottom: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-border);
+}
+.guide-cards__list {
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+.guide-cards__list a {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.8rem 1rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  color: var(--color-text);
+  font-weight: 600;
+}
+.guide-cards__list a:hover {
+  border-color: var(--color-primary);
+  color: var(--color-link);
+}
+.guide-cards__soon {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--color-soon);
+  white-space: nowrap;
+}
+
+/* ---------- previous / next ---------- */
+.guide-pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+.guide-pager a {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-weight: 600;
+  max-width: 48%;
+}
+.guide-pager a:hover { border-color: var(--color-primary); color: var(--color-link); }
+.guide-pager span {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.guide-pager__next { text-align: right; margin-left: auto; }
