@@ -112,20 +112,37 @@ LIST_RE = re.compile(r'^(?:([-•])|(\d+)\.)\s+(.*)$')
 MAP_RE  = re.compile(r'^@map\[([^\]]*)\]\(([^)]+)\)$')
 
 def map_embed(title, url):
-    """A Google Maps embed, as the old RapidWeaver site used.
+    """A Google Maps embed behind a click-to-load button.
+
+    Nothing contacts Google until the reader presses the button, so no cookie
+    is set unless they ask for the map - which keeps three maps on one page
+    from putting a consent banner on all 56. The button is labelled with what
+    it does and sits next to the notice, so pressing it is the consent.
 
     These are the keyless share-embed URLs (maps/embed?pb=...), so no API key
-    and no billing account is involved. The resolved pb URL is stored rather
-    than the legacy maps.google.co.uk form, which still works but only by way
-    of a 301 - baking in the target saves the redirect at load time.
+    is involved. Coordinates and zoom are read back out of the pb string for
+    the no-JavaScript fallback link rather than being stored twice.
     """
     if not url.startswith('https://www.google.com/maps/embed?pb='):
         raise BuildError(f"map embed should be a keyless maps/embed URL: {url[:60]}")
-    return (f'<figure class="guide-map">'
-            f'<iframe src="{html.escape(url, quote=True)}" '
-            f'title="{html.escape(title, quote=True)}" loading="lazy" '
-            f'referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>'
-            f'<figcaption>{html.escape(title)}</figcaption></figure>')
+    ll = re.search(r'!2d(-?[\d.]+)!3d(-?[\d.]+)', url)
+    z  = re.search(r'!6i(\d+)', url)
+    if not (ll and z):
+        raise BuildError(f"cannot read coordinates from map embed: {url[:60]}")
+    plain = (f'https://maps.google.com/?q={ll.group(2)},{ll.group(1)}'
+             f'&t=k&z={z.group(1)}')
+    e = lambda s: html.escape(s, quote=True)
+    return (
+        '<figure class="guide-map">'
+        f'<div class="guide-map__consent" data-map-src="{e(url)}" '
+        f'data-map-title="{e(title)}">'
+        '<button type="button" class="guide-map__load">Load map</button>'
+        '<p class="guide-map__notice">Loading the map means you consent to '
+        'Google&rsquo;s cookies. '
+        f'<a href="{e(plain)}" target="_blank" rel="noopener noreferrer">'
+        'Open in Google Maps instead</a>.</p>'
+        '</div>'
+        f'<figcaption>{html.escape(title)}</figcaption></figure>')
 
 def render(body, pages, where, page_path):
     body = re.sub(r'<!--.*?-->', '', body, flags=re.S)   # editorial notes

@@ -67,3 +67,21 @@ if (guideNav) {
   sync();
   narrow.addEventListener('change', sync);
 }
+
+// Guide maps: click to load. The Google embed sets a cookie, so nothing is
+// requested from Google until the reader presses the button — which is why
+// the site needs no consent banner. Pressing the button is the consent.
+document.querySelectorAll('.guide-map__consent').forEach(box => {
+  const btn = box.querySelector('.guide-map__load');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    const frame = document.createElement('iframe');
+    frame.src = box.dataset.mapSrc;
+    frame.title = box.dataset.mapTitle || 'Map';
+    frame.loading = 'lazy';
+    frame.referrerPolicy = 'no-referrer-when-downgrade';
+    frame.allowFullscreen = true;
+    box.replaceWith(frame);
+    frame.focus({ preventScroll: true });
+  });
+});
