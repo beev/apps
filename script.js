@@ -75,6 +75,30 @@ document.querySelectorAll('.guide-map__consent').forEach(box => {
   const btn = box.querySelector('.guide-map__load');
   if (!btn) return;
   btn.addEventListener('click', () => {
+    // Maps JavaScript API form: its `satellite` map type is imagery with no
+    // road-name labels, which the iframe embed cannot produce.
+    if (box.dataset.mapLat) {
+      loadMapsApi(box.dataset.mapKey).then(() => {
+        const el = document.createElement('div');
+        el.className = 'guide-map__canvas';
+        el.setAttribute('role', 'img');
+        el.setAttribute('aria-label', box.dataset.mapTitle || 'Map');
+        box.replaceWith(el);
+        new google.maps.Map(el, {
+          center: { lat: +box.dataset.mapLat, lng: +box.dataset.mapLng },
+          zoom: +box.dataset.mapZoom,
+          mapTypeId: 'satellite',
+          mapTypeControl: false,
+          streetViewControl: false,
+          fullscreenControl: true
+        });
+      }).catch(() => {
+        btn.textContent = 'Map could not be loaded';
+        btn.disabled = true;
+      });
+      return;
+    }
+
     const frame = document.createElement('iframe');
     frame.src = box.dataset.mapSrc;
     frame.title = box.dataset.mapTitle || 'Map';
@@ -85,3 +109,18 @@ document.querySelectorAll('.guide-map__consent').forEach(box => {
     frame.focus({ preventScroll: true });
   });
 });
+
+// Loads the Maps JavaScript API once, however many maps are on the page.
+function loadMapsApi(key) {
+  if (window.__mapsApiPromise) return window.__mapsApiPromise;
+  window.__mapsApiPromise = new Promise((resolve, reject) => {
+    window.__mapsApiReady = resolve;
+    const s = document.createElement('script');
+    s.src = 'https://maps.googleapis.com/maps/api/js?key=' + encodeURIComponent(key) +
+            '&v=weekly&loading=async&callback=__mapsApiReady';
+    s.async = true;
+    s.onerror = reject;
+    document.head.appendChild(s);
+  });
+  return window.__mapsApiPromise;
+}

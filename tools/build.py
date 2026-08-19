@@ -17,6 +17,13 @@ import os, re, csv, html, shutil, sys
 from datetime import date
 
 SITE      = 'https://www.neilbeaver.com'
+
+# Maps JavaScript API key, used only by the satellite: form of @map. Browser
+# API keys cannot be secret, so this one is restricted in the Cloud console to
+# this site's referrers, to the Maps JavaScript API alone, and to a daily map
+# load quota - the quota is what bounds the cost of a scraped key, since the
+# JS API is billable. It is NOT the key the Roads app uses.
+MAPS_API_KEY = 'AIzaSyCl0ieLxi9ZgkI555zxSXkqKOmoey-mrDQ'
 GUIDE_URL = '/lessons/guide'
 OUT       = 'lessons/guide'
 SRC       = 'content/guide'
@@ -123,11 +130,29 @@ def map_embed(title, url):
     is involved. Coordinates and zoom are read back out of the pb string for
     the no-JavaScript fallback link rather than being stored twice.
     """
-    # Keyless share-embed URLs only. The Maps Embed API was tried for
-    # label-free satellite and cannot do it: maptype is its only display
-    # option and its satellite layer carries labels. Label styling belongs to
-    # the Maps JavaScript API, which is billable. The labels are wanted here
-    # anyway - the page asks the reader to find the Retail Park on the map.
+    # Two forms. "satellite:lat,lng,zoom" renders through the Maps JavaScript
+    # API, whose `satellite` map type is imagery with no labels - the Embed
+    # API cannot do this, since its only display option is maptype and its
+    # satellite layer is really hybrid. Anything else is a keyless
+    # share-embed URL, which needs no key and shows labels.
+    m = re.fullmatch(r'satellite:(-?[\d.]+),(-?[\d.]+),(\d+)', url)
+    if m:
+        lat, lng, zoom = m.group(1), m.group(2), m.group(3)
+        plain = f'https://maps.google.com/?q={lat},{lng}&t=k&z={zoom}'
+        e = lambda s: html.escape(str(s), quote=True)
+        return (
+            '<figure class="guide-map">'
+            f'<div class="guide-map__consent" data-map-lat="{e(lat)}" '
+            f'data-map-lng="{e(lng)}" data-map-zoom="{e(zoom)}" '
+            f'data-map-key="{e(MAPS_API_KEY)}" data-map-title="{e(title)}">'
+            '<button type="button" class="guide-map__load">Load map</button>'
+            '<p class="guide-map__notice">Loading the map means you consent to '
+            'Google&rsquo;s cookies. '
+            f'<a href="{e(plain)}" target="_blank" rel="noopener noreferrer">'
+            'Open in Google Maps instead</a>.</p>'
+            '</div>'
+            f'<figcaption>{html.escape(title)}</figcaption></figure>')
+
     if not url.startswith('https://www.google.com/maps/embed?pb='):
         raise BuildError(f"map embed should be a keyless maps/embed URL: {url[:60]}")
     ll = re.search(r'!2d(-?[\d.]+)!3d(-?[\d.]+)', url)
