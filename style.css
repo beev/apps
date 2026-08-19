@@ -1204,9 +1204,8 @@ details.module[open] .module__chevron {
   margin-left: 0.4rem;
 }
 
-/* From tablet up the nav is permanent, so the disclosure is forced open
-   and its summary hidden. Author styles beat the UA rule that hides the
-   contents of a closed <details>. */
+/* From tablet up the nav is permanent, so the summary is hidden. The
+   element is emitted with `open`; script.js closes it below this width. */
 @media (min-width: 900px) {
   .guide-nav {
     position: sticky;
@@ -1215,7 +1214,6 @@ details.module[open] .module__chevron {
     overflow-y: auto;
   }
   .guide-nav > .guide-nav__title { display: none; }
-  .guide-nav > .guide-nav__body { display: block; }
   .guide-nav__list { margin-top: 0; }
 }
 
@@ -1324,3 +1322,25 @@ details.module[open] .module__chevron {
   letter-spacing: 0.04em;
 }
 .guide-pager__next { text-align: right; margin-left: auto; }
+
+/* ---------- store badges in the guide header ---------- */
+.badge-group--header {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+/* Apple renders at 32px here; Google's artwork bakes in its own clear space,
+   so 48px of file puts its visible badge at the same 32px. */
+.site-header .appstore-badge img { height: 32px; }
+.site-header .playstore-badge img { height: 48px; }
+.site-header .playstore-badge { margin-inline: -6px; }
+
+.guide-body .header-inner { gap: 0.75rem; }
+
+@media (max-width: 560px) {
+  .site-header__brand span { display: none; }
+  .site-header .appstore-badge img { height: 28px; }
+  .site-header .playstore-badge img { height: 42px; }
+}

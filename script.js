@@ -56,3 +56,14 @@ document.querySelectorAll('.device-switcher').forEach(switcher => {
     });
   });
 });
+
+// Guide sidebar: permanent from the tablet width up, collapsible below it.
+// The markup ships open so that with JavaScript off the nav is always
+// visible — a closed <details> would hide it with no way to reopen.
+const guideNav = document.querySelector('.guide-nav');
+if (guideNav) {
+  const narrow = window.matchMedia('(max-width: 899px)');
+  const sync = () => { guideNav.open = !narrow.matches; };
+  sync();
+  narrow.addEventListener('change', sync);
+}

@@ -160,6 +160,28 @@ def render(body, pages, where, page_path):
 
 # -------------------------------------------------------------- templates ---
 
+HEADER_BRAND = (
+    '    <a class="site-header__brand" href="/">'
+    '<img src="/assets/images/lessons/lessons-icon.png" alt="" width="32" height="32" '
+    'class="app-icon app-icon--sm"><span>Lessons by Neil Beaver</span></a>')
+
+# The same store badges as the home page. Apple's is served from their CDN;
+# Google's is self-hosted because their brand guidelines require it.
+HEADER_BADGES = '''    <div class="badge-group badge-group--header">
+      <a href="https://apps.apple.com/gb/app/lessons-by-neil-beaver/id6768265585?itscg=30200&itsct=apps_box_badge&mttnsubad=6768265585"
+         class="appstore-badge">
+        <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1781222400"
+             alt="Download Lessons by Neil Beaver on the App Store"
+             width="120" height="40" decoding="async">
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=com.neilbeaver.lessons"
+         class="playstore-badge">
+        <img src="/assets/images/google-play-badge.png"
+             alt="Get Lessons by Neil Beaver on Google Play"
+             width="646" height="250" decoding="async">
+      </a>
+    </div>'''
+
 FOOTER = '''  <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
@@ -247,9 +269,11 @@ def breadcrumbs(page, pages):
 def sidebar(page, tops):
     here = page['path']
     current_top = page.get('parent') or here
-    # <details> so the nav collapses on small screens with no JavaScript; the
-    # stylesheet forces it open and hides the summary from the tablet width up.
-    out = ['<details class="guide-nav">',
+    # Open by default: a closed <details> hides its contents through UA
+    # machinery that author CSS cannot reliably override, which left the
+    # sidebar an empty box. script.js collapses it on small screens instead,
+    # so with JavaScript off the nav is simply always visible.
+    out = ['<details class="guide-nav" open>',
            '<summary class="guide-nav__title">Sections</summary>',
            '<div class="guide-nav__body">',
            '<nav aria-label="Guide sections"><ul class="guide-nav__list">']
@@ -311,10 +335,8 @@ def build_page(page, pages, tops):
         head(page, desc),
         '  <a class="skip-link" href="#guide-main">Skip to content</a>',
         '  <header class="site-header" id="site-header"><div class="container header-inner">',
-        '    <a class="site-header__brand" href="/">'
-        '<img src="/assets/images/lessons/lessons-icon.png" alt="" width="32" height="32" '
-        'class="app-icon app-icon--sm"><span>Neil Beaver</span></a>',
-        '    <a class="site-header__cta" href="/#download-lessons">Get the app</a>',
+        HEADER_BRAND,
+        HEADER_BADGES,
         '  </div></header>',
         f'  {crumb_nav}',
         '  <div class="container guide-layout">',
