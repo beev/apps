@@ -19,7 +19,7 @@ Fortunately, there are a few simple tricks to getting spiral roundabouts right:
 
 This is a spiral roundabout:
 
-@map[Aerial view of a spiral roundabout, its lane markings winding outwards towards the exits](satellite:55.922279,-3.291218,19)
+@map[Aerial view of a spiral roundabout, its lane markings winding outwards towards the exits](https://www.google.com/maps/embed?pb=!1m11!1m8!1m3!1d558.89070924527391!2d-3.291218!3d55.922279!3m2!1i1024!2i768!4f13.1!5e1!6i19)
 
 
 This is not a spiral roundabout:

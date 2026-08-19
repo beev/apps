@@ -17,12 +17,6 @@ import os, re, csv, html, shutil, sys
 from datetime import date
 
 SITE      = 'https://www.neilbeaver.com'
-
-# Maps Embed API key. Public by necessity - browser APIs expose their key in
-# page source - so it is restricted in the Cloud console to this site's
-# referrers and to the Maps Embed API alone, which is free and unmetered.
-# It is deliberately NOT the key the Roads app uses.
-MAPS_API_KEY = 'AIzaSyCl0ieLxi9ZgkI555zxSXkqKOmoey-mrDQ'
 GUIDE_URL = '/lessons/guide'
 OUT       = 'lessons/guide'
 SRC       = 'content/guide'
@@ -129,24 +123,18 @@ def map_embed(title, url):
     is involved. Coordinates and zoom are read back out of the pb string for
     the no-JavaScript fallback link rather than being stored twice.
     """
-    # Two forms are accepted. "satellite:lat,lng,zoom" builds a Maps Embed API
-    # URL, whose maptype=satellite may drop the road-name labels the keyless
-    # share embed always shows. Anything else must be a keyless share-embed
-    # URL, which needs no key at all.
-    m = re.fullmatch(r'satellite:(-?[\d.]+),(-?[\d.]+),(\d+)', url)
-    if m:
-        lat, lng, zoom = m.group(1), m.group(2), m.group(3)
-        url = (f'https://www.google.com/maps/embed/v1/view?key={MAPS_API_KEY}'
-               f'&center={lat},{lng}&zoom={zoom}&maptype=satellite')
-    else:
-        if not url.startswith('https://www.google.com/maps/embed?pb='):
-            raise BuildError(f"map embed should be a keyless maps/embed URL "
-                             f"or satellite:lat,lng,zoom - got {url[:60]}")
-        ll = re.search(r'!2d(-?[\d.]+)!3d(-?[\d.]+)', url)
-        z  = re.search(r'!6i(\d+)', url)
-        if not (ll and z):
-            raise BuildError(f"cannot read coordinates from map embed: {url[:60]}")
-        lat, lng, zoom = ll.group(2), ll.group(1), z.group(1)
+    # Keyless share-embed URLs only. The Maps Embed API was tried for
+    # label-free satellite and cannot do it: maptype is its only display
+    # option and its satellite layer carries labels. Label styling belongs to
+    # the Maps JavaScript API, which is billable. The labels are wanted here
+    # anyway - the page asks the reader to find the Retail Park on the map.
+    if not url.startswith('https://www.google.com/maps/embed?pb='):
+        raise BuildError(f"map embed should be a keyless maps/embed URL: {url[:60]}")
+    ll = re.search(r'!2d(-?[\d.]+)!3d(-?[\d.]+)', url)
+    z  = re.search(r'!6i(\d+)', url)
+    if not (ll and z):
+        raise BuildError(f"cannot read coordinates from map embed: {url[:60]}")
+    lat, lng, zoom = ll.group(2), ll.group(1), z.group(1)
     plain = f'https://maps.google.com/?q={lat},{lng}&t=k&z={zoom}'
     e = lambda s: html.escape(s, quote=True)
     return (
