@@ -31,4 +31,4 @@ Remember, you are likely to be cutting your speed dramatically in this situation
 
 As you decelerate, use the MSPSL routine to safely select the correct signal, position and speed for whatever is coming next. As usual, aim to take position on the left unless you have a sensible reason for doing otherwise.
 
-![](exiting-2.png)
+![A dual carriageway with countdown markers set back on the verge - three diagonal bars, then two, then one - counting down the distance to the exit ahead. The blue car has moved into the left-hand lane with its left indicators on, ready to leave.](countdown-markers-to-an-exit.webp)

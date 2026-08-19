@@ -27,7 +27,7 @@ A small amount of steering to the right will take you swiftly and smoothly into 
 
 Cancel your signal as soon as you have changed lanes.
 
-![](pullingin.png)
+![A dual carriageway with a blue car in the right-hand lane and a yellow car further back in the left. A shaded circle covers the road alongside and behind the blue car, the blind spot that has to be checked before moving back to the left after overtaking.](blind-spot-before-pulling-in.webp)
 
 Accelerate if necessary to pass the vehicle(s) you are overtaking, making sure to stay at a sensible speed for the conditions and within the speed limit.
 

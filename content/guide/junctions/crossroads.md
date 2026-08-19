@@ -9,7 +9,7 @@ legacy_url: givewayjunctions/crossroads
 
 When two or more motorists facing each other wish to turn right from a major road into a minor road, there are two different options for positioning prior to the turn. Every other aspect of the turn is the same as normal: use the MSPSL and LADA routines.
 
-![](gwcross1.png)
+![Two cars turning right at a crossroads, one coming from the top and one from the bottom. Red arrows show their paths crossing in front of one another, so they pass nearside to nearside with each car blocking the other's view of oncoming traffic.](crossroads-nearside-to-nearside.webp)
 
 ## Nearside to nearside
 
@@ -19,7 +19,7 @@ The main advantage of this method is that space is maintained between the two ve
 
 The major disadvantage of turning nearside to nearside is that each motorist's view of the road ahead is limited by the vehicle in front. This is especially true when faced with a large vehicle such as a bus or van. Be careful to ensure you are aware of any road users, including cyclists and motorcyclists, who may be approaching from beyond the vehicle in front.
 
-![](gwcross2.png)
+![Two cars turning right at a crossroads, drawn up alongside each other in the middle with their right-hand sides closest. Red arrows show each turning off behind the other, so both keep a clear view of the road they are crossing.](crossroads-offside-to-offside.webp)
 
 ## Offside to offside
 

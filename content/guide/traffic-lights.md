@@ -12,13 +12,13 @@ Many junctions are busy with traffic traveling in several directions. One way to
 
 Red: A red traffic light means you must stop if you have not already crossed the solid white line. If there is a cycle box in front of you, there should be two solid white lines. You may have already crossed the first line, but not the second, when the light changes to red. In this case you should stop before crossing the second line.
 
-![](redamber.png)
+![A traffic signal showing red and amber lit together, the phase that warns green is about to appear but still means stop.](red-and-amber-signal.webp)
 
 Red & Amber: Red & amber lights showing together means the green light is about to show. You have a few seconds in which to prepare for moving. This is a good time to set the gas and find the biting point. Your left hand should be on the handbrake, ready to release it.
 
 Green: A green traffic light means you may proceed, but only if it is safe to do so. If turning right, priority should be given to oncoming traffic as usual.
 
-![](rightfilter.jpg)
+![A traffic signal showing red, with a separate filter head beside it lit by a green arrow pointing right. Traffic turning right may go while the main signal still holds everything else.](right-filter-arrow.webp)
 
 Filter arrows: Some junctions use filter arrows to give priority to road users traveling in a particular direction. Filter arrows may point left, right or ahead.
 
@@ -26,7 +26,7 @@ If a round green light is showing, traffic may proceed as normal in all directio
 
 If a green filter arrow pointing to the right appears in addition to a round green light, traffic turning right is now being given priority over oncoming traffic. After checking it is safe, anyone waiting to turn right can proceed unimpeded.
 
-![](amber.png)
+![A traffic signal showing amber alone, which means stop unless you are so close that pulling up would be dangerous.](amber-signal.webp)
 
 Amber: An amber traffic light means you must stop before the solid white line if it is safe to do so. Whether it is safe or not will depend on a number of factors such as the speed you are traveling, the distance to the line and the presence and distance of following traffic.
 

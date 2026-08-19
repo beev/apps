@@ -11,7 +11,7 @@ legacy_url: manoeuvres/baypark
 
 Start perpendicular to the bays with around a car's width of space between your car and the ends of the bays. Taking position roughly in the middle of the available space is usually a good way to begin.
 
-![](bp1.png)
+![Approaching a row of parking bays. A red arrow curves forward and to the right from the blue car towards the bays, and two shaded circles mark the areas either side of the car that need checking before it turns.](bay-park-approach.webp)
 
 ## Reversing - POM
 
@@ -29,7 +29,7 @@ As you turn into the bay, you should begin to see the lines either side of your 
 
 As your car aligns with the lines either side, straighten the wheels.
 
-![](bp3.png)
+![A car reversing into a parking bay between two white bay lines, with a red arrow showing the direction it is moving.](bay-park-reversing-in.webp)
 
 ## Finishing
 
@@ -51,7 +51,7 @@ Remember that car parks can be busy places with many people and vehicles moving 
 
 Make sure you Prepare, Observe and Move - in that order. Use the handbrake to prevent the car from rolling. Take effective all-round observations, including both blindspots.
 
-![](bp4.png)
+![A car park from above with a row of bays down the right-hand side, four of them taken by a purple, a white, a red and a green car. A red arrow curves from the blue car up the aisle and round into an empty bay.](bay-park-choosing-a-bay.webp)
 
 ## Steering
 

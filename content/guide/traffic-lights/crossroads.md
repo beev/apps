@@ -9,7 +9,7 @@ legacy_url: trafficlights/crossroads
 
 The first image shows a typical right turn when not having to cross the path of oncoming traffic. Notice how both cars are deliberately cutting the corner and leaving some free space in the centre of the junction. This enables them to pass each other safely.
 
-![](nearside.png)
+![Two cars turning right at a crossroads, passing nearside to nearside. Red arrows show one coming from the top and one from the bottom, each crossing in front of the other so their left-hand sides pass closest and neither can see past the other.](nearside-to-nearside.webp)
 
 ## Nearside to nearside
 
@@ -21,7 +21,7 @@ When a suitable gap is available, take the opportunity to move off and turn righ
 
 A suitable gap may not appear until the traffic lights are changing back from green to red. When the lights do change, watch for the next oncoming car stopping at the line, then proceed to clear the junction.
 
-![](offside-2.png)
+![Two cars turning right at a crossroads, passing offside to offside. The blue and red cars have drawn alongside each other with their right-hand sides closest before turning behind one another, leaving each with a clear view of oncoming traffic. Other cars wait at the junction.](offside-to-offside.webp)
 
 ## Offside to offside
 

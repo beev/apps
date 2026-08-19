@@ -9,7 +9,7 @@ legacy_url: givewayjunctions/turningright
 
 This section is about turning right from a *major road* into a *minor road*, or to put it another way, from a *main road* into a *side road*.
 
-![](gwright1.png)
+![A car approaching a right turn with the letters M, S, P and S set out along the verge in the order the driver passes them - Mirror, Signal, Position, Speed - marking the routine to work through on the approach. The car has already moved towards the centre line.](mirror-signal-position-speed.webp)
 
 ## Basic routine - MSPSL
 
@@ -21,7 +21,7 @@ Position: When you are sure it is safe, move your position towards the right and
 
 Speed: Bring your speed down nice and early. This will give you time to assess the junction and make the right decision about when to turn. Early use of the brake is good because it offers the maximum control over the vehicle’s speed, as well as providing an early signal (in the form of brake lights) for anyone traveling behind you.
 
-![](gwright2-2.png)
+![Turning right from a major road into a side road on the right. A red arrow curves from the blue car's lane across the opposite side of the road and into the side road, whose mouth is marked with broken give way lines.](turning-right-into-a-side-road.webp)
 
 Look: Before you turn into the side road, make sure you look into it. You must ensure the way is clear before you commit yourself. Be especially vigilant for pedestrians stepping onto the road from either side and remember that pedestrians on the road have priority. Use your mirrors to ensure nobody is attempting to pass on your right.
 

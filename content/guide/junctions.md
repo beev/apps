@@ -28,7 +28,7 @@ junction: [turning left](@junctions/turning-left) into a side road,
 
 There are three major things to look out for when identifying a Give Way junction:
 
-![](gw1.png)
+![A give way junction from above. Two thick broken white lines run across the mouth of the minor road, a hollow white triangle is painted on the road behind them, and a red-bordered inverted triangle GIVE WAY sign stands on the corner. Broken hazard warning lines run along the centre of the major road.](give-way-junction-markings.webp)
 
 1. Two thick, broken white lines painted on the left side of the road, with a single thinner, broken white line across the right side of the road
 
@@ -46,7 +46,7 @@ Notice also the white hazard warning lines painted in the centre of the road. Th
 
 As early as you can, try to identify whether you are approaching an *open* or a *closed* junction. An open junction has very little - if anything - to obstruct your view as you approach (as in the image above). A closed junction makes it much harder to see potential hazards on approach.
 
-![](gw2-2.png)
+![A closed give way junction from above. Houses and garden walls come right up to both corners and cars are parked along the major road, so a driver waiting at the give way line can see very little either way until the car is well forward. A pedestrian stands on the corner.](closed-give-way-junction.webp)
 
 Closed junction
 
@@ -54,7 +54,7 @@ Closed junction
 
 The clue is in the name: at a stop junction you must stop before the line (it's the law). The common mistake at stop junctions is treat it the same as a give way junction. The reason for doing this tends to come down to one of these two things:
 
-![](stop-3.png)
+![A stop junction from above. A solid white line runs across the mouth of the minor road with the word STOP painted on the road behind it, and an octagonal red STOP sign stands on the corner.](stop-junction-markings.webp)
 
 1. Failing to identify it as a stop junction
 

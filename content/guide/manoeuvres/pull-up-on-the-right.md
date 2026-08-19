@@ -33,7 +33,7 @@ Once you have manoeuvred into the space on the right, position the car reasonabl
 
 Secure the car by applying the handbrake, select neutral, and cancel your signal.
 
-![](puor1-2.png)
+![Pulling up on the right-hand side of the road. A red arrow shows the blue car crossing the centre line towards the right-hand kerb, while a second arrow beside it shows the direction traffic travels on that side. A white and a yellow car are parked further along the right.](pull-up-on-the-right.webp)
 
 ## Reversing - POM
 

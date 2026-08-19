@@ -9,7 +9,7 @@ legacy_url: manoeuvres/turnintheroad
 
 This manoeuvre should be carried out on a quiet road where you can see and be seen. Avoid junctions, parked vehicles, bends and anything else that could impede visibility.
 
-![](tinr1-3.png)
+![The first move of a turn in the road. A red arrow curves from the blue car at the left-hand kerb across to the right-hand side of the road.](turn-in-the-road-first-move.webp)
 
 ## Step 1 (forward) - POM
 
@@ -21,7 +21,7 @@ Move: If it's safe to move, release the handbrake. Use clutch control to keep th
 
 Approaching the opposite side of the road, the camber may cause the car to pick up speed as it rolls downhill. If so, push the clutch to the floor and softly brake. As you get close to the kerb, turn the steering wheel back towards the left, straightening your wheels. Bring the car to a gentle stop just before you reach the kerb. Engage the handbrake.
 
-![](tinr2.png)
+![The second move of a turn in the road. The car now faces the right-hand kerb, and a red arrow points back to the left to show it reversing across the road.](turn-in-the-road-reversing-back.webp)
 
 ## Step 2 (reverse) - POM
 
@@ -33,7 +33,7 @@ Move: Release the handbrake and start crawling slowly back. Steer quickly to the
 
 As you approach the kerb, straighten the wheels by steering back towards the right. If the car starts to roll, press the clutch to the floor and control the speed with the brake. While still looking back into your right blindspot, bring the car to a gentle stop just before you reach the kerb. Engage the handbrake.
 
-![](tinr3.png)
+![The third move of a turn in the road. The car is angled near the left-hand kerb, and a red arrow curves out and away down the road, now facing the opposite direction.](turn-in-the-road-driving-away.webp)
 
 ## Step 3 (forward) - POM
 

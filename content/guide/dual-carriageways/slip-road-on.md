@@ -39,4 +39,4 @@ Only in vary rare circumstances, when the dual carriageway is very busy, might y
 
 Once you have joined the dual carriageway, it is important to cancel your signal straight away so it does not mislead others into thinking you are about to change lanes. Focus on staying in the centre of your lane. As always, keep an eye on your mirrors so you know what is happening behind you, and try to maintain a safe, sensible speed for the conditions. Use the “two second rule” to keep a safe gap in front of you and ensure that you can stop safely at any time. If another road user gets too close behind you, increase the space in front of you so you have even more reaction time available. Remember to at least double stopping distances for wet weather, and increase them even more for icy or foggy conditions.
 
-![](joining-2.png)
+![A slip road joining a dual carriageway, the two separated by hatched chevron markings. The blue car on the slip road has its right-hand indicators on ready to merge, a white car is already in the left-hand lane, and a shaded circle marks the area alongside the joining car that its mirrors do not cover.](joining-by-slip-road.webp)

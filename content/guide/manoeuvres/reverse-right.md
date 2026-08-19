@@ -9,7 +9,7 @@ legacy_url: manoeuvres/reverseright
 
 To reverse around a corner you should have around half a metre of space free between the car and the kerb. Start from a position a little past the corner.
 
-![](rr1.png)
+![Approaching a side road on the right to reverse into. A red arrow curves from the blue car across to the right-hand side of the road and on past the junction, whose mouth is marked with broken give way lines.](reverse-right-approach.webp)
 
 Take care when pulling up on the opposite side of the road. If a signal is necessary, avoid misleading others by timing the signal so you are just passing the road on the right.
 
@@ -23,7 +23,7 @@ As usual, make sure you Prepare, Observe and Move - in that order. Use the handb
 
 If you look over your right shoulder as you approach the kerb, you should be able to see the kerb through the side window. Follow it round, trying to keep a steady distance throughout the manoeuvre.
 
-![](rr2.png)
+![The blue car angled at the mouth of the side road on the right as it reverses round the corner, the back of the car already into the side road.](reverse-right-turning-in.webp)
 
 Using the right mirror may help, but remember you must keep checking all around and look regularly out the back window for other road users. Keep very slow.
 

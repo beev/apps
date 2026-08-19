@@ -1,63 +1,63 @@
-page	ref	file	w	h	dw	dh
-junctions	gw1.png	junctions/gw1.webp	480	420	240	210
-junctions	gw2-2.png	junctions/gw2-2.webp	730	530	365	265
-junctions	stop-3.png	junctions/stop-3.webp	480	420	240	210
-traffic-lights	redamber.png	traffic-lights/redamber.webp	110	210	55	105
-traffic-lights	rightfilter.jpg	traffic-lights/rightfilter.webp	174	210	87	105
-traffic-lights	amber.png	traffic-lights/amber.webp	110	210	55	105
-traffic-lights/crossroads	nearside.png	traffic-lights/crossroads/nearside.webp	376	383	188	192
-traffic-lights/crossroads	offside-2.png	traffic-lights/crossroads/offside-2.webp	376	383	188	192
-pedestrian-crossings/other-crossings	toucan-2.jpg	pedestrian-crossings/other-crossings/toucan-2.webp	225	450	112	225
-pedestrian-crossings/pelican-crossings	pelican.jpg	pedestrian-crossings/pelican-crossings/pelican.webp	940	740	470	370
-pedestrian-crossings/puffin-crossings	puffinbutton-2.png	pedestrian-crossings/puffin-crossings/puffinbutton-2.webp	280	440	140	220
-pedestrian-crossings/zebra-crossings	zebra-2.jpg	pedestrian-crossings/zebra-crossings/zebra-2.webp	700	1080	350	540
-position/bends	left-bend-2.png	position/bends/left-bend-2.webp	540	696	270	348
-position/bends	right-bend.png	position/bends/right-bend.webp	540	696	270	348
-position/lanes	lanes-2.png	position/lanes/lanes-2.webp	474	1434	237	717
-position/moving-off-and-stopping	moveoff.png	position/moving-off-and-stopping/moveoff.webp	1200	900	600	450
-position/obstacles	obstacles.png	position/obstacles/obstacles.webp	270	420	135	210
-position/space-and-speed	spacespeed.png	position/space-and-speed/spacespeed.webp	270	420	135	210
-junctions/crossroads	gwcross1.png	junctions/crossroads/gwcross1.webp	540	390	270	195
-junctions/crossroads	gwcross2.png	junctions/crossroads/gwcross2.webp	540	390	270	195
-junctions/emerging	gwemerge1.png	junctions/emerging/gwemerge1.webp	470	420	235	210
-junctions/emerging	gwemerge2.png	junctions/emerging/gwemerge2.webp	410	410	205	205
-junctions/turning-left	gwleft1.png	junctions/turning-left/gwleft1.webp	500	440	250	220
-junctions/turning-left	gwleft2-2.png	junctions/turning-left/gwleft2-2.webp	500	360	250	180
-junctions/turning-right	gwright1.png	junctions/turning-right/gwright1.webp	380	440	190	220
-junctions/turning-right	gwright2-2.png	junctions/turning-right/gwright2-2.webp	380	290	190	145
-stopping/controlled-stop	graph.png	stopping/controlled-stop/graph.webp	1024	641	512	320
-stopping/following-distance	distance-2.png	stopping/following-distance/distance-2.webp	540	1300	270	650
-stopping/planning	fromabove.png	stopping/planning/fromabove.webp	400	480	200	240
-stopping/planning	feetbehindvan-2.png	stopping/planning/feetbehindvan-2.webp	340	260	170	130
-dual-carriageways/overtaking	pullingin.png	dual-carriageways/overtaking/pullingin.webp	550	870	275	435
-dual-carriageways/right-turn	rightslip-3.png	dual-carriageways/right-turn/rightslip-3.webp	670	930	335	465
-dual-carriageways/slip-road-off	exiting-2.png	dual-carriageways/slip-road-off/exiting-2.webp	520	1840	260	920
-dual-carriageways/slip-road-on	joining-2.png	dual-carriageways/slip-road-on/joining-2.webp	760	1240	380	620
-manoeuvres/bay-park	bp1.png	manoeuvres/bay-park/bp1.webp	520	385	260	192
-manoeuvres/bay-park	bp3.png	manoeuvres/bay-park/bp3.webp	300	300	150	150
-manoeuvres/bay-park	bp4.png	manoeuvres/bay-park/bp4.webp	360	414	180	207
-manoeuvres/parallel-park	pp1.png	manoeuvres/parallel-park/pp1.webp	440	365	220	182
-manoeuvres/parallel-park	pp2.png	manoeuvres/parallel-park/pp2.webp	399	300	200	150
-manoeuvres/parallel-park	pp3-2.png	manoeuvres/parallel-park/pp3-2.webp	399	300	200	150
-manoeuvres/pull-up-on-the-right	puor1-2.png	manoeuvres/pull-up-on-the-right/puor1-2.webp	400	980	200	490
-manoeuvres/reverse-left	rl1.png	manoeuvres/reverse-left/rl1.webp	400	400	200	200
-manoeuvres/reverse-left	rl2.png	manoeuvres/reverse-left/rl2.webp	290	340	145	170
-manoeuvres/reverse-left	rl3.png	manoeuvres/reverse-left/rl3.webp	400	340	200	170
-manoeuvres/reverse-right	rr1.png	manoeuvres/reverse-right/rr1.webp	400	560	200	280
-manoeuvres/reverse-right	rr2.png	manoeuvres/reverse-right/rr2.webp	270	360	135	180
-manoeuvres/turn-in-the-road	tinr1-3.png	manoeuvres/turn-in-the-road/tinr1-3.webp	420	450	210	225
-manoeuvres/turn-in-the-road	tinr2.png	manoeuvres/turn-in-the-road/tinr2.webp	420	450	210	225
-manoeuvres/turn-in-the-road	tinr3.png	manoeuvres/turn-in-the-road/tinr3.webp	420	450	210	225
-roundabouts/large-roundabouts	largert.png	roundabouts/large-roundabouts/largert.webp	1300	1860	650	930
-roundabouts/medium-roundabouts	mediumrt.png	roundabouts/medium-roundabouts/mediumrt.webp	1300	1700	650	850
-roundabouts/mini-roundabouts	minirt.png	roundabouts/mini-roundabouts/minirt.webp	1100	1320	550	660
-roundabouts/small-roundabouts	smallrt.png	roundabouts/small-roundabouts/smallrt.webp	1300	1400	650	700
-controls/clutch	clutch.png	controls/clutch/clutch.webp	1150	494	575	247
-controls/cockpit-drill	steering.png	controls/cockpit-drill/steering.webp	400	580	200	290
-controls/cockpit-drill	mirrors.png	controls/cockpit-drill/mirrors.webp	1300	901	650	450
-controls/gears	gears.png	controls/gears/gears.webp	400	474	200	237
-controls/gears	controlsautosmall.png	controls/gears/controlsautosmall.webp	300	600	150	300
-controls/pedals	pedals.png	controls/pedals/pedals.webp	1300	752	650	376
-controls/signals	signals-2.png	controls/signals/signals-2.webp	672	1400	336	700
-controls/steering	steering.png	controls/steering/steering.webp	1190	1050	595	525
-controls/zones-of-vision	blindspots.png	controls/zones-of-vision/blindspots.webp	480	660	240	330
+page	file	w	h	dw	dh	alt
+junctions	junctions/give-way-junction-markings.webp	480	420	240	210	A give way junction from above. Two thick broken white lines run across the mouth of the minor road, a hollow white triangle is painted on the road behind them, and a red-bordered inverted triangle GIVE WAY sign stands on the corner. Broken hazard warning lines run along the centre of the major road.
+junctions	junctions/closed-give-way-junction.webp	730	530	365	265	A closed give way junction from above. Houses and garden walls come right up to both corners and cars are parked along the major road, so a driver waiting at the give way line can see very little either way until the car is well forward. A pedestrian stands on the corner.
+junctions	junctions/stop-junction-markings.webp	480	420	240	210	A stop junction from above. A solid white line runs across the mouth of the minor road with the word STOP painted on the road behind it, and an octagonal red STOP sign stands on the corner.
+traffic-lights	traffic-lights/red-and-amber-signal.webp	110	210	55	105	A traffic signal showing red and amber lit together, the phase that warns green is about to appear but still means stop.
+traffic-lights	traffic-lights/right-filter-arrow.webp	174	210	87	105	A traffic signal showing red, with a separate filter head beside it lit by a green arrow pointing right. Traffic turning right may go while the main signal still holds everything else.
+traffic-lights	traffic-lights/amber-signal.webp	110	210	55	105	A traffic signal showing amber alone, which means stop unless you are so close that pulling up would be dangerous.
+traffic-lights/crossroads	traffic-lights/crossroads/nearside-to-nearside.webp	376	383	188	192	Two cars turning right at a crossroads, passing nearside to nearside. Red arrows show one coming from the top and one from the bottom, each crossing in front of the other so their left-hand sides pass closest and neither can see past the other.
+traffic-lights/crossroads	traffic-lights/crossroads/offside-to-offside.webp	376	383	188	192	Two cars turning right at a crossroads, passing offside to offside. The blue and red cars have drawn alongside each other with their right-hand sides closest before turning behind one another, leaving each with a clear view of oncoming traffic. Other cars wait at the junction.
+pedestrian-crossings/other-crossings	pedestrian-crossings/other-crossings/toucan-crossing-signal.webp	225	450	112	225	"The signal panel of a toucan crossing. A red bicycle and a red standing figure appear above a green bicycle and a green walking figure, showing that cyclists and pedestrians cross together, with the instruction ""Push button, Wait for signal"" above the button itself."
+pedestrian-crossings/pelican-crossings	pedestrian-crossings/pelican-crossings/pelican-crossing.webp	940	740	470	370	A pelican crossing from above, marked by two rows of studs across the road and zig-zag lines on the approach. The traffic signal beside it shows amber, while the pedestrian signal shows a red figure, and a pedestrian with a dog waits on the red-surfaced pavement.
+pedestrian-crossings/puffin-crossings	pedestrian-crossings/puffin-crossings/puffin-crossing-button.webp	280	440	140	220	A pedestrian standing at a puffin crossing reaching for the push button. The control box carries a red standing figure on its face, and the traffic signal above shows green to traffic.
+pedestrian-crossings/zebra-crossings	pedestrian-crossings/zebra-crossings/zebra-crossing.webp	700	1080	350	540	A zebra crossing from above. Broad white stripes run across the road between two flashing orange belisha beacons, zig-zag lines mark the approach on both sides, and a pedestrian waits at the kerb as a van and a car come to a stop short of the give way line.
+position/bends	position/bends/left-bend-position.webp	540	696	270	348	A left-hand bend seen from above. The car stays within its own lane but sits towards the centre line, following a curved path that keeps it away from the inside of the bend so more of the road round the corner comes into view.
+position/bends	position/bends/right-bend-position.webp	540	696	270	348	A right-hand bend seen from above. The car follows a curved path close to the left-hand edge of its lane, keeping it away from the centre line and from anything coming the other way.
+position/lanes	position/lanes/changing-lane.webp	474	1434	237	717	A two-lane road from above. A blue car in the left-hand lane has its right-hand indicators flashing to move across, with a white and a yellow car ahead of it and a red car following behind.
+position/moving-off-and-stopping	position/moving-off-and-stopping/moving-off-observations.webp	1200	900	600	450	A residential street from above. A blue car waits at the kerb ready to move off. A motorcyclist is approaching from behind in the same lane, a red car is parked further up on the opposite side, and a pedestrian with a dog stands on the pavement by a side road.
+position/obstacles	position/obstacles/obstacle-on-your-side.webp	270	420	135	210	A narrow road from above with a purple car parked on the left-hand side. A blue car comes up behind the parked car while a red car travels the other way, its path marked by an arrow, so the blue car is the one whose side is blocked.
+position/space-and-speed	position/space-and-speed/narrowed-gap-parked-cars.webp	270	420	135	210	Four cars parked nose to tail along the left of a road. A blue car travelling up the road meets a red car coming the other way, its path marked by an arrow, and the parked cars leave only a narrow gap for the two to pass.
+junctions/crossroads	junctions/crossroads/crossroads-nearside-to-nearside.webp	540	390	270	195	Two cars turning right at a crossroads, one coming from the top and one from the bottom. Red arrows show their paths crossing in front of one another, so they pass nearside to nearside with each car blocking the other's view of oncoming traffic.
+junctions/crossroads	junctions/crossroads/crossroads-offside-to-offside.webp	540	390	270	195	Two cars turning right at a crossroads, drawn up alongside each other in the middle with their right-hand sides closest. Red arrows show each turning off behind the other, so both keep a clear view of the road they are crossing.
+junctions/emerging	junctions/emerging/emerging-left.webp	470	420	235	210	Emerging left from a minor road onto a major one. A red arrow curves from the blue car waiting at the broken give way lines round to the left along the major road, with a GIVE WAY sign on the corner behind it.
+junctions/emerging	junctions/emerging/emerging-right.webp	410	410	205	205	Emerging right from a minor road onto a major one. A red arrow curves from the blue car waiting at the broken give way lines across the near side of the major road and away to the right, with a GIVE WAY sign on the corner.
+junctions/turning-left	junctions/turning-left/turning-left-into-a-side-road.webp	500	440	250	220	Turning left from a major road into a side road. A red arrow curves from the blue car's lane round into the side road on the left, whose mouth is marked with broken give way lines.
+junctions/turning-left	junctions/turning-left/emerging-left-from-a-side-road.webp	500	360	250	180	A side road meeting a major road. A red arrow shows the blue car turning left out of the side road, while a red car travels the other way along the major road with a white car waiting behind it.
+junctions/turning-right	junctions/turning-right/mirror-signal-position-speed.webp	380	440	190	220	A car approaching a right turn with the letters M, S, P and S set out along the verge in the order the driver passes them - Mirror, Signal, Position, Speed - marking the routine to work through on the approach. The car has already moved towards the centre line.
+junctions/turning-right	junctions/turning-right/turning-right-into-a-side-road.webp	380	290	190	145	Turning right from a major road into a side road on the right. A red arrow curves from the blue car's lane across the opposite side of the road and into the side road, whose mouth is marked with broken give way lines.
+stopping/controlled-stop	stopping/controlled-stop/brake-pressure-curve.webp	1024	641	512	320	A graph of brake pedal pressure against time during a controlled stop. The line rises gently at first and then ever more steeply towards maximum brake, and a marker near the end shows where the clutch goes down shortly before the car comes to rest.
+stopping/following-distance	stopping/following-distance/two-second-rule.webp	540	1300	270	650	"Two cars travelling one behind the other, with the gap between them marked and labelled ""At least 2 seconds"" alongside the reminder ""Only a fool breaks the 2 second rule""."
+stopping/planning	stopping/planning/hidden-by-a-van.webp	400	480	200	240	A white van seen from above with a pedestrian walking a dog crossing the road just in front of it, hidden from anyone following behind.
+stopping/planning	stopping/planning/feet-beneath-a-van.webp	340	260	170	130	The back of a van from road level. The doors and number plate give nothing away, but a pair of legs is visible in the gap beneath the vehicle, the only clue that someone is walking across in front of it.
+dual-carriageways/overtaking	dual-carriageways/overtaking/blind-spot-before-pulling-in.webp	550	870	275	435	A dual carriageway with a blue car in the right-hand lane and a yellow car further back in the left. A shaded circle covers the road alongside and behind the blue car, the blind spot that has to be checked before moving back to the left after overtaking.
+dual-carriageways/right-turn	dual-carriageways/right-turn/right-turn-through-the-central-reservation.webp	670	930	335	465	A dual carriageway with a gap in the central reservation. Red lines trace two paths: a blue car crossing the near carriageway and turning away up the far side, and a red car waiting in the gap to join. A right-turn arrow is painted in the approach lane below.
+dual-carriageways/slip-road-off	dual-carriageways/slip-road-off/countdown-markers-to-an-exit.webp	520	1840	260	920	A dual carriageway with countdown markers set back on the verge - three diagonal bars, then two, then one - counting down the distance to the exit ahead. The blue car has moved into the left-hand lane with its left indicators on, ready to leave.
+dual-carriageways/slip-road-on	dual-carriageways/slip-road-on/joining-by-slip-road.webp	760	1240	380	620	A slip road joining a dual carriageway, the two separated by hatched chevron markings. The blue car on the slip road has its right-hand indicators on ready to merge, a white car is already in the left-hand lane, and a shaded circle marks the area alongside the joining car that its mirrors do not cover.
+manoeuvres/bay-park	manoeuvres/bay-park/bay-park-approach.webp	520	385	260	192	Approaching a row of parking bays. A red arrow curves forward and to the right from the blue car towards the bays, and two shaded circles mark the areas either side of the car that need checking before it turns.
+manoeuvres/bay-park	manoeuvres/bay-park/bay-park-reversing-in.webp	300	300	150	150	A car reversing into a parking bay between two white bay lines, with a red arrow showing the direction it is moving.
+manoeuvres/bay-park	manoeuvres/bay-park/bay-park-choosing-a-bay.webp	360	414	180	207	A car park from above with a row of bays down the right-hand side, four of them taken by a purple, a white, a red and a green car. A red arrow curves from the blue car up the aisle and round into an empty bay.
+manoeuvres/parallel-park	manoeuvres/parallel-park/parallel-park-drawing-alongside.webp	440	365	220	182	The first stage of a parallel park. The blue car has drawn up alongside the parked red car, roughly level with it, and a shaded circle marks the area behind that has to be checked before reversing.
+manoeuvres/parallel-park	manoeuvres/parallel-park/parallel-park-reversing-in.webp	399	300	200	150	The second stage of a parallel park. The blue car has reversed back at an angle, its front swinging out towards the centre of the road as the back of the car comes in towards the kerb behind the red car.
+manoeuvres/parallel-park	manoeuvres/parallel-park/parallel-park-finished.webp	399	300	200	150	The finished parallel park. The blue car sits straight and parallel to the kerb, a short distance behind the parked red car.
+manoeuvres/pull-up-on-the-right	manoeuvres/pull-up-on-the-right/pull-up-on-the-right.webp	400	980	200	490	Pulling up on the right-hand side of the road. A red arrow shows the blue car crossing the centre line towards the right-hand kerb, while a second arrow beside it shows the direction traffic travels on that side. A white and a yellow car are parked further along the right.
+manoeuvres/reverse-left	manoeuvres/reverse-left/reverse-left-approach.webp	400	400	200	200	Approaching the side road on the left to reverse into. The blue car has driven past the junction, and a large shaded circle marks the stretch of road that has to be kept under observation throughout the manoeuvre.
+manoeuvres/reverse-left	manoeuvres/reverse-left/reverse-left-turning-in.webp	290	340	145	170	The blue car angled across the mouth of the side road as it reverses round the corner to the left, the back of the car already into the side road.
+manoeuvres/reverse-left	manoeuvres/reverse-left/reverse-left-straightening-up.webp	400	340	200	170	The blue car straightened up in the side road with a red arrow pointing back along it, showing the car continuing to reverse in a straight line parallel to the kerb.
+manoeuvres/reverse-right	manoeuvres/reverse-right/reverse-right-approach.webp	400	560	200	280	Approaching a side road on the right to reverse into. A red arrow curves from the blue car across to the right-hand side of the road and on past the junction, whose mouth is marked with broken give way lines.
+manoeuvres/reverse-right	manoeuvres/reverse-right/reverse-right-turning-in.webp	270	360	135	180	The blue car angled at the mouth of the side road on the right as it reverses round the corner, the back of the car already into the side road.
+manoeuvres/turn-in-the-road	manoeuvres/turn-in-the-road/turn-in-the-road-first-move.webp	420	450	210	225	The first move of a turn in the road. A red arrow curves from the blue car at the left-hand kerb across to the right-hand side of the road.
+manoeuvres/turn-in-the-road	manoeuvres/turn-in-the-road/turn-in-the-road-reversing-back.webp	420	450	210	225	The second move of a turn in the road. The car now faces the right-hand kerb, and a red arrow points back to the left to show it reversing across the road.
+manoeuvres/turn-in-the-road	manoeuvres/turn-in-the-road/turn-in-the-road-driving-away.webp	420	450	210	225	The third move of a turn in the road. The car is angled near the left-hand kerb, and a red arrow curves out and away down the road, now facing the opposite direction.
+roundabouts/large-roundabouts	roundabouts/large-roundabouts/large-roundabout-turning-right.webp	1300	1860	650	930	A large roundabout with a wide grass island and multiple lanes. Two orange lines trace the paths of a blue and a red car waiting side by side at the entry below, each curving round the island and out at the exit for a right turn.
+roundabouts/medium-roundabouts	roundabouts/medium-roundabouts/medium-roundabout-turning-right.webp	1300	1700	650	850	A medium roundabout with a large grass island and two lanes on the approach. Two orange lines run side by side, tracing the paths of the red and the blue car as they turn right, each keeping to its own lane round the island.
+roundabouts/mini-roundabouts	roundabouts/mini-roundabouts/mini-roundabout-turning-right.webp	1100	1320	550	660	A mini-roundabout seen from above: a painted white circle on the road surface with three curved arrows around it. A white car is passing round the circle with its indicators on, while a blue car waits at the entry from the road below.
+roundabouts/small-roundabouts	roundabouts/small-roundabouts/small-roundabout-turning-right.webp	1300	1400	650	700	A small roundabout with a raised island. An orange line traces the path of the blue car turning right, entering from the road at the bottom, round the island and out by the road at the top right. Other cars wait at two of the remaining entries.
+controls/clutch	controls/clutch/clutch-plates.webp	1150	494	575	247	"Cut-away of a clutch. Two friction plates sit face to face between a shaft running left, labelled ""To Wheels"", and a shaft running right, labelled ""To Engine""."
+controls/cockpit-drill	controls/cockpit-drill/driving-position.webp	400	580	200	290	A driver sitting in the seat with both hands on the top of the steering wheel. Her elbows are slightly bent and her knee is slightly bent with the clutch pushed down, which is the position the seat adjustment is aiming for.
+controls/cockpit-drill	controls/cockpit-drill/mirror-views.webp	1300	901	650	450	The same street scene as it appears in all three mirrors. The interior mirror shows the full width of the road behind, with a car approaching and a woman walking a dog on the pavement. Each door mirror shows a sliver of the car's own side along with part of that scene.
+controls/gears	controls/gears/gear-gate-five-speed.webp	400	474	200	237	Gate of a five-speed manual gearbox. First, third and fifth branch up from a central horizontal channel; second and fourth branch down. The gearstick sits in the middle of that channel, marked Neutral.
+controls/gears	controls/gears/automatic-gear-selector.webp	300	600	150	300	An automatic gearbox selector. The lever moves up and down a single slot past the positions P, R, N, D, 2 and 1, and is resting at N.
+controls/pedals	controls/pedals/pedals-clutch-brake-accelerator.webp	1300	752	650	376	The three pedals side by side, labelled from left to right: Clutch, Brake, Accelerator (Gas). Their initials spell C-B-A.
+controls/signals	controls/signals/dipped-headlights.webp	672	1400	336	700	A road at night seen from above. The car behind has its headlights dipped, so the beams fall on the road surface and angle slightly to the left, away from the car ahead rather than into its mirrors.
+controls/steering	controls/steering/hand-position-clock-face.webp	1190	1050	595	525	A steering wheel marked like a clock face with 12 at the top, 3 at the right, 6 at the bottom and 9 at the left. Two hands grip the rim a little above the horizontal, at roughly ten to two.
+controls/zones-of-vision	controls/zones-of-vision/blind-spots.webp	480	660	240	330	The view along a road from the driver's position. A car ahead and a car to the right are both in clear view, while a motorcyclist alongside the car sits in the shaded band that neither the mirrors nor the forward view covers.

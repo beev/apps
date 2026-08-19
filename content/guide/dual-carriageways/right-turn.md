@@ -25,4 +25,4 @@ In the diagram, the blue car’s angled position helps to avoid the right signal
 
 As with positioning, it is important to realise that these junctions come in many shapes and sizes. The example given here is not intended to form a definitive guide. You must approach each junction with care and consideration, and decide on a course of action which is appropriate for the individual situation.
 
-![](rightslip-3.png)
+![A dual carriageway with a gap in the central reservation. Red lines trace two paths: a blue car crossing the near carriageway and turning away up the far side, and a red car waiting in the gap to join. A right-turn arrow is painted in the approach lane below.](right-turn-through-the-central-reservation.webp)

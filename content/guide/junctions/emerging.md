@@ -9,7 +9,7 @@ legacy_url: givewayjunctions/emerging
 
 This section is about emerging from a *minor road* into a *major road*, or to put it another way, from a *side road* into a *main road*.
 
-![](gwemerge1.png)
+![Emerging left from a minor road onto a major one. A red arrow curves from the blue car waiting at the broken give way lines round to the left along the major road, with a GIVE WAY sign on the corner behind it.](emerging-left.webp)
 
 ## Basic routine - MSPSL
 
@@ -19,7 +19,7 @@ Signal: If turning left or right, let other road users know your intentions by g
 
 Position: When turning left, approach the corner on the left side, around a metre from the kerb. Look for the point at which the kerb bends away from you and start to steer left at that moment. Continue to follow the kerb, steering as much as is necessary to maintain a steady distance of around a metre. When turning right, position next to the white centre lines and keep straight until after you have entered the new road. Time your steering so you turn onto the left side of the new road. If traveling ahead at a crossroads, keep to the left when possible. Position towards the right only if you have a reason for doing so.
 
-![](gwemerge2.png)
+![Emerging right from a minor road onto a major one. A red arrow curves from the blue car waiting at the broken give way lines across the near side of the major road and away to the right, with a GIVE WAY sign on the corner.](emerging-right.webp)
 
 Speed: Start slowing down well before the junction. While doing so, assess how much you can see to the left and right. The more limited your view on approach, the slower you need to be as you approach the give way lines. You may need to stop to allow other road users to pass, or you may be able to maintain a "controlled roll" while assessing whether it is safe to proceed. To continue safely, you should be able to clear the junction without causing another road user to after their speed or direction.
 
