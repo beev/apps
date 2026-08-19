@@ -1209,8 +1209,8 @@ details.module[open] .module__chevron {
 @media (min-width: 900px) {
   .guide-nav {
     position: sticky;
-    top: 76px;
-    max-height: calc(100vh - 96px);
+    top: 96px;
+    max-height: calc(100vh - 116px);
     overflow-y: auto;
   }
   .guide-nav > .guide-nav__title { display: none; }
@@ -1343,16 +1343,23 @@ details.module[open] .module__chevron {
   flex-shrink: 0;
 }
 
-/* Apple renders at 32px here; Google's artwork bakes in its own clear space,
-   so 48px of file puts its visible badge at the same 32px. */
-.site-header .appstore-badge img { height: 32px; }
-.site-header .playstore-badge img { height: 48px; }
-.site-header .playstore-badge { margin-inline: -6px; }
+/* Apple renders at 42px here; Google's artwork bakes in its own clear space,
+   so 63px of file puts its visible badge at the same 42px. */
+.site-header .appstore-badge img { height: 42px; }
+.site-header .playstore-badge img { height: 63px; }
+.site-header .playstore-badge { margin-inline: -8px; }
 
-.guide-body .header-inner { gap: 0.75rem; }
+/* The home page header is a fixed 60px, which leaves the taller badges
+   pressed against the top. Guide pages size to their content instead. */
+.guide-body .header-inner {
+  height: auto;
+  min-height: 76px;
+  padding-block: 0.85rem;
+  gap: 0.75rem;
+}
 
 @media (max-width: 560px) {
   .site-header__brand span { display: none; }
-  .site-header .appstore-badge img { height: 28px; }
-  .site-header .playstore-badge img { height: 42px; }
+  .site-header .appstore-badge img { height: 34px; }
+  .site-header .playstore-badge img { height: 51px; }
 }
