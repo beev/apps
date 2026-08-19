@@ -15,7 +15,7 @@ The interior mirror uses a flat piece of glass and gives the most accurate repre
 
 To maximise your awareness of what is behind, you should develop the habit of using your mirrors in pairs. If you need to know what is happening behind and to the right of you, first check your interior mirror for an accurate reflection, then check your right mirror to provide a wider angle of visibility towards the right side. By combining your mirror checks in this way, you will gain a genuinely helpful understanding of the movement and speed of following traffic.
 
-![](blindspots.png)
+![The view along a road from the driver's position. A car ahead and a car to the right are both in clear view, while a motorcyclist alongside the car sits in the shaded band that neither the mirrors nor the forward view covers.](blind-spots.webp)
 
 Blindspots are areas which are not covered by your peripheral vision or your mirrors. It is surprisingly easy for another road user to disappear in one of these blindspots. It is also surprising how close to you they can get while in this hidden position.
 

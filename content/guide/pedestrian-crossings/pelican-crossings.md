@@ -15,4 +15,4 @@ A flashing amber light means you may proceed if it is safe to do so and the cros
 
 For pelican crossings, the presence of an island does not divide the crossing into two separate crossings. However if a pelican crossing is staggered either side of an island, it does become two separate crossings.
 
-![](pelican.jpg)
+![A pelican crossing from above, marked by two rows of studs across the road and zig-zag lines on the approach. The traffic signal beside it shows amber, while the pedestrian signal shows a red figure, and a pedestrian with a dog waits on the red-surfaced pavement.](pelican-crossing.webp)

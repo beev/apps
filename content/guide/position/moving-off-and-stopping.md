@@ -9,7 +9,7 @@ legacy_url: position/moveoffandstop
 
 The process described here is for a car with *manual transmission*.
 
-![](moveoff.png)
+![A residential street from above. A blue car waits at the kerb ready to move off. A motorcyclist is approaching from behind in the same lane, a red car is parked further up on the opposite side, and a pedestrian with a dog stands on the pavement by a side road.](moving-off-observations.webp)
 
 ## Moving off - POM
 

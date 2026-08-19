@@ -25,7 +25,7 @@ Most car seats can be adjusted in four ways. Forward and backward, up and down, 
 
 The first check to make when adjusting your seat is to press the clutch pedal fully to the floor with your left foot. Your left knee should be slightly bent, with no need to stretch.
 
-![](steering.png)
+![A driver sitting in the seat with both hands on the top of the steering wheel. Her elbows are slightly bent and her knee is slightly bent with the clutch pushed down, which is the position the seat adjustment is aiming for.](driving-position.webp)
 
 ## Steering
 
@@ -53,4 +53,4 @@ Your side mirrors should be adjusted so you can see a little bit of the side of 
 
 Notice how objects appear further away in the side mirror than they do in the interior mirror. See the [Zones Of Vision](@controls/zones-of-vision) section for more details.
 
-![](mirrors.png)
+![The same street scene as it appears in all three mirrors. The interior mirror shows the full width of the road behind, with a car approaching and a woman walking a dog on the pavement. Each door mirror shows a sliver of the car's own side along with part of that scene.](mirror-views.webp)

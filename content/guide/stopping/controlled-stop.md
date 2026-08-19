@@ -26,4 +26,4 @@ The emergency stop is not a manoeuvre. You may or may not be asked to carry out 
 • Observe: Effective all-round observations. Remember blindspots
 • Move: Move off when safe
 
-![](graph.png)
+![A graph of brake pedal pressure against time during a controlled stop. The line rises gently at first and then ever more steeply towards maximum brake, and a marker near the end shows where the clutch goes down shortly before the car comes to rest.](brake-pressure-curve.webp)

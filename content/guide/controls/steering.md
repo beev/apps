@@ -21,4 +21,4 @@ Neither hand should ever cross the six or the twelve o’clock position. The lef
 
 With the push-pull method, at least one hand has a firm grip on the wheel at all times. The wheel can be turned easily and quickly in either direction at any time with no loss of control.
 
-![](steering.png)
+![A steering wheel marked like a clock face with 12 at the top, 3 at the right, 6 at the bottom and 9 at the left. Two hands grip the rim a little above the horizontal, at roughly ten to two.](hand-position-clock-face.webp)

@@ -21,4 +21,4 @@ In this situation, the white car has arrived first so should proceed first.
 
 If both cars arrive at the same time, the only way to decide who should go first is to use this simple rule: If they move, you wait; if they wait, you move!
 
-![](minirt.png)
+![A mini-roundabout seen from above: a painted white circle on the road surface with three curved arrows around it. A white car is passing round the circle with its indicators on, while a blue car waits at the entry from the road below.](mini-roundabout-turning-right.webp)

@@ -13,7 +13,7 @@ legacy_url: controls/gears
 
 The starting position of the gearstick is in the centre of the gearbox and is called *neutral*. In neutral, no gear is selected and the engine is completely disengaged from the wheels.
 
-![](gears.png)
+![Gate of a five-speed manual gearbox. First, third and fifth branch up from a central horizontal channel; second and fourth branch down. The gearstick sits in the middle of that channel, marked Neutral.](gear-gate-five-speed.webp)
 
 The driver selects an appropriate gear for the current speed and conditions. Situations which require more power, such as moving off or climbing a hill, require lower gears. At higher speeds, with more momentum, higher gears are used as less power is needed to maintain forward motion.
 
@@ -29,7 +29,7 @@ The clutch should always be pressed to the floor when changing gear.
 
 Modern cars can have many variations of automatic transmission control. This shows the standard layout that has been in use for many years. Most modern variations are adapted from this basic design.
 
-![](controlsautosmall.png)
+![An automatic gearbox selector. The lever moves up and down a single slot past the positions P, R, N, D, 2 and 1, and is resting at N.](automatic-gear-selector.webp)
 
 P = Park
 

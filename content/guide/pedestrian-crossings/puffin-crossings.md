@@ -11,4 +11,4 @@ From a motorist's point of view, puffin crossings are very similar to pelican cr
 
 As with pelican crossings, a puffin crossing with an island should be treated as a single crossing, except where the crossing is staggered either side of the island.
 
-![](puffinbutton-2.png)
+![A pedestrian standing at a puffin crossing reaching for the push button. The control box carries a red standing figure on its face, and the traffic signal above shows green to traffic.](puffin-crossing-button.webp)

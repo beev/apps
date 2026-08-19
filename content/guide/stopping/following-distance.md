@@ -15,4 +15,4 @@ If the vehicle in front of you should suddenly stop, you need to have enough tim
 
 This is an example of how a good driver can avoid the need to carry out an emergency stop and why this is important for safety. You may be closer to the vehicle in front and, if you are paying attention, there might still be enough time to stop. But there would be a greater risk of losing control. And would the driver following you be able to stop in time? Perhaps the driver behind you is not paying full attention. Are you willing to take that risk?
 
-![](distance-2.png)
+![Two cars travelling one behind the other, with the gap between them marked and labelled "At least 2 seconds" alongside the reminder "Only a fool breaks the 2 second rule".](two-second-rule.webp)

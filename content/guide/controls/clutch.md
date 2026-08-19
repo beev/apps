@@ -19,4 +19,4 @@ When applying pressure to the clutch with the engine running, be careful not to 
 
 If you want to release the clutch while the car is stationary and the engine is still running, make sure you return the gearstick to the neutral position first. Doing so will completely disengage engine and wheels. If you fail to select neutral before releasing the clutch, either the wheels will turn or the engine will stall.
 
-![](clutch.png)
+![Cut-away of a clutch. Two friction plates sit face to face between a shaft running left, labelled "To Wheels", and a shaft running right, labelled "To Engine".](clutch-plates.webp)

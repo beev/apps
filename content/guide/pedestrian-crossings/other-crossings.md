@@ -13,4 +13,4 @@ Pegasus or equestrian crossings (either name can be used) also work in the same 
 
 Note: although toucan and pegasus/equestrian crossings are intended to work the same way as puffin crossings (Highway Code, rule 199), there are cases in which these crossings can be found using the same light sequence as pelican crossings.
 
-![](toucan-2.jpg)
+![The signal panel of a toucan crossing. A red bicycle and a red standing figure appear above a green bicycle and a green walking figure, showing that cyclists and pedestrians cross together, with the instruction "Push button, Wait for signal" above the button itself.](toucan-crossing-signal.webp)

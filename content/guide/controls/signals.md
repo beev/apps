@@ -19,6 +19,6 @@ Head lights should normally be used *dipped* - without full beam. Unless you act
 
 If you need to use full beam to illuminate more of the road ahead, be aware of the effect on other road users (including cyclists and pedestrians) and make sure to dip your headlights whenever necessary.
 
-![](signals-2.png)
+![A road at night seen from above. The car behind has its headlights dipped, so the beams fall on the road surface and angle slightly to the left, away from the car ahead rather than into its mirrors.](dipped-headlights.webp)
 
 **

@@ -9,11 +9,18 @@ legacy_url: position/obstacles
 
 In general, aim to pass obstacles with at least a metre of clearance - more if the obstacle is alive or unpredictable!
 
-![](obstacles.png)
+![A narrow road from above with a purple car parked on the left-hand side. A blue car comes up behind the parked car while a red car travels the other way, its path marked by an arrow, so the blue car is the one whose side is blocked.](obstacle-on-your-side.webp)
 
 ## Priority
 
-Sometimes there will be oncoming traffic and not enough space to for you both to pass the obstacle at the same time. In this situation, whoever has the obstacle on their side should give way.For example, if the obstacle is on the left you should give way to oncoming traffic. If the obstacle is on the right, oncoming traffic should give way to you.Always be aware that other road users may not do what they are supposed to. Oncoming traffic may proceed when it is not their priority, or others may wait when it is their turn to go. If there is an obstacle on both sides of the road, nobody has priority. You will need to assess the “body language” of any other road users to establish whether they are going to wait or proceed.
+Sometimes there will be oncoming traffic and not enough space to for you both to pass the obstacle at the same time. In this situation, whoever has the obstacle on their side should give way.
+
+For example, if the obstacle is on the left you should give way to oncoming traffic. If the obstacle is on the right, oncoming traffic should give way to you.
+
+Always be aware that other road users may not do what they are supposed to. Oncoming traffic may proceed when it is not their priority, or others may wait when it is their turn to go. 
+
+If there is an obstacle on both sides of the road, nobody has priority. You will need to assess the “body language” of any other road users to establish whether they are going to wait or proceed.
+
 
 ## Planning and anticipation - MSM
 

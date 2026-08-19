@@ -25,7 +25,7 @@ Use gentle pressure for the accelerator and brake, easing gradually on and off a
 
 The clutch pedal can be pushed straight to the floor when it is necessary to disconnect the engine (usually when stopping or changing gear). However, when lifting the clutch up it can be necessary to move your left foot very gently or the engine may stall. As a general rule, the lower your gear, the more gentle you need to be with the clutch.
 
-![](pedals.png)
+![The three pedals side by side, labelled from left to right: Clutch, Brake, Accelerator (Gas). Their initials spell C-B-A.](pedals-clutch-brake-accelerator.webp)
 
 ## Automatic
 
