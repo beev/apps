@@ -1256,7 +1256,19 @@ details.module[open] .module__chevron {
   background: var(--color-surface);
 }
 
-/* ---------- section index ---------- */
+/* ---------- section index ----------
+
+   These sit inside .guide-main, so the prose rules above (disc bullets,
+   list indent, underlined links) would otherwise apply to them. Reset
+   those here rather than narrowing the prose selectors, which would
+   leave the same trap for the next component added inside an article. */
+.guide-main .guide-cards__list { list-style: none; margin: 0; }
+
+.guide-main .guide-cards__list li { margin: 0; padding: 0; }
+
+.guide-main .guide-cards__list a,
+.guide-main .guide-pager a { text-decoration: none; }
+
 .guide-cards { margin-top: 3rem; }
 .guide-cards h2 {
   font-size: 1.35rem;
