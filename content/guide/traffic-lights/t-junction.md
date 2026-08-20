@@ -10,21 +10,7 @@ lastmod: 2026-08-19
 A light-controlled T-junction removes the judgement needed at an unmarked one,
 but only if you read which phase applies to your lane.
 
+<!-- Write the lesson here. Anything added between this note and
+     the image below appears above the diagram on the page. -->
+
 ![A light-controlled T-junction from above. The side road meets the main road from below, where two cars wait at the stop line beside a red signal, and a second signal faces traffic on the main road.](light-controlled-t-junction.webp)
-
-<!-- STUB: this page matches a lesson in the Lessons app but has not been
-     written yet. It carries draft: true, so it is excluded from the sitemap
-     and served with noindex, while still appearing in the section
-     navigation. Remove draft: true once the page has real content. -->
-
-## Still to be written
-
-This page is not finished yet. When it is, it will cover:
-
-- Identifying which signal head governs your lane
-- Turning left and right out of the stem of the T
-- Approaching along the top of the T
-- What the different light phases mean for each approach
-
-In the meantime, [Crossroads](@traffic-lights/crossroads) covers the general
-approach to light-controlled junctions, and much of it applies here too.
