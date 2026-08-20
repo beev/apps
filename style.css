@@ -1426,15 +1426,21 @@ details.module[open] .module__chevron {
   color: var(--color-primary);
   line-height: 1.1;
   letter-spacing: -0.02em;
-  max-width: 20ch;
+  max-width: 24ch;
   margin-inline: auto;
 }
 
-.home-hero__sub {
-  margin: 1rem auto 0;
-  max-width: 54ch;
-  font-size: clamp(1rem, 2vw, 1.125rem);
+/* The name sits inside the h1 rather than above it, so the heading Google
+   reads is "Neil Beaver Professional teaching aids for driving instructors" -
+   the name and the words people actually search for, in one heading. */
+.home-hero__name {
+  display: block;
+  font-size: clamp(0.9375rem, 2vw, 1.125rem);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: var(--color-muted);
+  margin-bottom: 0.75rem;
 }
 
 .products {

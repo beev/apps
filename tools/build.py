@@ -680,8 +680,7 @@ def home_page(home, apps):
       '  <main id="main">',
       f'''    <section class="home-hero">
       <div class="container">
-        <h1>{lines(home["hero"]["heading"])}</h1>
-        <p class="home-hero__sub">{e(home["hero"]["subheading"])}</p>
+        <h1><span class="home-hero__name">{e(home["hero"]["name"])}</span>{lines(home["hero"]["heading"])}</h1>
       </div>
     </section>
 

@@ -13,8 +13,8 @@ og_image    = "/assets/images/og-lessons.png"
 faq_heading = "Frequently asked questions"
 
 [hero]
-heading    = "Teaching aids for driving instructors."
-subheading = "Built by an instructor, for instructors. Two apps for the front of the car and a free written guide for your learners between lessons."
+name    = "Neil Beaver"
+heading = "Professional teaching aids\nfor driving instructors"
 
 # The three things the site is for. Order is deliberate: the shipped app
 # first, then the one coming, then the free guide.
@@ -46,8 +46,8 @@ body   = "The whole syllabus written out, with diagrams — fifty-six pages your
 [about]
 heading = "Built by a driving instructor\nfor driving instructors"
 body    = [
-  "I am a driving instructor. Every diagram in these apps started life on a notepad in the passenger seat, drawn for a learner who needed to see the thing rather than hear about it again.",
-  "The original Learn to Drive apps have been used by ADIs and PDIs across the UK, Ireland, Cyprus and Malta. These new versions are rewritten from the ground up, and they work on your phone as well as your tablet.",
+  "As an ADI, I know what instructors need. I built these apps to help me do a better job. I hope they will help you too!",
+  "My original Learn to Drive, Road Board and Road Pad apps have been used by ADIs and PDIs across the UK and beyond. These new versions are rewritten from the ground up, and they work on your phone as well as your tablet. They're finally available on Android too!",
 ]
 
 [[faq]]
