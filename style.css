@@ -177,12 +177,6 @@ a {
   border-bottom-color: var(--color-accent);
 }
 
-/* The badges are the header's least important element: every app page
-   repeats them in its hero. They go first when space runs short. */
-@media (max-width: 860px) {
-  .badge-group--header { display: none; }
-}
-
 /* ============================================================
    BUTTONS
    ============================================================ */
@@ -1403,6 +1397,14 @@ details.module[open] .module__chevron {
   align-items: center;
   gap: 0.25rem;
   flex-shrink: 0;
+}
+
+/* The badges are the header's least important element: every app page repeats
+   them in its hero, so they go first when the nav needs the room. This has to
+   sit after the rule above rather than up with .site-nav, or the display:flex
+   there wins on source order and the badges never hide. */
+@media (max-width: 860px) {
+  .badge-group--header { display: none; }
 }
 
 /* Apple renders at 42px here; Google's artwork bakes in its own clear space,
