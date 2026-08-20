@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lessons by Neil Beaver — Animated Driving Lesson Briefings</title>
+  <meta name="description" content="Animated driving lesson briefings for driving instructors. Neil Beaver&#x27;s Learn to Drive series, rebuilt as one app for Android, iPhone and iPad.">
+  <link rel="canonical" href="https://www.neilbeaver.com/lessons/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Neil Beaver">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:url" content="https://www.neilbeaver.com/lessons/">
+  <meta property="og:title" content="Lessons by Neil Beaver — Animated Driving Lesson Briefings">
+  <meta property="og:description" content="Animated driving lesson briefings for driving instructors. Neil Beaver&#x27;s Learn to Drive series, rebuilt as one app for Android, iPhone and iPad.">
+  <meta property="og:image" content="https://www.neilbeaver.com/assets/images/og-lessons.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Lessons by Neil Beaver running on an iPad, showing an animated spiral roundabout lesson diagram">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Lessons by Neil Beaver — Animated Driving Lesson Briefings">
+  <meta name="twitter:description" content="Animated driving lesson briefings for driving instructors. Neil Beaver&#x27;s Learn to Drive series, rebuilt as one app for Android, iPhone and iPad.">
+  <meta name="twitter:image" content="https://www.neilbeaver.com/assets/images/og-lessons.png">
+
+  <meta name="theme-color" content="#1A3A5C">
+  <link rel="preload" as="image" href="/assets/images/lessons/iPad1.webp" fetchpriority="high">
+  <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="icon-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,6 8,10 12,6"/></symbol>
+  <symbol id="icon-controls" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/> <circle cx="12" cy="12" r="2.5"/> <line x1="12" y1="14.5" x2="12" y2="21"/> <line x1="3" y1="12" x2="9.5" y2="12"/> <line x1="14.5" y1="12" x2="21" y2="12"/></symbol>
+  <symbol id="icon-crossings" viewBox="0 0 24 24"><circle cx="12" cy="9" r="7" fill="#E8B84B"/> <line x1="12" y1="16" x2="12" y2="22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></symbol>
+  <symbol id="icon-dual-carriageway" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><g transform="rotate(90 12 12)"> <line x1="2" y1="6" x2="22" y2="6"/> <line x1="2" y1="18" x2="22" y2="18"/> <polyline points="17,2 22,6 17,10" stroke-linejoin="round"/> <polyline points="7,14 2,18 7,22" stroke-linejoin="round"/> </g></symbol>
+  <symbol id="icon-instructors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/> <circle cx="9" cy="7" r="4"/> <path d="M23 21v-2a4 4 0 0 0-3-3.87"/> <path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="icon-junctions" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 22 L14 14 L22 14"/> <path d="M10 22 L10 14 L2 14"/> <path d="M14 2 L14 10 L22 10"/> <path d="M10 2 L10 10 L2 10"/></symbol>
+  <symbol id="icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/> <rect x="14" y="3" width="7" height="7"/> <rect x="3" y="14" width="7" height="7"/> <rect x="14" y="14" width="7" height="7"/></symbol>
+  <symbol id="icon-manoeuvres" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12 Q3 5 12 5 L12 2 L17 7 L12 12 L12 9 Q7 9 7 12 L7 21"/></symbol>
+  <symbol id="icon-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/> <polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="icon-road" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 L6 22"/> <path d="M18 2 L18 22"/> <line x1="12" y1="2" x2="12" y2="6"/> <line x1="12" y1="9" x2="12" y2="13"/> <line x1="12" y1="16" x2="12" y2="20"/></symbol>
+  <symbol id="icon-roundabouts" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.6 3.1 A9 9 0 0 1 21 12" stroke-width="2.5"/> <polyline points="18.2,8.6 21,12 21.7,7.7"/> <path d="M18.9 17.8 A9 9 0 0 1 7.5 19.8" stroke-width="2.5"/> <polyline points="11.8,19.1 7.5,19.8 10.9,22.6"/> <path d="M3.5 15.1 A9 9 0 0 1 7.5 4.2" stroke-width="2.5"/> <polyline points="5.9,8.3 7.5,4.2 3.4,5.8"/></symbol>
+  <symbol id="icon-satellite" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(45 12 12)"> <rect x="-1" y="8" width="8" height="8"/> <line x1="3" y1="8" x2="3" y2="16"/> <rect x="17" y="8" width="8" height="8"/> <line x1="21" y1="8" x2="21" y2="16"/> <line x1="7" y1="12" x2="17" y2="12"/> <circle cx="12" cy="12" r="2.5"/> </g></symbol>
+  <symbol id="icon-stopping" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="miter"><polygon points="8.5,2.5 15.5,2.5 21.5,8.5 21.5,15.5 15.5,21.5 8.5,21.5 2.5,15.5 2.5,8.5"/></symbol>
+  <symbol id="icon-traffic-lights" viewBox="0 0 24 24"><rect x="5" y="1" width="14" height="22" rx="3" fill="none" stroke="currentColor" stroke-width="2"/> <circle cx="12" cy="7" r="3" fill="#E8B84B"/> <circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.4"/> <circle cx="12" cy="17" r="3" fill="#30A46C"/></symbol>
+</svg>
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="site-header__brand" href="/"><img src="/assets/images/lessons/lessons-icon.png" alt="" width="32" height="32" class="app-icon app-icon--sm"><span>Lessons by Neil Beaver</span></a>
+      <nav class="site-nav" aria-label="Site"><a href="/lessons/" aria-current="page">Lessons</a><a href="/roads/">Roads</a><a href="/lessons/guide/">Learn To Drive</a></nav>
+      <div class="badge-group badge-group--header">
+          <a href="https://apps.apple.com/gb/app/lessons-by-neil-beaver/id6768265585?itscg=30200&amp;itsct=apps_box_badge&amp;mttnsubad=6768265585" class="appstore-badge">
+            <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1781222400"
+                 alt="Download Lessons by Neil Beaver on the App Store"
+                 width="120" height="40" loading="lazy" decoding="async">
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.neilbeaver.lessons" class="playstore-badge">
+            <img src="/assets/images/google-play-badge.png"
+                 alt="Get Lessons by Neil Beaver on Google Play"
+                 width="646" height="250" loading="lazy" decoding="async">
+          </a>
+        </div>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <h1 class="hero-heading">All your animated lesson briefings, in one app.</h1>
+          <p class="hero-subheading">Finally back, and better than ever. Neil Beaver&#x27;s Learn to Drive series has been completely rewritten from the ground up. All bundled into a single app. At last, available on Android and iPhone as well as iPad.</p>
+          <div class="badge-group">
+          <a href="https://apps.apple.com/gb/app/lessons-by-neil-beaver/id6768265585?itscg=30200&amp;itsct=apps_box_badge&amp;mttnsubad=6768265585" class="appstore-badge" id="appstore-link">
+            <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1781222400"
+                 alt="Download Lessons by Neil Beaver on the App Store"
+                 width="120" height="40" decoding="async">
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.neilbeaver.lessons" class="playstore-badge" id="play-link">
+            <img src="/assets/images/google-play-badge.png"
+                 alt="Get Lessons by Neil Beaver on Google Play"
+                 width="646" height="250" decoding="async">
+          </a>
+        </div>
+          <p class="hero-markets">Available in:&ensp;<span class="hero-markets__countries"><span class="market">&#127468;&#127463;&thinsp;UK</span><span class="market">&#127470;&#127466;&thinsp;Ireland</span><span class="market">&#127464;&#127486;&thinsp;Cyprus</span><span class="market">&#127474;&#127481;&thinsp;Malta</span></span></p>
+        </div>
+        <div class="hero-device"><div class="device-display">
+            <div class="device-switcher" role="group" aria-label="Switch device preview">
+              <button class="device-switcher__btn is-active" data-device="tablet" aria-pressed="true">
+                <svg viewBox="0 0 14 18" width="11" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="1" y="1" width="12" height="16" rx="2"/>
+                  <circle cx="7" cy="14.5" r="0.8" fill="currentColor" stroke="none"/>
+                </svg>
+                Tablet
+              </button>
+              <button class="device-switcher__btn" data-device="phone" aria-pressed="false">
+                <svg viewBox="0 0 10 18" width="8" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="1" y="1" width="8" height="16" rx="2.5"/>
+                  <line x1="3.5" y1="15" x2="6.5" y2="15"/>
+                </svg>
+                Phone
+              </button>
+            </div>
+            <div class="device-view device-view--tablet">
+              <div class="ipad-mockup ipad-mockup--portrait">
+                <div class="ipad-mockup__shell">
+                  <div class="ipad-mockup__camera" aria-hidden="true"></div>
+                  <div class="ipad-mockup__screen">
+                    <img src="/assets/images/lessons/iPad1.webp" alt="Lessons by Neil Beaver running on an iPad, showing an animated spiral roundabout lesson diagram"
+                         class="ipad-mockup__screenshot"
+                         width="1032" height="1376" fetchpriority="high" decoding="async">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="device-view device-view--phone" hidden>
+              <div class="iphone-mockup">
+                <div class="iphone-mockup__shell">
+                  <div class="iphone-mockup__screen">
+                    <img src="/assets/images/lessons/iPhone1.webp" alt="Lessons by Neil Beaver running on an iPhone, showing an animated spiral roundabout lesson diagram"
+                         class="iphone-mockup__screenshot"
+                         width="660" height="1434" loading="lazy" decoding="async">
+                  </div>
+                  <div class="iphone-mockup__home-bar" aria-hidden="true"></div>
+                </div>
+              </div>
+            </div>
+          </div></div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="container">
+        <div class="about-icon-wrap">
+          <img src="/assets/images/lessons/lessons-icon.png" alt="Lessons by Neil Beaver" class="app-icon app-icon--lg" width="120" height="120">
+        </div>
+        <div class="section-intro">
+          <h2>Built by a driving instructor<br>for driving instructors</h2>
+          <p>A professional teaching tool — show your learner exactly what happens, before it happens.</p>
+        </div>
+        <div class="cards"><div class="card">
+            <div class="card__icon" aria-hidden="true"><svg class="" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-play"/></svg></div>
+            <h3>Animated diagrams</h3>
+            <p>Every lesson is animated — showing road position, routines, signals, blindspots, other road users, the lot!</p>
+          </div><div class="card">
+            <div class="card__icon" aria-hidden="true"><svg class="" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-layers"/></svg></div>
+            <h3>One app, every topic</h3>
+            <p>Previously sold separately. Now every component is bundled together in one big, easy-to-navigate app.</p>
+          </div><div class="card">
+            <div class="card__icon" aria-hidden="true"><svg class="" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-instructors"/></svg></div>
+            <h3>Designed for instructors</h3>
+            <p>Tried and tested by ADIs and PDIs across the UK. Works on your phone or tablet for lesson briefings and debriefs.</p>
+          </div></div>
+      </div>
+    </section>
+
+    <section class="modules">
+      <div class="container">
+        <div class="section-intro">
+          <h2>Everything your learner needs to see</h2>
+          <p>Browse available modules — tap any category to expand.</p>
+        </div>
+        <div class="modules-layout">
+          <div class="modules-list"><details class="module">
+              <summary class="module__header">
+                <svg class="module__icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-controls"/></svg>
+                <span class="module__title">Controls</span>
+                <span class="module__count">8 topics</span>
+                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
+              </summary>
+              <ul class="module__topics"><li>Cockpit Drill</li><li>Vision</li><li>Handbrake</li><li>Pedals</li><li>Clutch</li><li>Gears</li><li>Steering</li><li>Signals</li></ul>
+              <p class="module__guide"><a href="/lessons/guide/controls/">Read about controls in the guide</a></p>
+            </details><details class="module">
+              <summary class="module__header">
+                <svg class="module__icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-road"/></svg>
+                <span class="module__title">Position</span>
+                <span class="module__count">5 topics</span>
+                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
+              </summary>
+              <ul class="module__topics"><li>Move Off &amp; Stop</li><li>Obstacles</li><li>Space &amp; Speed</li><li>Lanes</li><li>Bends</li></ul>
+              <p class="module__guide"><a href="/lessons/guide/position/">Read about position in the guide</a></p>
+            </details><details class="module">
+              <summary class="module__header">
+                <svg class="module__icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-stopping"/></svg>
+                <span class="module__title">Stopping</span>
+                <span class="module__count">4 topics</span>
+                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
+              </summary>
+              <ul class="module__topics"><li>Distance</li><li>Planning</li><li>Skidding</li><li>Controlled Stop</li></ul>
+              <p class="module__guide"><a href="/lessons/guide/stopping/">Read about stopping in the guide</a></p>
+            </details><details class="module">
+              <summary class="module__header">
+                <svg class="module__icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-manoeuvres"/></svg>
+                <span class="module__title">Manoeuvres</span>
+                <span class="module__count">3 topics</span>
+                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
+              </summary>
+              <ul class="module__topics"><li>Pull Up &amp; Reverse</li><li>Parallel Park</li><li>Bay Park</li></ul>
+              <p class="module__guide"><a href="/lessons/guide/manoeuvres/">Read about manoeuvres in the guide</a></p>
+            </details><details class="module">
+              <summary class="module__header">
+                <svg class="module__icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-crossings"/></svg>
+                <span class="module__title">Pedestrian Crossings</span>
+                <span class="module__count">4 topics</span>
+                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
+              </summary>
+              <ul class="module__topics"><li>Zebra</li><li>Pelican</li><li>Puffin</li><li>More</li></ul>
+              <p class="module__guide"><a href="/lessons/guide/pedestrian-crossings/">Read about pedestrian crossings in the guide</a></p>
+            </details><details class="module">
+              <summary class="module__header">
+                <svg class="module__icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-junctions"/></svg>
+                <span class="module__title">Junctions</span>
+                <span class="module__count">4 topics</span>
+                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
+              </summary>
+              <ul class="module__topics"><li>Turn Left</li><li>Turn Right</li><li>Emerge</li><li>Crossroads</li></ul>
+              <p class="module__guide"><a href="/lessons/guide/junctions/">Read about junctions in the guide</a></p>
+            </details><details class="module">
+              <summary class="module__header">
+                <svg class="module__icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-traffic-lights"/></svg>
+                <span class="module__title">Traffic Lights</span>
+                <span class="module__count">6 topics</span>
+                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
+              </summary>
+              <ul class="module__topics"><li>Crossroads</li><li>Turn Left</li><li>Turn Right</li><li>T-Junction</li><li>Left Filter</li><li>Double Right</li></ul>
+              <p class="module__guide"><a href="/lessons/guide/traffic-lights/">Read about traffic lights in the guide</a></p>
+            </details><details class="module">
+              <summary class="module__header">
+                <svg class="module__icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-roundabouts"/></svg>
+                <span class="module__title">Roundabouts</span>
+                <span class="module__count">5 topics</span>
+                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
+              </summary>
+              <ul class="module__topics"><li>Mini</li><li>Small</li><li>Medium</li><li>Large</li><li>Spiral</li></ul>
+              <p class="module__guide"><a href="/lessons/guide/roundabouts/">Read about roundabouts in the guide</a></p>
+            </details><details class="module">
+              <summary class="module__header">
+                <svg class="module__icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-dual-carriageway"/></svg>
+                <span class="module__title">Dual Carriageways</span>
+                <span class="module__count">4 topics</span>
+                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
+              </summary>
+              <ul class="module__topics"><li>Slip Road On</li><li>Slip Road Off</li><li>Overtaking</li><li>Right Turn</li></ul>
+              <p class="module__guide"><a href="/lessons/guide/dual-carriageways/">Read about dual carriageways in the guide</a></p>
+            </details></div>
+          <div class="device-display">
+            <div class="device-switcher" role="group" aria-label="Switch device preview">
+              <button class="device-switcher__btn is-active" data-device="tablet" aria-pressed="true">
+                <svg viewBox="0 0 14 18" width="11" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="1" y="1" width="12" height="16" rx="2"/>
+                  <circle cx="7" cy="14.5" r="0.8" fill="currentColor" stroke="none"/>
+                </svg>
+                Tablet
+              </button>
+              <button class="device-switcher__btn" data-device="phone" aria-pressed="false">
+                <svg viewBox="0 0 10 18" width="8" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="1" y="1" width="8" height="16" rx="2.5"/>
+                  <line x1="3.5" y1="15" x2="6.5" y2="15"/>
+                </svg>
+                Phone
+              </button>
+            </div>
+            <div class="device-view device-view--tablet">
+              <div class="ipad-mockup ipad-mockup--portrait">
+                <div class="ipad-mockup__shell">
+                  <div class="ipad-mockup__camera" aria-hidden="true"></div>
+                  <div class="ipad-mockup__screen">
+                    <img src="/assets/images/lessons/iPad2.webp" alt="Lessons by Neil Beaver on iPad — browsing the lesson module list"
+                         class="ipad-mockup__screenshot"
+                         width="1032" height="1376" loading="lazy" decoding="async">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="device-view device-view--phone" hidden>
+              <div class="iphone-mockup">
+                <div class="iphone-mockup__shell">
+                  <div class="iphone-mockup__screen">
+                    <img src="/assets/images/lessons/iPhone2.webp" alt="Lessons by Neil Beaver on iPhone — browsing the lesson module list"
+                         class="iphone-mockup__screenshot"
+                         width="660" height="1434" loading="lazy" decoding="async">
+                  </div>
+                  <div class="iphone-mockup__home-bar" aria-hidden="true"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="download-cta">
+      <div class="container download-cta-inner">
+        <h2>Ready to transform how you teach?</h2>
+        <p>Free one month trial subscription. £3.99 per month thereafter.</p>
+        <div class="badge-group badge-group--center">
+          <a href="https://apps.apple.com/gb/app/lessons-by-neil-beaver/id6768265585?itscg=30200&amp;itsct=apps_box_badge&amp;mttnsubad=6768265585" class="appstore-badge">
+            <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1781222400"
+                 alt="Download Lessons by Neil Beaver on the App Store"
+                 width="120" height="40" loading="lazy" decoding="async">
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.neilbeaver.lessons" class="playstore-badge">
+            <img src="/assets/images/google-play-badge.png"
+                 alt="Get Lessons by Neil Beaver on Google Play"
+                 width="646" height="250" loading="lazy" decoding="async">
+          </a>
+        </div>
+        <p class="contact-note">Questions or feedback? <a href="#" class="js-email" data-u="ebobfbhynccf" data-d="tznvy.pbz">Send us an email</a></p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/images/lessons/lessons-icon.png" alt="" width="32" height="32" class="app-icon app-icon--sm">
+        <div><p class="footer-brand__name">Lessons by Neil Beaver</p></div>
+      </div>
+      <div class="footer-markets">
+        <p class="footer-markets__label">Available in</p>
+        <ul class="footer-markets__list"><li>&#127468;&#127463;&nbsp;United Kingdom</li><li>&#127470;&#127466;&nbsp;Ireland</li><li>&#127464;&#127486;&nbsp;Cyprus</li><li>&#127474;&#127481;&nbsp;Malta</li></ul>
+      </div>
+      <div class="footer-legal">
+        <p>&copy; 2026 Neil Beaver. All rights reserved.</p>
+        <p>
+          <a href="/privacy">Privacy Policy</a>
+          &nbsp;&middot;&nbsp;
+          <a href="/terms">Terms of Use</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script src="/script.js"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","@id":"https://www.neilbeaver.com/lessons/#app","name":"Lessons by Neil Beaver","description":"Animated driving lesson briefings for driving instructors. Neil Beaver's Learn to Drive series, rebuilt as one app for Android, iPhone and iPad.","applicationCategory":"EducationalApplication","operatingSystem":"iOS, iPadOS, Android","url":"https://www.neilbeaver.com/lessons/","image":"https://www.neilbeaver.com/assets/images/og-lessons.png","author":{"@type":"Person","name":"Neil Beaver"},"offers":{"@type":"Offer","price":"3.99","priceCurrency":"GBP","eligibleRegion":["GB","IE","CY","MT"]}}]}</script>
+</body>
+</html>

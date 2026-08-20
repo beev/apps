@@ -13,7 +13,7 @@ output, which is what makes a hand-rolled renderer safe here.
 
 Usage: python3 tools/build.py
 """
-import os, re, csv, html, shutil, sys
+import os, re, csv, html, shutil, sys, tomllib
 from datetime import date
 
 SITE      = 'https://www.neilbeaver.com'
@@ -28,6 +28,27 @@ GUIDE_URL = '/lessons/guide'
 OUT       = 'lessons/guide'
 SRC       = 'content/guide'
 IMG_URL   = '/assets/images/guide'
+APPS_SRC  = 'content/apps'          # one .toml per app page
+ICONS_SRC = 'content/icons.svg'     # <symbol>s shared by the module and card icons
+
+# The site nav, in every header. Adding an app means adding its .toml and a
+# line here; nothing else in this file needs to know the app exists.
+NAV = [('Lessons', '/lessons/'),
+       ('Roads',   '/roads/'),
+       ('Learn To Drive', f'{GUIDE_URL}/')]
+
+# Who a page belongs to. The home and legal pages are the site itself; each app
+# page wears its own name and icon; the guide is Learn To Drive but sells
+# Lessons, so it carries the Lessons badges.
+BRANDS = {
+    'site':    dict(name='Neil Beaver', icon=None, badges=None),
+    'lessons': dict(name='Lessons by Neil Beaver', badges='lessons',
+                    icon='/assets/images/lessons/lessons-icon.png'),
+    'roads':   dict(name='Roads by Neil Beaver', badges=None,
+                    icon='/assets/images/roads/roads-icon.png'),
+    'guide':   dict(name='Learn To Drive', badges='lessons',
+                    icon='/assets/images/guide/l-plate.svg'),
+}
 
 # Pages outside the guide that must stay in the sitemap. Their lastmod values
 # are kept as they are so a guide rebuild does not churn every entry.
@@ -228,43 +249,121 @@ def render(body, pages, where, page_path):
 
 # -------------------------------------------------------------- templates ---
 
-HEADER_BRAND = (
-    '    <a class="site-header__brand" href="/">'
-    '<img src="/assets/images/lessons/lessons-icon.png" alt="" width="32" height="32" '
-    'class="app-icon app-icon--sm"><span>Lessons by Neil Beaver</span></a>')
+def e(x):
+    return html.escape(str(x), quote=True)
 
-# The same store badges as the home page. Apple's is served from their CDN;
-# Google's is self-hosted because their brand guidelines require it.
-HEADER_BADGES = '''    <div class="badge-group badge-group--header">
-      <a href="https://apps.apple.com/gb/app/lessons-by-neil-beaver/id6768265585?itscg=30200&itsct=apps_box_badge&mttnsubad=6768265585"
-         class="appstore-badge">
-        <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1781222400"
-             alt="Download Lessons by Neil Beaver on the App Store"
-             width="120" height="40" decoding="async">
-      </a>
-      <a href="https://play.google.com/store/apps/details?id=com.neilbeaver.lessons"
-         class="playstore-badge">
-        <img src="/assets/images/google-play-badge.png"
-             alt="Get Lessons by Neil Beaver on Google Play"
-             width="646" height="250" decoding="async">
-      </a>
-    </div>'''
+def lines(text):
+    """A deliberate line break in a heading, kept out of the data as markup."""
+    return '<br>'.join(e(p) for p in str(text).split('\n'))
 
-FOOTER = '''  <footer class="site-footer">
+# ------------------------------------------------------------------- icons ---
+
+def icon_sprite():
+    """The <symbol> definitions, inlined once per page that uses them.
+
+    Nine module icons cover sixteen modules across the two apps, and the card
+    icons overlap too, so they are defined once and referenced by <use>.
+    """
+    return ('<svg width="0" height="0" style="position:absolute" aria-hidden="true">\n'
+            + open(ICONS_SRC).read() + '</svg>')
+
+def icon(name, cls, size):
+    return (f'<svg class="{cls}" width="{size}" height="{size}" viewBox="0 0 24 24" '
+            f'aria-hidden="true"><use href="#icon-{e(name)}"/></svg>')
+
+# ------------------------------------------------------------------ badges ---
+
+APPLE_GLYPH = ('<svg viewBox="0 0 384 512" width="20" height="20" fill="currentColor" '
+    'aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>')
+PLAY_GLYPH = ('<svg viewBox="0 0 512 512" width="20" height="20" fill="currentColor" '
+    'aria-hidden="true"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c17.4-9.8 17.4-36 0-46.7l-1.2.9zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>')
+
+def store_badges(app, group_class='', lazy=True, link_ids=False):
+    """Apple and Google badges for an app that has shipped.
+
+    Apple's artwork is served from their CDN; Google's is self-hosted because
+    their brand guidelines require it, and it bakes in its own clear space,
+    which is why it renders taller - see .playstore-badge in style.css.
+    """
+    st = app['store']
+    ld = ' id="appstore-link"' if link_ids else ''
+    lp = ' id="play-link"' if link_ids else ''
+    load = ' loading="lazy"' if lazy else ''
+    return f'''<div class="badge-group{group_class}">
+          <a href="{e(st['apple'])}" class="appstore-badge"{ld}>
+            <img src="{e(st['apple_badge'])}"
+                 alt="Download {e(app['name'])} on the App Store"
+                 width="120" height="40"{load} decoding="async">
+          </a>
+          <a href="{e(st['google'])}" class="playstore-badge"{lp}>
+            <img src="/assets/images/google-play-badge.png"
+                 alt="Get {e(app['name'])} on Google Play"
+                 width="646" height="250"{load} decoding="async">
+          </a>
+        </div>'''
+
+def soon_badge(store, glyph, cls):
+    return (f'<span class="badge badge--{cls} badge--disabled" '
+            f'aria-label="{e(store)} — Coming Soon">'
+            f'<span class="badge__icon" aria-hidden="true">{glyph}</span>'
+            '<span class="badge__text">'
+            '<span class="badge__eyebrow">Coming Soon to</span>'
+            f'<span class="badge__title">{e(store)}</span></span></span>')
+
+def soon_badges(group_class=''):
+    """Non-interactive pills for an app with no store listing yet.
+
+    Swap these for store_badges() by giving the app a [store] table in its
+    .toml - nothing else needs changing.
+    """
+    return (f'<div class="badge-group{group_class}">'
+            + soon_badge('App Store', APPLE_GLYPH, 'appstore')
+            + soon_badge('Google Play', PLAY_GLYPH, 'play') + '</div>')
+
+def badges_for(app, group_class='', lazy=True, link_ids=False):
+    return (store_badges(app, group_class, lazy, link_ids) if app.get('store')
+            else soon_badges(group_class))
+
+# ------------------------------------------------------------------ chrome ---
+
+def header(brand, current, apps):
+    b = BRANDS[brand]
+    ic = (f'<img src="{b["icon"]}" alt="" width="32" height="32" '
+          'class="app-icon app-icon--sm">') if b['icon'] else ''
+    # The longest matching prefix wins, so a guide page marks Learn To Drive
+    # rather than Lessons, even though /lessons/ is a prefix of both.
+    here = max((u for _, u in NAV if current.startswith(u)), key=len, default=None)
+    links = ''.join(
+        f'<a href="{u}"{" aria-current=\"page\"" if u == here else ""}>{e(n)}</a>'
+        for n, u in NAV)
+    badges = ''
+    if b['badges'] and b['badges'] in apps:
+        badges = badges_for(apps[b['badges']], ' badge-group--header')
+    return f'''  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="site-header__brand" href="/">{ic}<span>{e(b["name"])}</span></a>
+      <nav class="site-nav" aria-label="Site">{links}</nav>
+{badges and "      " + badges}
+    </div>
+  </header>'''
+
+MARKETS = [('&#127468;&#127463;', 'United Kingdom'), ('&#127470;&#127466;', 'Ireland'),
+           ('&#127464;&#127486;', 'Cyprus'), ('&#127474;&#127481;', 'Malta')]
+
+def footer(brand):
+    b = BRANDS[brand]
+    ic = (f'<img src="{b["icon"]}" alt="" width="32" height="32" '
+          'class="app-icon app-icon--sm">') if b['icon'] else ''
+    markets = ''.join(f'<li>{f}&nbsp;{n}</li>' for f, n in MARKETS)
+    return f'''  <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <img src="/assets/images/lessons/lessons-icon.png" alt=""
-             class="app-icon app-icon--sm" width="32" height="32">
-        <div><p class="footer-brand__name">Lessons by Neil Beaver</p></div>
+        {ic}
+        <div><p class="footer-brand__name">{e(b["name"])}</p></div>
       </div>
       <div class="footer-markets">
         <p class="footer-markets__label">Available in</p>
-        <ul class="footer-markets__list">
-          <li>&#127468;&#127463; United Kingdom</li>
-          <li>&#127470;&#127466; Ireland</li>
-          <li>&#127464;&#127486; Cyprus</li>
-          <li>&#127474;&#127481; Malta</li>
-        </ul>
+        <ul class="footer-markets__list">{markets}</ul>
       </div>
       <div class="footer-legal">
         <p>&copy; 2026 Neil Beaver. All rights reserved.</p>
@@ -277,42 +376,242 @@ FOOTER = '''  <footer class="site-footer">
     </div>
   </footer>'''
 
-def head(page, desc):
-    title = ('Learn To Drive — A Free Guide for Learner Drivers'
-             if page['path'] == 'index'
-             else f"{page['title']} — Learn To Drive Guide")
-    url = SITE + page['url']
-    robots = '\n  <meta name="robots" content="noindex, follow">' if page['draft'] else ''
-    e = lambda s: html.escape(s, quote=True)
+def head(title, desc, url, og_image, og_type='website', og_alt='',
+         noindex=False, preload=None, body_class=''):
+    """Every page's <head>, so the address and the social tags cannot disagree.
+
+    url is a path; it becomes the canonical and og:url against one SITE
+    constant, which is the whole reason a domain change is one edit here
+    rather than a find-and-replace across the site.
+    """
+    robots = '\n  <meta name="robots" content="noindex, follow">' if noindex else ''
+    pre = (f'\n  <link rel="preload" as="image" href="{e(preload)}" fetchpriority="high">'
+           if preload else '')
+    cls = f' class="{body_class}"' if body_class else ''
     return f'''<!DOCTYPE html>
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{e(title)} | Neil Beaver</title>
+  <title>{e(title)}</title>
   <meta name="description" content="{e(desc)}">{robots}
-  <link rel="canonical" href="{e(url)}">
+  <link rel="canonical" href="{SITE}{e(url)}">
 
-  <meta property="og:type" content="article">
+  <meta property="og:type" content="{og_type}">
   <meta property="og:site_name" content="Neil Beaver">
   <meta property="og:locale" content="en_GB">
-  <meta property="og:url" content="{e(url)}">
+  <meta property="og:url" content="{SITE}{e(url)}">
   <meta property="og:title" content="{e(title)}">
   <meta property="og:description" content="{e(desc)}">
-  <meta property="og:image" content="{SITE}/assets/images/og-lessons.png">
+  <meta property="og:image" content="{SITE}{e(og_image)}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{e(og_alt or title)}">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{e(title)}">
+  <meta name="twitter:description" content="{e(desc)}">
+  <meta name="twitter:image" content="{SITE}{e(og_image)}">
 
-  <meta name="theme-color" content="#1A3A5C">
+  <meta name="theme-color" content="#1A3A5C">{pre}
   <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
   <link rel="stylesheet" href="/style.css">
 </head>
-<body class="guide-body">'''
+<body{cls}>'''
+
+# --------------------------------------------------------------- app pages ---
+
+def device_display(mock, first=False):
+    """The tablet/phone mockup pair with its segmented switcher.
+
+    script.js scopes the switcher to the enclosing .device-display, so a page
+    can carry several of these independently.
+    """
+    t, ph = mock['tablet'], mock['phone']
+    prio = ' fetchpriority="high" decoding="async"' if first else ' loading="lazy" decoding="async"'
+    return f'''<div class="device-display">
+            <div class="device-switcher" role="group" aria-label="Switch device preview">
+              <button class="device-switcher__btn is-active" data-device="tablet" aria-pressed="true">
+                <svg viewBox="0 0 14 18" width="11" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="1" y="1" width="12" height="16" rx="2"/>
+                  <circle cx="7" cy="14.5" r="0.8" fill="currentColor" stroke="none"/>
+                </svg>
+                Tablet
+              </button>
+              <button class="device-switcher__btn" data-device="phone" aria-pressed="false">
+                <svg viewBox="0 0 10 18" width="8" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="1" y="1" width="8" height="16" rx="2.5"/>
+                  <line x1="3.5" y1="15" x2="6.5" y2="15"/>
+                </svg>
+                Phone
+              </button>
+            </div>
+            <div class="device-view device-view--tablet">
+              <div class="ipad-mockup ipad-mockup--portrait">
+                <div class="ipad-mockup__shell">
+                  <div class="ipad-mockup__camera" aria-hidden="true"></div>
+                  <div class="ipad-mockup__screen">
+                    <img src="{e(t['src'])}" alt="{e(t['alt'])}"
+                         class="ipad-mockup__screenshot"
+                         width="{t['width']}" height="{t['height']}"{prio}>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="device-view device-view--phone" hidden>
+              <div class="iphone-mockup">
+                <div class="iphone-mockup__shell">
+                  <div class="iphone-mockup__screen">
+                    <img src="{e(ph['src'])}" alt="{e(ph['alt'])}"
+                         class="iphone-mockup__screenshot"
+                         width="{ph['width']}" height="{ph['height']}" loading="lazy" decoding="async">
+                  </div>
+                  <div class="iphone-mockup__home-bar" aria-hidden="true"></div>
+                </div>
+              </div>
+            </div>
+          </div>'''
+
+CONTACT = ('<p class="contact-note">Questions or feedback? '
+           '<a href="#" class="js-email" data-u="ebobfbhynccf" data-d="tznvy.pbz">'
+           'Send us an email</a></p>')
+
+def app_schema(app):
+    """SoftwareApplication for one app.
+
+    An app with no store listing gets no `offers`: advertising a price for
+    something nobody can buy is exactly the kind of claim structured data is
+    not for.
+    """
+    parts = ['"@type":"SoftwareApplication"',
+             f'"@id":"{SITE}/{app["slug"]}/#app"',
+             f'"name":{json_str(app["name"])}',
+             f'"description":{json_str(app["description"])}',
+             '"applicationCategory":"EducationalApplication"',
+             '"operatingSystem":"iOS, iPadOS, Android"',
+             f'"url":"{SITE}/{app["slug"]}/"',
+             f'"image":"{SITE}{app["og_image"]}"',
+             '"author":{"@type":"Person","name":"Neil Beaver"}']
+    if app.get('offer'):
+        o = app['offer']
+        regions = ','.join(f'"{r}"' for r in o['regions'])
+        parts.append('"offers":{"@type":"Offer","price":"%s","priceCurrency":"%s",'
+                     '"eligibleRegion":[%s]}' % (o['price'], o['currency'], regions))
+    return '{' + ','.join(parts) + '}'
+
+def json_str(x):
+    return '"' + str(x).replace('\\', '\\\\').replace('"', '\\"').replace('\n', ' ') + '"'
+
+def app_page(app, apps):
+    slug, url = app['slug'], f'/{app["slug"]}/'
+    hero, about, mods, cta = app['hero'], app['about'], app['modules'], app['cta']
+
+    cards = ''.join(f'''<div class="card">
+            <div class="card__icon" aria-hidden="true">{icon(c["icon"], "", 24)}</div>
+            <h3>{e(c["title"])}</h3>
+            <p>{e(c["body"])}</p>
+          </div>''' for c in about['cards'])
+
+    items = []
+    for m in mods['list']:
+        topics = ''.join(f'<li>{e(t)}</li>' for t in m['topics'])
+        # The nine Lessons modules are the nine guide sections, so each one
+        # can point at the written version of itself.
+        more = (f'\n              <p class="module__guide"><a href="{m["guide"]}">'
+                f'Read about {e(m["title"]).lower()} in the guide</a></p>'
+                if m.get('guide') else '')
+        n = len(m['topics'])
+        items.append(f'''<details class="module">
+              <summary class="module__header">
+                {icon(m["icon"], "module__icon", 18)}
+                <span class="module__title">{e(m["title"])}</span>
+                <span class="module__count">{n} topic{"" if n == 1 else "s"}</span>
+                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
+              </summary>
+              <ul class="module__topics">{topics}</ul>{more}
+            </details>''')
+
+    markets = ''.join(f'<span class="market">{f}&thinsp;{n}</span>'
+                      for f, n in [('&#127468;&#127463;', 'UK'), ('&#127470;&#127466;', 'Ireland'),
+                                   ('&#127464;&#127486;', 'Cyprus'), ('&#127474;&#127481;', 'Malta')])
+
+    return '\n'.join([
+      head(app['title'], app['description'], url, app['og_image'],
+           og_type='website', og_alt=hero['tablet']['alt'],
+           preload=hero['tablet']['src']),
+      '  <a class="skip-link" href="#main">Skip to content</a>',
+      '  ' + icon_sprite(),
+      header(slug, url, apps),
+      '  <main id="main">',
+      f'''    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <h1 class="hero-heading">{lines(hero["heading"])}</h1>
+          <p class="hero-subheading">{e(hero["subheading"])}</p>
+          {badges_for(app, "", lazy=False, link_ids=True)}
+          <p class="hero-markets">Available in:&ensp;<span class="hero-markets__countries">{markets}</span></p>
+        </div>
+        <div class="hero-device">{device_display(hero, first=True)}</div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="container">
+        <div class="about-icon-wrap">
+          <img src="{e(app["icon"])}" alt="{e(app["name"])}" class="app-icon app-icon--lg" width="120" height="120">
+        </div>
+        <div class="section-intro">
+          <h2>{lines(about["heading"])}</h2>
+          <p>{e(about["subheading"])}</p>
+        </div>
+        <div class="cards">{cards}</div>
+      </div>
+    </section>
+
+    <section class="modules">
+      <div class="container">
+        <div class="section-intro">
+          <h2>{e(mods["heading"])}</h2>
+          <p>Browse available modules — tap any category to expand.</p>
+        </div>
+        <div class="modules-layout">
+          <div class="modules-list">{"".join(items)}</div>
+          {device_display(mods)}
+        </div>
+      </div>
+    </section>
+
+    <section class="download-cta">
+      <div class="container download-cta-inner">
+        <h2>{e(cta["heading"])}</h2>
+        <p>{e(cta["lead"])}</p>
+        {badges_for(app, " badge-group--center")}
+        {CONTACT}
+      </div>
+    </section>''',
+      '  </main>',
+      footer(slug),
+      '  <script src="/script.js"></script>',
+      '  <script type="application/ld+json">'
+      '{"@context":"https://schema.org","@graph":[' + app_schema(app) + ']}</script>',
+      '</body>',
+      '</html>',
+    ])
+
+def load_apps():
+    apps = {}
+    if not os.path.isdir(APPS_SRC): return apps
+    for f in sorted(os.listdir(APPS_SRC)):
+        if f.endswith('.toml'):
+            d = tomllib.load(open(os.path.join(APPS_SRC, f), 'rb'))
+            apps[d['slug']] = d
+    return apps
 
 def breadcrumbs(page, pages):
-    trail = [('Home', '/'), ('Learn To Drive', f'{GUIDE_URL}/')]
+    trail = [('Home', '/'), ('Lessons', '/lessons/'),
+             ('Learn To Drive', f'{GUIDE_URL}/')]
     if page.get('parent'):
         p = pages[page['parent']]
         trail.append((p['title'], p['url']))
@@ -398,18 +697,19 @@ def child_cards(page, tops, body_html):
     return ('<section class="guide-cards"><h2>In this section</h2>'
             f'<ul class="guide-cards__list">{cards}</ul></section>')
 
-def build_page(page, pages, tops):
+def build_page(page, pages, tops, apps):
     body_html, first_para = render(page['body'], pages,
                                    f"content/guide/{page['path']}.md", page['path'])
     desc = (first_para[:157].rsplit(' ', 1)[0] + '…') if len(first_para) > 158 else first_para
     crumb_nav, crumb_ld = breadcrumbs(page, pages)
+    title = ('Learn To Drive — A Free Guide for Learner Drivers | Neil Beaver'
+             if page['path'] == 'index'
+             else f"{page['title']} — Learn To Drive Guide | Neil Beaver")
     return '\n'.join([
-        head(page, desc),
+        head(title, desc, page['url'], '/assets/images/og-lessons.png',
+             og_type='article', noindex=page['draft'], body_class='guide-body'),
         '  <a class="skip-link" href="#guide-main">Skip to content</a>',
-        '  <header class="site-header" id="site-header"><div class="container header-inner">',
-        HEADER_BRAND,
-        HEADER_BADGES,
-        '  </div></header>',
+        header('guide', page['url'], apps),
         f'  {crumb_nav}',
         '  <div class="container guide-layout">',
         f'    {sidebar(page, tops)}',
@@ -420,15 +720,17 @@ def build_page(page, pages, tops):
         siblings_nav(page, pages, tops),
         '    </main>',
         '  </div>',
-        FOOTER,
+        footer('guide'),
         '  <script src="/script.js"></script>',
         f'  {crumb_ld}',
         '</body>',
         '</html>',
     ])
 
-def write_sitemap(pages):
+def write_sitemap(pages, apps):
     rows = list(STATIC_URLS)
+    for a in sorted(apps.values(), key=lambda a: a['slug']):
+        rows.append((f"/{a['slug']}/", str(date.today()), 'monthly', '0.9'))
     for p in sorted(pages.values(), key=lambda p: p['url']):
         if p['draft']: continue          # thin stubs stay out of the index
         prio = '0.8' if p['path'] == 'index' else ('0.7' if 'parent' not in p else '0.6')
@@ -447,6 +749,7 @@ def main():
     for r in csv.DictReader(open('tools/image-manifest.tsv'), delimiter='\t'):
         DIMS[(r['page'], os.path.basename(r['file']))] = {'dw': r['dw'], 'dh': r['dh']}
 
+    apps  = load_apps()
     pages = load_pages()
     tops  = tree(pages)
     for t in tops: pages[t['path']]['children'] = t['children']
@@ -457,11 +760,16 @@ def main():
         dest = os.path.join(OUT, 'index.html' if p['path'] == 'index'
                             else os.path.join(p['path'], 'index.html'))
         os.makedirs(os.path.dirname(dest), exist_ok=True)
-        open(dest, 'w').write(build_page(p, pages, tops))
+        open(dest, 'w').write(build_page(p, pages, tops, apps))
         written += 1
 
-    n = write_sitemap(pages)
-    print(f"built {written} pages into {OUT}/")
+    for a in apps.values():
+        os.makedirs(a['slug'], exist_ok=True)
+        open(os.path.join(a['slug'], 'index.html'), 'w').write(app_page(a, apps))
+
+    n = write_sitemap(pages, apps)
+    print(f"built {written} guide pages into {OUT}/")
+    print(f"built {len(apps)} app pages: {', '.join('/' + s + '/' for s in sorted(apps))}")
     print(f"sitemap: {n} URLs ({sum(1 for p in pages.values() if p['draft'])} drafts excluded)")
 
 if __name__ == '__main__':

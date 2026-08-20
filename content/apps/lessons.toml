@@ -1,0 +1,109 @@
+# Lessons by Neil Beaver - the content of /lessons/.
+# Structure lives in tools/build.py; only what differs per app is here.
+
+slug        = "lessons"
+name        = "Lessons by Neil Beaver"
+short_name  = "Lessons"
+icon        = "/assets/images/lessons/lessons-icon.png"
+og_image    = "/assets/images/og-lessons.png"
+title       = "Lessons by Neil Beaver — Animated Driving Lesson Briefings"
+description = "Animated driving lesson briefings for driving instructors. Neil Beaver's Learn to Drive series, rebuilt as one app for Android, iPhone and iPad."
+shipped     = true
+
+[store]
+apple = "https://apps.apple.com/gb/app/lessons-by-neil-beaver/id6768265585?itscg=30200&itsct=apps_box_badge&mttnsubad=6768265585"
+apple_badge = "https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1781222400"
+google = "https://play.google.com/store/apps/details?id=com.neilbeaver.lessons"
+
+[offer]
+price = "3.99"
+currency = "GBP"
+regions = ["GB", "IE", "CY", "MT"]
+
+[hero]
+heading = "All your animated lesson briefings, in one app."
+subheading = "Finally back, and better than ever. Neil Beaver's Learn to Drive series has been completely rewritten from the ground up. All bundled into a single app. At last, available on Android and iPhone as well as iPad."
+tablet = { src = "/assets/images/lessons/iPad1.webp", alt = "Lessons by Neil Beaver running on an iPad, showing an animated spiral roundabout lesson diagram", width = 1032, height = 1376 }
+phone = { src = "/assets/images/lessons/iPhone1.webp", alt = "Lessons by Neil Beaver running on an iPhone, showing an animated spiral roundabout lesson diagram", width = 660, height = 1434 }
+
+[about]
+heading = "Built by a driving instructor\nfor driving instructors"
+subheading = "A professional teaching tool — show your learner exactly what happens, before it happens."
+
+[[about.cards]]
+title = "Animated diagrams"
+icon = "play"
+body = "Every lesson is animated — showing road position, routines, signals, blindspots, other road users, the lot!"
+
+[[about.cards]]
+title = "One app, every topic"
+icon = "layers"
+body = "Previously sold separately. Now every component is bundled together in one big, easy-to-navigate app."
+
+[[about.cards]]
+title = "Designed for instructors"
+icon = "instructors"
+body = "Tried and tested by ADIs and PDIs across the UK. Works on your phone or tablet for lesson briefings and debriefs."
+
+[modules]
+heading = "Everything your learner needs to see"
+tablet = { src = "/assets/images/lessons/iPad2.webp", alt = "Lessons by Neil Beaver on iPad — browsing the lesson module list", width = 1032, height = 1376 }
+phone = { src = "/assets/images/lessons/iPhone2.webp", alt = "Lessons by Neil Beaver on iPhone — browsing the lesson module list", width = 660, height = 1434 }
+
+[[modules.list]]
+title = "Controls"
+icon = "controls"
+guide = "/lessons/guide/controls/"
+topics = ["Cockpit Drill", "Vision", "Handbrake", "Pedals", "Clutch", "Gears", "Steering", "Signals"]
+
+[[modules.list]]
+title = "Position"
+icon = "road"
+guide = "/lessons/guide/position/"
+topics = ["Move Off & Stop", "Obstacles", "Space & Speed", "Lanes", "Bends"]
+
+[[modules.list]]
+title = "Stopping"
+icon = "stopping"
+guide = "/lessons/guide/stopping/"
+topics = ["Distance", "Planning", "Skidding", "Controlled Stop"]
+
+[[modules.list]]
+title = "Manoeuvres"
+icon = "manoeuvres"
+guide = "/lessons/guide/manoeuvres/"
+topics = ["Pull Up & Reverse", "Parallel Park", "Bay Park"]
+
+[[modules.list]]
+title = "Pedestrian Crossings"
+icon = "crossings"
+guide = "/lessons/guide/pedestrian-crossings/"
+topics = ["Zebra", "Pelican", "Puffin", "More"]
+
+[[modules.list]]
+title = "Junctions"
+icon = "junctions"
+guide = "/lessons/guide/junctions/"
+topics = ["Turn Left", "Turn Right", "Emerge", "Crossroads"]
+
+[[modules.list]]
+title = "Traffic Lights"
+icon = "traffic-lights"
+guide = "/lessons/guide/traffic-lights/"
+topics = ["Crossroads", "Turn Left", "Turn Right", "T-Junction", "Left Filter", "Double Right"]
+
+[[modules.list]]
+title = "Roundabouts"
+icon = "roundabouts"
+guide = "/lessons/guide/roundabouts/"
+topics = ["Mini", "Small", "Medium", "Large", "Spiral"]
+
+[[modules.list]]
+title = "Dual Carriageways"
+icon = "dual-carriageway"
+guide = "/lessons/guide/dual-carriageways/"
+topics = ["Slip Road On", "Slip Road Off", "Overtaking", "Right Turn"]
+
+[cta]
+heading = "Ready to transform how you teach?"
+lead = "Free one month trial subscription. £3.99 per month thereafter."

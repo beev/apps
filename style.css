@@ -144,6 +144,46 @@ a {
 }
 
 /* ============================================================
+   SITE NAV (header)
+
+   Replaces the old app-tabs control. Tabs swapped hidden sections
+   inside one page, so neither app had an address; these are plain
+   links to real pages, which is what makes them shareable and
+   indexable.
+   ============================================================ */
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.75rem, 2.5vw, 1.75rem);
+  margin-inline: auto;
+}
+
+.site-nav a {
+  color: var(--color-muted);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  white-space: nowrap;
+  padding-block: 0.25rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.site-nav a:hover {
+  color: var(--color-text);
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-accent);
+}
+
+/* The badges are the header's least important element: every app page
+   repeats them in its hero. They go first when space runs short. */
+@media (max-width: 860px) {
+  .badge-group--header { display: none; }
+}
+
+/* ============================================================
    APP TABS (header) — switch between Lessons and Roads
    ============================================================ */
 .app-tabs {
@@ -834,6 +874,17 @@ details.module[open] .module__chevron {
   position: relative;
 }
 
+/* Each Lessons module points at the guide section that covers it. */
+.module__guide {
+  padding: 0 1rem 1rem;
+  font-size: 0.875rem;
+}
+
+.module__guide a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .module__topics li::before {
   content: "";
   position: absolute;
@@ -908,7 +959,18 @@ details.module[open] .module__chevron {
   color: rgba(255,255,255,0.45);
 }
 
-.module--upcoming .module__topics li::before {
+.module--upcoming /* Each Lessons module points at the guide section that covers it. */
+.module__guide {
+  padding: 0 1rem 1rem;
+  font-size: 0.875rem;
+}
+
+.module__guide a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.module__topics li::before {
   background-color: rgba(255,255,255,0.25);
 }
 

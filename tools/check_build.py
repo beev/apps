@@ -26,9 +26,18 @@ SITE = 'https://www.neilbeaver.com'
 
 # Where built pages live. Listed explicitly rather than walking from the root,
 # which would wander into .venv and the gitignored image source folders.
-ROOT_PAGES  = '.'            # hand-written pages at the top level
-PAGE_TREES  = ['lessons']    # generated trees
+ROOT_PAGES  = '.'              # pages at the top level
 MARKDOWN    = 'lessons/guide'  # the subset built from content/guide/*.md
+
+def page_trees():
+    """The generated directories: one per app, plus whatever nests inside them.
+
+    Read from content/apps rather than listed here, so adding an app brings its
+    pages under these checks without anyone remembering to say so.
+    """
+    if not os.path.isdir('content/apps'): return []
+    return sorted(f[:-len('.toml')] for f in os.listdir('content/apps')
+                  if f.endswith('.toml'))
 
 VOID = {'area','base','br','col','embed','hr','img','input','link','meta',
         'param','source','track','wbr'}
@@ -83,7 +92,7 @@ def find_pages():
     pages = []
     for f in sorted(os.listdir(ROOT_PAGES)):
         if f.endswith('.html'): pages.append(f)
-    for tree in PAGE_TREES:
+    for tree in page_trees():
         for base, _, files in os.walk(tree):
             for f in sorted(files):
                 if f.endswith('.html'): pages.append(os.path.join(base, f))

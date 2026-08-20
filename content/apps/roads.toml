@@ -1,0 +1,80 @@
+# Roads by Neil Beaver - the content of /roads/.
+# Structure lives in tools/build.py; only what differs per app is here.
+
+slug        = "roads"
+name        = "Roads by Neil Beaver"
+short_name  = "Roads"
+icon        = "/assets/images/roads/roads-icon.png"
+og_image    = "/assets/images/og-roads.png"
+title       = "Roads by Neil Beaver — Road Layout Teaching Aid"
+description = "Draw and demonstrate any road layout for your learner. Pre-drawn junctions and roundabouts plus Google Maps satellite imagery, on Android, iPhone and iPad."
+shipped     = false
+
+[hero]
+heading = "Any situation, any time."
+subheading = "Finally back, and better than ever. Neil Beaver's Road Board and Road Pad apps have been completely rewritten and combined into a single app by popular demand. Now available on the iPhone as well as the iPad."
+tablet = { src = "/assets/images/roads/iPad1.webp", alt = "Roads by Neil Beaver running on an iPad, showing a detailed road layout diagram", width = 1032, height = 1376 }
+phone = { src = "/assets/images/roads/iPhone1.webp", alt = "Roads by Neil Beaver running on an iPhone, showing a detailed road layout diagram", width = 660, height = 1434 }
+
+[about]
+heading = "Built by a driving instructor\nfor driving instructors"
+subheading = "A professional teaching tool — any situation illustrated, in detail."
+
+[[about.cards]]
+title = "Pre-drawn backgrounds"
+icon = "road"
+body = "More than 50 pre-drawn, common road situations are included for quick and detailed explanations."
+
+[[about.cards]]
+title = "Detailed satellite images"
+icon = "satellite"
+body = "Google Maps satellite images are used to provide the best quality images with the highest level of detail."
+
+[[about.cards]]
+title = "Designed for instructors"
+icon = "instructors"
+body = "Tried and tested by ADIs and PDIs across the UK. Works on your phone or tablet, any time, any situation."
+
+[modules]
+heading = "Everything your learner needs to see"
+tablet = { src = "/assets/images/roads/iPad2.webp", alt = "Roads by Neil Beaver on iPad — a satellite view of a roundabout approach, with a bus and a learner car ringed in red beside keep clear markings", width = 1032, height = 1376 }
+phone = { src = "/assets/images/roads/iPhone2.webp", alt = "Roads by Neil Beaver on iPhone — a satellite view of a roundabout approach, with a bus and a learner car ringed in red beside keep clear markings", width = 660, height = 1434 }
+
+[[modules.list]]
+title = "Basic Roads"
+icon = "road"
+topics = ["Straight Road", "Unmarked Road", "Lanes", "Bus Lanes", "Left Bend", "Right Bend", "Sharp Left Bend", "Sharp Right Bend", "Pinch Points"]
+
+[[modules.list]]
+title = "Basic Junctions"
+icon = "junctions"
+topics = ["Side Road Left", "Side Road Right", "Open T-Junction", "Closed T-Junction", "Stop Junction", "Crossroads", "Staggered Crossroads One", "Staggered Crossroads Two", "Unmarked Crossroads"]
+
+[[modules.list]]
+title = "Pedestrian Crossings"
+icon = "crossings"
+topics = ["Zebra Crossing", "Staggered Zebra Crossing", "Pelican or Puffin Crossing", "Staggered Crossing", "Toucan Crossing", "Equestrian or Pegasus Crossing"]
+
+[[modules.list]]
+title = "Traffic Lights"
+icon = "traffic-lights"
+topics = ["Controlled Side Road Left", "Controlled Side Road Right", "Controlled T-Junction", "Controlled Crossroads", "Box Junction", "Left Filter", "Three Lanes"]
+
+[[modules.list]]
+title = "Roundabouts"
+icon = "roundabouts"
+topics = ["Roundabout Approach", "Roundabout Lanes Approach", "Small Roundabout", "Medium Roundabout", "Large Roundabout", "Spiral Roundabout", "Mini Roundabout", "Mini Roundabout T-Junction", "Double Mini Roundabout"]
+
+[[modules.list]]
+title = "Dual Carriageway"
+icon = "dual-carriageway"
+topics = ["Dual Carriageway", "Slip Road On", "Dual Carriageway Exit", "Slip Road Off", "Right Turn"]
+
+[[modules.list]]
+title = "Other"
+icon = "manoeuvres"
+topics = ["One Way Street", "Protected Right Turn", "Car Park", "Level Crossing", "Motorway", "Y-Junction", "Passing Place", "Cul De Sac", "Left Reverse", "Right Reverse"]
+
+[cta]
+heading = "Ready to transform how you teach?"
+lead = "Coming soon."
