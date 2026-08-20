@@ -24,7 +24,7 @@ full   = "Lessons by Neil Beaver"
 url    = "/lessons/"
 icon   = "/assets/images/lessons/lessons-icon.png"
 status = "On the App Store and Google Play"
-body   = "Every animated lesson briefing in one app. Nine modules covering controls, junctions, roundabouts, manoeuvres and the rest — show your learner exactly what happens, before it happens."
+body   = "Every animated lesson briefing in one app. Nine modules covering controls, junctions, roundabouts, manoeuvres, and the rest. Show your learner exactly what happens, before it happens."
 
 [[products]]
 name   = "Roads"
@@ -41,13 +41,13 @@ url    = "/lessons/guide/"
 icon   = "/assets/images/guide/l-plate.svg"
 square = true
 status = "Free · read on the web"
-body   = "The whole syllabus written out, with diagrams — fifty-six pages your learner can revise between lessons. No app, no sign-up, nothing to install."
+body   = "The whole syllabus written out, with diagrams, fifty-six pages your learner can revise between lessons. No app, no sign-up, nothing to install."
 
 [about]
 heading = "Built by a driving instructor\nfor driving instructors"
 body    = [
-  "As an ADI, I know what instructors need. I built these apps to help me do a better job. I hope they will help you too!",
-  "My original Learn to Drive, Road Board and Road Pad apps have been used by ADIs and PDIs across the UK and beyond. These new versions are rewritten from the ground up, and they work on your phone as well as your tablet. They're finally available on Android too!",
+  "As an ADI, I know what instructors need. I built these apps to help me do a better job. I hope they will help you as much as they helped me.",
+  "My original Learn to Drive, Road Board and Road Pad apps have been used by ADIs and PDIs across the UK and beyond. These new versions are rewritten from the ground up, and they work on your phone as well as your tablet. And they're finally available on Android too!",
 ]
 
 [[faq]]
