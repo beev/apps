@@ -23,7 +23,7 @@ SITE      = 'https://www.neilbeaver.com'
 # this site's referrers, to the Maps JavaScript API alone, and to a daily map
 # load quota - the quota is what bounds the cost of a scraped key, since the
 # JS API is billable. It is NOT the key the Roads app uses.
-MAPS_API_KEY = 'AIzaSyCl0ieLxi9ZgkI555zxSXkqKOmoey-mrDQ'
+MAPS_API_KEY = 'AIzaSyAeVoRW-dA5WkLP4eAGk_RPwnjGBEnNCmI'
 GUIDE_URL = '/lessons/guide'
 OUT       = 'lessons/guide'
 SRC       = 'content/guide'
