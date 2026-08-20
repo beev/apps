@@ -379,12 +379,19 @@ def siblings_nav(page, pages, tops):
     return ''.join(parts)
 
 def child_cards(page, tops, body_html):
-    """An index of the section's pages, unless the prose already links them all."""
-    kids = page.get('children') or []
-    if not kids and page['path'] == 'index':
-        kids = tops
+    """An index of the section's pages, at the foot of every section page.
+
+    Every section ends the same way, so a reader always knows where the next
+    page is. The guide home is the exception: it introduces each section in its
+    own words, and a bare list of the same links underneath would only repeat
+    itself.
+    """
+    if page['path'] == 'index':
+        kids = page.get('children') or tops
+        if all(k['url'] in body_html for k in kids): return ''
+    else:
+        kids = page.get('children') or []
     if not kids: return ''
-    if all(k['url'] in body_html for k in kids): return ''
     cards = ''.join(
         f'<li><a href="{k["url"]}"><span class="guide-cards__name">'
         f'{html.escape(k["title"])}</span></a></li>' for k in kids)
