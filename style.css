@@ -374,6 +374,12 @@ a {
   border-radius: 7px;
 }
 
+/* An L-plate is a square sign with a printed black border. The app-icon
+   rounding would cut its corners off, so it keeps its own shape. */
+.app-icon--square {
+  border-radius: 0;
+}
+
 /* ============================================================
    DEVICE DISPLAY WRAPPER
    ============================================================ */
@@ -1467,6 +1473,12 @@ details.module[open] .module__chevron {
   height: 96px;
   border-radius: 20px;
   margin-bottom: 1rem;
+}
+
+/* Same as .app-icon--square, and it has to sit after the rule above rather
+   than beside that one, or the border-radius there wins on source order. */
+.product__icon--square {
+  border-radius: 0;
 }
 
 .product__name {

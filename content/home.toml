@@ -39,6 +39,7 @@ name   = "Learn To Drive"
 full   = "Learn To Drive — the guide"
 url    = "/lessons/guide/"
 icon   = "/assets/images/guide/l-plate.svg"
+square = true
 status = "Free · read on the web"
 body   = "The whole syllabus written out, with diagrams — fifty-six pages your learner can revise between lessons. No app, no sign-up, nothing to install."
 

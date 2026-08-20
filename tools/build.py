@@ -42,7 +42,9 @@ GUIDE_NAV = ('Learn To Drive', f'{GUIDE_URL}/')
 # app's brand is its own name and icon, read from its .toml.
 BRANDS = {
     'site':  dict(name='Neil Beaver', icon=None, badges=None),
-    'guide': dict(name='Learn To Drive', badges='lessons',
+    # An L-plate is a square sign with a printed black border, so the rounding
+    # the app icons want would slice its corners off. square=True opts out.
+    'guide': dict(name='Learn To Drive', badges='lessons', square=True,
                   icon='/assets/images/guide/l-plate.svg'),
 }
 
@@ -51,7 +53,7 @@ def brand(key, apps):
     a = apps[key]
     # Header badges are for an app you can actually get; an unreleased app
     # would only be repeating its hero's Coming Soon pills up here.
-    return dict(name=a['name'], icon=a['icon'],
+    return dict(name=a['name'], icon=a['icon'], square=False,
                 badges=a['slug'] if a.get('store') else None)
 
 # Pages outside the guide that must stay in the sitemap. Their lastmod values
@@ -341,8 +343,9 @@ def nav_items(apps):
 def header(brand_key, current, apps):
     b = brand(brand_key, apps)
     NAV = nav_items(apps)
+    sq = ' app-icon--square' if b.get('square') else ''
     ic = (f'<img src="{b["icon"]}" alt="" width="32" height="32" '
-          'class="app-icon app-icon--sm">') if b['icon'] else ''
+          f'class="app-icon app-icon--sm{sq}">') if b['icon'] else ''
     # The longest matching prefix wins, so a guide page marks Learn To Drive
     # rather than Lessons, even though /lessons/ is a prefix of both.
     here = max((u for _, u in NAV if current.startswith(u)), key=len, default=None)
@@ -365,8 +368,9 @@ MARKETS = [('&#127468;&#127463;', 'United Kingdom'), ('&#127470;&#127466;', 'Ire
 
 def footer(brand_key, apps):
     b = brand(brand_key, apps)
+    sq = ' app-icon--square' if b.get('square') else ''
     ic = (f'<img src="{b["icon"]}" alt="" width="32" height="32" '
-          'class="app-icon app-icon--sm">') if b['icon'] else ''
+          f'class="app-icon app-icon--sm{sq}">') if b['icon'] else ''
     markets = ''.join(f'<li>{f}&nbsp;{n}</li>' for f, n in MARKETS)
     return f'''  <footer class="site-footer">
     <div class="container footer-inner">
@@ -646,7 +650,8 @@ def faq_blocks(faq):
 
 def home_page(home, apps):
     cards = ''.join(f'''<a class="product" href="{e(p["url"])}">
-            <img src="{e(p["icon"])}" alt="" class="product__icon" width="96" height="96">
+            <img src="{e(p["icon"])}" alt="" width="96" height="96"
+                 class="product__icon{" product__icon--square" if p.get("square") else ""}">
             <h2 class="product__name">{e(p["name"])}</h2>
             <p class="product__status">{e(p["status"])}</p>
             <p class="product__body">{e(p["body"])}</p>
