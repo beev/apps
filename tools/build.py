@@ -38,8 +38,8 @@ GUIDE_NAV = ('Learn To Drive', f'{GUIDE_URL}/')
 
 # Who a page belongs to. Only the two brands that are not apps are named here:
 # the site itself, for the home and legal pages, and the guide, which is Learn
-# To Drive under the L-plate but sells Lessons and so carries its badges. An
-# app's brand is its own name and icon, read from its .toml.
+# To Drive under the L-plate. An app's brand is its own name and icon, read
+# from its .toml.
 BRANDS = {
     'site':  dict(name='Neil Beaver', icon=None, badges=None),
     # An L-plate is a square sign with a printed black border, so the rounding
@@ -51,10 +51,7 @@ BRANDS = {
 def brand(key, apps):
     if key in BRANDS: return BRANDS[key]
     a = apps[key]
-    # Header badges are for an app you can actually get; an unreleased app
-    # would only be repeating its hero's Coming Soon pills up here.
-    return dict(name=a['name'], icon=a['icon'], square=False,
-                badges=a['slug'] if a.get('store') else None)
+    return dict(name=a['name'], icon=a['icon'], square=False)
 
 # Pages outside the guide that must stay in the sitemap. Their lastmod values
 # are kept as they are so a guide rebuild does not churn every entry.
@@ -352,14 +349,18 @@ def header(brand_key, current, apps):
     links = ''.join(
         f'<a href="{u}"{" aria-current=\"page\"" if u == here else ""}>{e(n)}</a>'
         for n, u in NAV)
-    badges = ''
-    if b['badges'] and b['badges'] in apps:
-        badges = badges_for(apps[b['badges']], ' badge-group--header')
+    # An app or the guide names itself up here; the site's own pages do not,
+    # since the home page says who this is in its own heading and repeating it
+    # in the corner is just the same words twice.
+    mark = (f'<a class="site-header__brand" href="/">{ic}'
+            f'<span>{e(b["name"])}</span></a>') if b['icon'] else ''
+    # Three slots, the outer two equal, so the nav is centred on the page
+    # whether or not there is a brand on the left or badges on the right.
     return f'''  <header class="site-header" id="site-header">
     <div class="container header-inner">
-      <a class="site-header__brand" href="/">{ic}<span>{e(b["name"])}</span></a>
+      <div class="header-inner__start">{mark}</div>
       <nav class="site-nav" aria-label="Site">{links}</nav>
-{badges and "      " + badges}
+      <div class="header-inner__end"></div>
     </div>
   </header>'''
 
