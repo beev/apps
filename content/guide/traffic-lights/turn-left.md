@@ -11,6 +11,8 @@ Turning left at traffic lights is the simplest of the light-controlled
 manoeuvres, but it carries one hazard the others do not: cyclists and
 motorcyclists coming up the nearside as you wait.
 
+![A light-controlled junction from above. Two cars wait side by side at the stop line on the approach road with the signal beside them showing red, and dotted guide lines mark the lanes across the junction.](turning-left-at-lights.webp)
+
 <!-- STUB: this page matches a lesson in the Lessons app but has not been
      written yet. It carries draft: true, so it is excluded from the sitemap
      and served with noindex, while still appearing in the section

@@ -10,6 +10,8 @@ lastmod: 2026-08-19
 A light-controlled T-junction removes the judgement needed at an unmarked one,
 but only if you read which phase applies to your lane.
 
+![A light-controlled T-junction from above. The side road meets the main road from below, where two cars wait at the stop line beside a red signal, and a second signal faces traffic on the main road.](light-controlled-t-junction.webp)
+
 <!-- STUB: this page matches a lesson in the Lessons app but has not been
      written yet. It carries draft: true, so it is excluded from the sitemap
      and served with noindex, while still appearing in the section

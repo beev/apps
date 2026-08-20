@@ -5,3 +5,6 @@ Website Learn To Drive/
 
 # Python bytecode from the tools/ scripts
 __pycache__/
+
+# Source screenshots for the guide (local reference only)
+Website New Images/

@@ -11,6 +11,8 @@ Some large junctions provide two lanes that both turn right. Choosing the
 correct one on approach matters, because changing your mind inside the junction
 is rarely possible.
 
+![A light-controlled crossroads with two right-turn lanes. Arrows painted on the approach mark the lanes as left-and-ahead, right, and right; three cars wait at the stop line, and a dashed guide line curves across the junction.](double-right-turn-lanes.webp)
+
 <!-- STUB: this page matches a lesson in the Lessons app but has not been
      written yet. It carries draft: true, so it is excluded from the sitemap
      and served with noindex, while still appearing in the section
