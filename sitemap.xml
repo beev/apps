@@ -331,7 +331,31 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.neilbeaver.com/lessons/guide/traffic-lights/double-right/</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.neilbeaver.com/lessons/guide/traffic-lights/left-filter/</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.neilbeaver.com/lessons/guide/traffic-lights/t-junction/</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.neilbeaver.com/lessons/guide/traffic-lights/turn-left/</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.neilbeaver.com/lessons/guide/traffic-lights/turn-right/</loc>
     <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

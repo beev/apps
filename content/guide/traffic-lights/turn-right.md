@@ -3,15 +3,12 @@ title: Turn Right
 path: traffic-lights/turn-right
 order: 3
 parent: traffic-lights
-draft: true
+draft: false
 lastmod: 2026-08-19
 ---
 
-Turning right at traffic lights means crossing the path of oncoming traffic,
-usually from the middle of the junction, and often deciding for yourself when
-the gap is big enough.
+When turning right with no side road on the left, there is no need to worry about leaving space for oncoming traffic turning to their right.
 
-<!-- Write the lesson here. Anything added between this note and
-     the image below appears above the diagram on the page. -->
+Even if the lanes are not marked with arrows, those going ahead would do well to stick to the left lane at this junction, to avoid getting stuck behind others waiting to turn right.
 
-![A light-controlled junction from above, with a red signal on the corner and two cars waiting at the stop line. Dotted guide lines carry the lanes across the junction towards the side road.](turning-right-at-lights.webp)
+![A light-controlled junction from above with the signal showing green. Cars are queued in two lanes on the approach road, and a side road opens to the right beyond the junction.](turning-right-at-lights.webp)

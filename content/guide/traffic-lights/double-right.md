@@ -3,15 +3,13 @@ title: Double Right
 path: traffic-lights/double-right
 order: 6
 parent: traffic-lights
-draft: true
+draft: false
 lastmod: 2026-08-19
 ---
 
-Some large junctions provide two lanes that both turn right. Choosing the
-correct one on approach matters, because changing your mind inside the junction
-is rarely possible.
+When two lanes are provided for turning right, good lane discipline must be maintained throughout the turn. Be sure to indentify the correct lane to turn into, allowing space for others turning right next to you.
 
-<!-- Write the lesson here. Anything added between this note and
-     the image below appears above the diagram on the page. -->
+There may or may not be guiding lines painted on the road to help with positioning. 
+It's helpful to be aware of the whole junction on approach, taking in as much information as possible about which lane goes where. This can help to avoid any surprises once the lights go green and everyone starts to move.
 
 ![A light-controlled crossroads with two right-turn lanes. Arrows painted on the approach mark the lanes as left-and-ahead, right, and right; three cars wait at the stop line, and a dashed guide line curves across the junction.](double-right-turn-lanes.webp)

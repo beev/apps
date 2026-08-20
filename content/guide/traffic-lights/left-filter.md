@@ -3,15 +3,16 @@ title: Left Filter
 path: traffic-lights/left-filter
 order: 5
 parent: traffic-lights
-draft: true
+draft: false
 lastmod: 2026-08-19
 ---
 
-A filter arrow gives you priority to turn while the main signal is still red.
-It applies only in the direction the arrow points, which is the part most often
-misread.
+A green light allows the the stop line to be crossed, but the give way line indicates that priority must be given to those passing from right to left in this example.
 
-<!-- Write the lesson here. Anything added between this note and
-     the image below appears above the diagram on the page. -->
+The blue car may go forward from the stop line on green, but even the left filter light does not grant prority at the give way line. 
 
-![A light-controlled junction with a separate left filter lane curving away behind a traffic island. A blue car is in the filter lane while a yellow car waits at the main stop line, with red signals on both approaches.](left-filter-lane.webp)
+This situation can seem counter-intuitive, because it is not usual to give priority to someone turning right, as in the case of the red car.
+
+It is important for the driver of the blue car to make at least one careful check before proceeding into the new road, including looking over the right shoulder if necessary to compensate for the car being angled towards the left.
+
+![A light-controlled junction with a separate left filter lane running behind a traffic island. A blue car waits in the filter lane with the filter signal beside it showing a green arrow, while a red car crosses the junction ahead.](left-filter-lane.webp)
