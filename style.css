@@ -1198,12 +1198,6 @@ details.module[open] .module__chevron {
 }
 .guide-nav__children a { font-size: 0.9rem; color: var(--color-muted); }
 .guide-nav__children a.is-current { color: #fff; }
-.guide-nav__soon {
-  font-size: 0.7rem;
-  color: var(--color-soon);
-  margin-left: 0.4rem;
-}
-
 /* From tablet up the nav is permanent, so the summary is hidden. The
    element is emitted with `open`; script.js closes it below this width. */
 @media (min-width: 900px) {
@@ -1363,13 +1357,6 @@ details.module[open] .module__chevron {
   border-color: var(--color-primary);
   color: var(--color-link);
 }
-.guide-cards__soon {
-  font-size: 0.7rem;
-  font-weight: 500;
-  color: var(--color-soon);
-  white-space: nowrap;
-}
-
 /* ---------- previous / next ---------- */
 .guide-pager {
   display: flex;

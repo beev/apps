@@ -354,9 +354,8 @@ def sidebar(page, tops):
             out.append('<ul class="guide-nav__children">')
             for c in t['children']:
                 ccls = ' class="is-current"' if c['path'] == here else ''
-                draft = '<span class="guide-nav__soon">soon</span>' if c['draft'] else ''
                 out.append(f'<li><a href="{c["url"]}"{ccls}>'
-                           f'{html.escape(c["title"])}</a>{draft}</li>')
+                           f'{html.escape(c["title"])}</a></li>')
             out.append('</ul>')
         out.append('</li>')
     out.append('</ul></nav></div></details>')
@@ -388,9 +387,7 @@ def child_cards(page, tops, body_html):
     if all(k['url'] in body_html for k in kids): return ''
     cards = ''.join(
         f'<li><a href="{k["url"]}"><span class="guide-cards__name">'
-        f'{html.escape(k["title"])}</span>'
-        + ('<span class="guide-cards__soon">Coming soon</span>' if k['draft'] else '')
-        + '</a></li>' for k in kids)
+        f'{html.escape(k["title"])}</span></a></li>' for k in kids)
     return ('<section class="guide-cards"><h2>In this section</h2>'
             f'<ul class="guide-cards__list">{cards}</ul></section>')
 
