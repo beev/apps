@@ -1415,3 +1415,80 @@ details.module[open] .module__chevron {
   .site-header .appstore-badge img { height: 34px; }
   .site-header .playstore-badge img { height: 51px; }
 }
+
+/* ==========================================================================
+   PROSE PAGES
+
+   Terms, privacy and the Road Board import guide: one narrow column of text
+   under a back-link. These lived as three near-identical <style> blocks in
+   the three files - terms and privacy differed only in their class names -
+   which meant a change to the reading column was three edits in three places.
+   ========================================================================== */
+
+.prose-page {
+  padding-block: clamp(3rem, 8vw, 6rem);
+}
+.prose-page .container {
+  max-width: 680px;
+}
+.prose-page h1 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+.prose-page .last-updated {
+  color: var(--color-muted);
+  font-size: 0.875rem;
+  margin-bottom: 2.5rem;
+}
+.prose-page h2 {
+  font-size: 1.125rem;
+  color: var(--color-primary);
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+.prose-page p {
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+.prose-page a {
+  text-decoration: underline;
+}
+/* The reset strips list markers site-wide; prose is the one place that wants
+   them back, the same way .guide-main does. */
+.prose-page ul,
+.prose-page ol {
+  color: var(--color-text);
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.prose-page ul { list-style: disc; }
+.prose-page ol { list-style: decimal; }
+.prose-page li {
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+
+.prose-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--color-muted);
+  font-size: 0.875rem;
+  margin-bottom: 2rem;
+}
+.prose-back:hover {
+  color: var(--color-primary);
+}
+
+/* The import guide's caution notice - the one thing not shared by all three. */
+.import-warning {
+  background: var(--color-primary-dim);
+  border-left: 3px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1.5rem;
+}
+.import-warning p {
+  margin-bottom: 0;
+}
