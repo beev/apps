@@ -58,6 +58,37 @@ def watch():
             last = snapshot()
 
 class Handler(http.server.SimpleHTTPRequestHandler):
+    """Serve with GitHub Pages' URL rules rather than plain file semantics.
+
+    Pages resolves /privacy to privacy.html, and redirects /lessons/guide to
+    the trailing-slash form. The stdlib handler does the redirect but not the
+    extensionless lookup, so every address this site actually publishes -
+    /privacy, /terms, /import - used to 404 in the preview while working in
+    production. The convention is that addresses are written without .html,
+    so the preview has to understand them or it cannot test the real links.
+    """
+    def send_head(self):
+        path = self.path.partition('?')[0]
+        target = self.translate_path(path)
+        if not os.path.exists(target) and os.path.isfile(target + '.html'):
+            head, sep, query = self.path.partition('?')
+            self.path = head + '.html' + sep + query
+        return super().send_head()
+
+    def send_error(self, code, message=None, explain=None):
+        """Serve 404.html for misses, as Pages does, so it gets exercised."""
+        page = os.path.join(ROOT, '404.html')
+        if code == 404 and os.path.isfile(page):
+            body = open(page, 'rb').read()
+            self.send_response(404)
+            self.send_header('Content-Type', 'text/html; charset=utf-8')
+            self.send_header('Content-Length', str(len(body)))
+            self.end_headers()
+            if self.command != 'HEAD':
+                self.wfile.write(body)
+            return
+        super().send_error(code, message, explain)
+
     def end_headers(self):
         # otherwise a rebuilt page can sit in the browser cache
         self.send_header('Cache-Control', 'no-store')
@@ -69,5 +100,5 @@ if __name__ == '__main__':
     build()
     threading.Thread(target=watch, daemon=True).start()
     handler = functools.partial(Handler, directory=ROOT)
-    print(f"\n  http://localhost:{PORT}/lessons/guide/\n  watching {', '.join(WATCH)} — Ctrl-C to stop\n")
+    print(f"\n  http://localhost:{PORT}/\n  watching {', '.join(WATCH)} — Ctrl-C to stop\n")
     http.server.ThreadingHTTPServer(('', PORT), handler).serve_forever()
