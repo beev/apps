@@ -3,15 +3,16 @@ title: Turn Left
 path: traffic-lights/turn-left
 order: 2
 parent: traffic-lights
-draft: true
+draft: false
 lastmod: 2026-08-19
 ---
 
-Turning left at traffic lights is the simplest of the light-controlled
-manoeuvres, but it carries one hazard the others do not: cyclists and
-motorcyclists coming up the nearside as you wait.
+Although the default position for going ahead is on the left, be aware of situations in which it makes more sense to position towards the right. 
 
-<!-- Write the lesson here. Anything added between this note and
-     the image below appears above the diagram on the page. -->
+Where there is a side road on the left only, lanes can be used to keep traffic flowing efficiently. The right lane can be used for going ahead, leaving the left lane clear for those proceeding on the filter light.
 
-![A light-controlled junction from above. Two cars wait side by side at the stop line on the approach road with the signal beside them showing red, and dotted guide lines mark the lanes across the junction.](turning-left-at-lights.webp)
+When the left filter light goes off and only the round light is showing, all traffic is allowed to proceed, including those turning left.
+
+Always be aware of cyclists and other road users when turning.
+
+![A light-controlled junction from above. Two cars wait side by side at the stop line on the approach road with the signal beside them showing red.](turning-left-at-lights.webp)
