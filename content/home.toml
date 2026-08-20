@@ -1,0 +1,82 @@
+# The home page.
+#
+# The apps and the guide each have their own page; this one says who Neil
+# Beaver is, points at the three of them, and carries the FAQ - which covers
+# both apps and so belongs on neither app page. Its structured data is the
+# only place FAQPage appears on the site: the same questions repeated on two
+# pages would be duplicate markup for one set of answers.
+
+title       = "Neil Beaver — Teaching Aids for Driving Instructors"
+description = "Animated lesson briefings and road layout teaching aids for driving instructors, on Android, iPhone and iPad — plus a free written guide for learner drivers."
+og_image    = "/assets/images/og-lessons.png"
+
+faq_heading = "Frequently asked questions"
+
+[hero]
+heading    = "Teaching aids for driving instructors."
+subheading = "Built by an instructor, for instructors. Two apps for the front of the car and a free written guide for your learners between lessons."
+
+# The three things the site is for. Order is deliberate: the shipped app
+# first, then the one coming, then the free guide.
+[[products]]
+name   = "Lessons"
+full   = "Lessons by Neil Beaver"
+url    = "/lessons/"
+icon   = "/assets/images/lessons/lessons-icon.png"
+status = "On the App Store and Google Play"
+body   = "Every animated lesson briefing in one app. Nine modules covering controls, junctions, roundabouts, manoeuvres and the rest — show your learner exactly what happens, before it happens."
+
+[[products]]
+name   = "Roads"
+full   = "Roads by Neil Beaver"
+url    = "/roads/"
+icon   = "/assets/images/roads/roads-icon.png"
+status = "Coming soon"
+body   = "Draw any road situation as it comes up. More than fifty pre-drawn layouts, plus Google Maps satellite imagery so you can teach the junction you are actually parked at."
+
+[[products]]
+name   = "Learn To Drive"
+full   = "Learn To Drive — the guide"
+url    = "/lessons/guide/"
+icon   = "/assets/images/guide/l-plate.svg"
+status = "Free · read on the web"
+body   = "The whole syllabus written out, with diagrams — fifty-six pages your learner can revise between lessons. No app, no sign-up, nothing to install."
+
+[about]
+heading = "Built by a driving instructor\nfor driving instructors"
+body    = [
+  "I am a driving instructor. Every diagram in these apps started life on a notepad in the passenger seat, drawn for a learner who needed to see the thing rather than hear about it again.",
+  "The original Learn to Drive apps have been used by ADIs and PDIs across the UK, Ireland, Cyprus and Malta. These new versions are rewritten from the ground up, and they work on your phone as well as your tablet.",
+]
+
+[[faq]]
+q = "We've been waiting… What took you so long?"
+a = "A multitude of technical complexities and the prioritisation of family and health over work. It's taken a few years to get things back on track, and I apologise for that. The new apps have been re-written from the ground up in a different programming language to allow for cross-platform compatibility. The images are the same, but not a single line of the original code remains in the new versions."
+
+[[faq]]
+q = "Are you going to update your old apps?"
+a = "No. These are gradually being rendered obsolete by Apple's never-ending system updates. I wanted to get these new versions made before the old ones completely disappear."
+
+[[faq]]
+q = "Why subscription? Your old apps only required a one-off payment."
+a = "Yes, those were the good old days 😁 Something I learned the hard way: as apps age, they require ongoing work — while sales steadily decline. This makes the business model unsustainable. When I first realised this, I resisted going subscription-only because I didn't want to inflict it on my customers. When I realised I was just delaying the inevitable, that's when I got things properly moving forward again."
+
+[[faq]]
+q = "What about Road Pad and Road Board?"
+a = "These are currently being redeveloped and are coming soon."
+
+[[faq]]
+q = "How can I import my saved files from Road Board to Roads?"
+a = "Have a look [here](/import) for the full instructions."
+
+[[faq]]
+q = "What about Routes and DL25 — Mock Test?"
+a = "It's on my to do list to revisit these apps and see if I can bring them more up-to-date."
+
+[[faq]]
+q = "What about Android?"
+a = "Lessons is now available on the Google Play Store.\nRoads will be arriving soon."
+
+[[faq]]
+q = "Will my subscription work across iOS and Android?"
+a = "Unfortunately, it is not possible to make the same subscription work across the two different platforms."

@@ -3,50 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lessons &amp; Roads by Neil Beaver — Driving Instructor Teaching Aids</title>
-  <meta name="description" content="Neil Beaver's teaching aid apps for driving instructors. Lessons: animated Learn to Drive briefings. Roads: Road Board and Road Pad rebuilt. Android, iPhone and iPad.">
-
-  <!-- Google Search Console ownership verification. Must stay on the live
-       homepage — removing it un-verifies the property. -->
-  <meta name="google-site-verification" content="ftGvtdA16fvx6lBJQdFA9hr3gUy0wjTvugK0GFxUl-o" />
-
-  <!-- ============================================================
-       CANONICAL & SOCIAL
-
-       SITE BASE URL is https://www.neilbeaver.com/ — the www hostname is
-       canonical, and the bare domain 301s to it at the registrar. Keep
-       every absolute URL here on www; mixing the two splits the ranking
-       signal between them.
-
-       If the base URL ever changes again, it appears in *.html,
-       robots.txt and sitemap.xml. Change it only once the new host
-       actually resolves — a canonical pointing at a dead host will
-       deindex the site.
-       ============================================================ -->
+  <title>Neil Beaver — Teaching Aids for Driving Instructors</title>
+  <meta name="description" content="Animated lesson briefings and road layout teaching aids for driving instructors, on Android, iPhone and iPad — plus a free written guide for learner drivers.">
+  <meta name="google-site-verification" content="ftGvtdA16fvx6lBJQdFA9hr3gUy0wjTvugK0GFxUl-o">
   <link rel="canonical" href="https://www.neilbeaver.com/">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Neil Beaver">
   <meta property="og:locale" content="en_GB">
   <meta property="og:url" content="https://www.neilbeaver.com/">
-  <meta property="og:title" content="Lessons &amp; Roads by Neil Beaver — Driving Instructor Teaching Aids">
-  <meta property="og:description" content="Animated lesson diagrams and road layout teaching aids for driving instructors. Android, iPhone and iPad. Available in the UK, Ireland, Cyprus and Malta.">
+  <meta property="og:title" content="Neil Beaver — Teaching Aids for Driving Instructors">
+  <meta property="og:description" content="Animated lesson briefings and road layout teaching aids for driving instructors, on Android, iPhone and iPad — plus a free written guide for learner drivers.">
   <meta property="og:image" content="https://www.neilbeaver.com/assets/images/og-lessons.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Lessons by Neil Beaver — animated driving lesson diagrams, shown on an iPad.">
-
+  <meta property="og:image:alt" content="Neil Beaver — Teaching Aids for Driving Instructors">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Lessons &amp; Roads by Neil Beaver">
-  <meta name="twitter:description" content="Animated lesson diagrams and road layout teaching aids for driving instructors. Android, iPhone and iPad.">
+  <meta name="twitter:title" content="Neil Beaver — Teaching Aids for Driving Instructors">
+  <meta name="twitter:description" content="Animated lesson briefings and road layout teaching aids for driving instructors, on Android, iPhone and iPad — plus a free written guide for learner drivers.">
   <meta name="twitter:image" content="https://www.neilbeaver.com/assets/images/og-lessons.png">
 
   <meta name="theme-color" content="#1A3A5C">
-  <link rel="preload" as="image" href="/assets/images/lessons/iPad1.webp" fetchpriority="high">
-  <!--
-    Analytics: add your tracking script here if needed.
-    Example: Google Analytics, Fathom, Plausible, etc.
-  -->
   <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
@@ -54,1300 +31,150 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-
-  <!-- ============================================================
-       SVG SPRITE — shared icon definitions (visually hidden)
-       ============================================================ -->
+  <a class="skip-link" href="#main">Skip to content</a>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="icon-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="4,6 8,10 12,6"/>
-    </symbol>
-  </svg>
-
-  <!-- ============================================================
-       STICKY HEADER
-       ============================================================ -->
+  <symbol id="icon-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,6 8,10 12,6"/></symbol>
+  <symbol id="icon-controls" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/> <circle cx="12" cy="12" r="2.5"/> <line x1="12" y1="14.5" x2="12" y2="21"/> <line x1="3" y1="12" x2="9.5" y2="12"/> <line x1="14.5" y1="12" x2="21" y2="12"/></symbol>
+  <symbol id="icon-crossings" viewBox="0 0 24 24"><circle cx="12" cy="9" r="7" fill="#E8B84B"/> <line x1="12" y1="16" x2="12" y2="22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></symbol>
+  <symbol id="icon-dual-carriageway" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><g transform="rotate(90 12 12)"> <line x1="2" y1="6" x2="22" y2="6"/> <line x1="2" y1="18" x2="22" y2="18"/> <polyline points="17,2 22,6 17,10" stroke-linejoin="round"/> <polyline points="7,14 2,18 7,22" stroke-linejoin="round"/> </g></symbol>
+  <symbol id="icon-instructors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/> <circle cx="9" cy="7" r="4"/> <path d="M23 21v-2a4 4 0 0 0-3-3.87"/> <path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="icon-junctions" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 22 L14 14 L22 14"/> <path d="M10 22 L10 14 L2 14"/> <path d="M14 2 L14 10 L22 10"/> <path d="M10 2 L10 10 L2 10"/></symbol>
+  <symbol id="icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/> <rect x="14" y="3" width="7" height="7"/> <rect x="3" y="14" width="7" height="7"/> <rect x="14" y="14" width="7" height="7"/></symbol>
+  <symbol id="icon-manoeuvres" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12 Q3 5 12 5 L12 2 L17 7 L12 12 L12 9 Q7 9 7 12 L7 21"/></symbol>
+  <symbol id="icon-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/> <polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="icon-road" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 L6 22"/> <path d="M18 2 L18 22"/> <line x1="12" y1="2" x2="12" y2="6"/> <line x1="12" y1="9" x2="12" y2="13"/> <line x1="12" y1="16" x2="12" y2="20"/></symbol>
+  <symbol id="icon-roundabouts" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.6 3.1 A9 9 0 0 1 21 12" stroke-width="2.5"/> <polyline points="18.2,8.6 21,12 21.7,7.7"/> <path d="M18.9 17.8 A9 9 0 0 1 7.5 19.8" stroke-width="2.5"/> <polyline points="11.8,19.1 7.5,19.8 10.9,22.6"/> <path d="M3.5 15.1 A9 9 0 0 1 7.5 4.2" stroke-width="2.5"/> <polyline points="5.9,8.3 7.5,4.2 3.4,5.8"/></symbol>
+  <symbol id="icon-satellite" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(45 12 12)"> <rect x="-1" y="8" width="8" height="8"/> <line x1="3" y1="8" x2="3" y2="16"/> <rect x="17" y="8" width="8" height="8"/> <line x1="21" y1="8" x2="21" y2="16"/> <line x1="7" y1="12" x2="17" y2="12"/> <circle cx="12" cy="12" r="2.5"/> </g></symbol>
+  <symbol id="icon-stopping" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="miter"><polygon points="8.5,2.5 15.5,2.5 21.5,8.5 21.5,15.5 15.5,21.5 8.5,21.5 2.5,15.5 2.5,8.5"/></symbol>
+  <symbol id="icon-traffic-lights" viewBox="0 0 24 24"><rect x="5" y="1" width="14" height="22" rx="3" fill="none" stroke="currentColor" stroke-width="2"/> <circle cx="12" cy="7" r="3" fill="#E8B84B"/> <circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.4"/> <circle cx="12" cy="17" r="3" fill="#30A46C"/></symbol>
+</svg>
   <header class="site-header" id="site-header">
     <div class="container header-inner">
-
-      <!-- ============================================================
-           Lessons is the default tab; the Roads sections carry `hidden`
-           in the markup and are revealed by script.js on tab click.
-
-           Lessons is live on both stores. Roads has no listing on either
-           store yet, so its badges are the non-interactive "Coming Soon"
-           variants — swap them for the real badges (same markup as the
-           Lessons hero) once it ships.
-           ============================================================ -->
-      <nav class="app-tabs" role="tablist" aria-label="Choose app">
-        <button type="button" class="app-tabs__tab is-active" role="tab" aria-selected="true" data-app="lessons">
-          <img src="/assets/images/lessons/lessons-icon.png"
-               alt=""
-               class="app-tabs__icon"
-               width="28" height="28">
-          <span class="app-tabs__label">Lessons</span>
-        </button>
-        <button type="button" class="app-tabs__tab" role="tab" aria-selected="false" data-app="roads">
-          <img src="/assets/images/roads/roads-icon.png"
-               alt=""
-               class="app-tabs__icon"
-               width="28" height="28">
-          <span class="app-tabs__label">Roads</span>
-        </button>
-      </nav>
-
-      <!-- <a href="#appstore-link" class="btn btn--primary btn--sm">Download for iOS</a> -->
+      <a class="site-header__brand" href="/"><span>Neil Beaver</span></a>
+      <nav class="site-nav" aria-label="Site"><a href="/lessons/">Lessons</a><a href="/roads/">Roads</a><a href="/lessons/guide/">Learn To Drive</a></nav>
 
     </div>
   </header>
-
-  <main>
-
-    <!-- ============================================================
-         HERO
-         ============================================================ -->
-    <section id="hero-lessons" class="hero app-view" data-app="lessons">
-      <div class="container hero-inner">
-
-        <div class="hero-content">
-          <h1 class="hero-heading">All your animated lesson&nbsp;briefings, in one&nbsp;app.</h1>
-          <p class="hero-subheading">
-            Finally back, and better than ever. Neil Beaver's Learn to Drive series has been completely rewritten from the ground up. All bundled into a single app. At last, available on Android and iPhone as well as iPad.
-          </p>
-
-          <div class="badge-group">
-
-            <!-- Apple's official App Store badge (image served from Apple's CDN). -->
-            <a href="https://apps.apple.com/gb/app/lessons-by-neil-beaver/id6768265585?itscg=30200&itsct=apps_box_badge&mttnsubad=6768265585"
-               class="appstore-badge" id="appstore-link">
-              <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1781222400"
-                   alt="Download Lessons by Neil Beaver on the App Store"
-                   width="120" height="40" decoding="async" />
-            </a>
-
-            <!-- Google's official Play badge, self-hosted as their brand
-                 guidelines require (no supported hotlink CDN, unlike Apple).
-                 The artwork bakes in its own mandatory clear space, hence the
-                 taller render — see .playstore-badge in style.css. -->
-            <a href="https://play.google.com/store/apps/details?id=com.neilbeaver.lessons"
-               class="playstore-badge" id="play-link">
-              <img src="/assets/images/google-play-badge.png"
-                   alt="Get Lessons by Neil Beaver on Google Play"
-                   width="646" height="250" decoding="async" />
-            </a>
-
-          </div>
-
-          <p class="hero-markets">
-            Available in:&ensp;<span class="hero-markets__countries">
-              <span class="market">&#127468;&#127463;&thinsp;UK</span>
-              <span class="market">&#127470;&#127466;&thinsp;Ireland</span>
-              <span class="market">&#127464;&#127486;&thinsp;Cyprus</span>
-              <span class="market">&#127474;&#127481;&thinsp;Malta</span>
-            </span>
-          </p>
-        </div>
-
-        <div class="hero-device">
-          <div class="device-display">
-
-            <div class="device-switcher" role="group" aria-label="Switch device preview">
-              <button class="device-switcher__btn is-active" data-device="tablet" aria-pressed="true">
-                <svg viewBox="0 0 14 18" width="11" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <rect x="1" y="1" width="12" height="16" rx="2"/>
-                  <circle cx="7" cy="14.5" r="0.8" fill="currentColor" stroke="none"/>
-                </svg>
-                Tablet
-              </button>
-              <button class="device-switcher__btn" data-device="phone" aria-pressed="false">
-                <svg viewBox="0 0 10 18" width="8" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <rect x="1" y="1" width="8" height="16" rx="2.5"/>
-                  <line x1="3.5" y1="15" x2="6.5" y2="15"/>
-                </svg>
-                Phone
-              </button>
-            </div>
-
-            <div class="device-view device-view--tablet">
-              <div class="ipad-mockup ipad-mockup--portrait">
-                <div class="ipad-mockup__shell">
-                  <div class="ipad-mockup__camera" aria-hidden="true"></div>
-                  <div class="ipad-mockup__screen">
-                    <img src="/assets/images/lessons/iPad1.webp"
-                         alt="Lessons by Neil Beaver running on an iPad, showing an animated spiral roundabout lesson diagram"
-                         class="ipad-mockup__screenshot"
-                         width="1032" height="1376"
-                         fetchpriority="high" decoding="async">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="device-view device-view--phone" hidden>
-              <div class="iphone-mockup">
-                <div class="iphone-mockup__shell">
-                  <div class="iphone-mockup__screen">
-                    <img src="/assets/images/lessons/iPhone1.webp"
-                         alt="Lessons by Neil Beaver running on an iPhone, showing an animated spiral roundabout lesson diagram"
-                         class="iphone-mockup__screenshot"
-                         width="660" height="1434"
-                         loading="lazy" decoding="async">
-                  </div>
-                  <div class="iphone-mockup__home-bar" aria-hidden="true"></div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ============================================================
-         ROADS — HERO. Roads has no store listing yet, so both badges
-         below are the non-interactive "Coming Soon" variants.
-         ============================================================ -->
-    <section id="hero-roads" class="hero app-view" data-app="roads" hidden>
-      <div class="container hero-inner">
-
-        <div class="hero-content">
-          <h1 class="hero-heading">Any&nbsp;situation, any&nbsp;time.</h1>
-          <p class="hero-subheading">
-            Finally back, and better than ever. Neil Beaver's Road Board and Road Pad apps have been completely rewritten and combined into a single app by popular demand. Now available on the iPhone as well as the iPad.
-          </p>
-
-          <div class="badge-group">
-
-            <!-- Roads isn't live yet — swap this for the real Apple badge (same markup
-                 as the Lessons hero above) once Roads has an App Store listing. -->
-            <span class="badge badge--appstore badge--disabled" aria-label="Download on the App Store — Coming Soon">
-              <span class="badge__icon" aria-hidden="true">
-                <svg viewBox="0 0 384 512" width="20" height="20" fill="currentColor" aria-hidden="true">
-                  <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
-                </svg>
-              </span>
-              <span class="badge__text">
-                <span class="badge__eyebrow">Coming Soon to</span>
-                <span class="badge__title">App Store</span>
-              </span>
-            </span>
-
-            <!-- Google Play — Coming Soon (non-interactive) -->
-            <span class="badge badge--play badge--disabled" aria-label="Get it on Google Play — Coming Soon">
-              <span class="badge__icon" aria-hidden="true">
-                <svg viewBox="0 0 512 512" width="20" height="20" fill="currentColor" aria-hidden="true">
-                  <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c17.4-9.8 17.4-36 0-46.7l-1.2.9zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/>
-                </svg>
-              </span>
-              <span class="badge__text">
-                <span class="badge__eyebrow">Coming Soon to</span>
-                <span class="badge__title">Google Play</span>
-              </span>
-            </span>
-
-          </div>
-
-          <p class="hero-markets">
-            Available in:&ensp;<span class="hero-markets__countries">
-              <span class="market">&#127468;&#127463;&thinsp;UK</span>
-              <span class="market">&#127470;&#127466;&thinsp;Ireland</span>
-              <span class="market">&#127464;&#127486;&thinsp;Cyprus</span>
-              <span class="market">&#127474;&#127481;&thinsp;Malta</span>
-            </span>
-          </p>
-        </div>
-
-        <div class="hero-device">
-          <div class="device-display">
-
-            <div class="device-switcher" role="group" aria-label="Switch device preview">
-              <button class="device-switcher__btn is-active" data-device="tablet" aria-pressed="true">
-                <svg viewBox="0 0 14 18" width="11" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <rect x="1" y="1" width="12" height="16" rx="2"/>
-                  <circle cx="7" cy="14.5" r="0.8" fill="currentColor" stroke="none"/>
-                </svg>
-                Tablet
-              </button>
-              <button class="device-switcher__btn" data-device="phone" aria-pressed="false">
-                <svg viewBox="0 0 10 18" width="8" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <rect x="1" y="1" width="8" height="16" rx="2.5"/>
-                  <line x1="3.5" y1="15" x2="6.5" y2="15"/>
-                </svg>
-                Phone
-              </button>
-            </div>
-
-            <div class="device-view device-view--tablet">
-              <div class="ipad-mockup ipad-mockup--portrait">
-                <div class="ipad-mockup__shell">
-                  <div class="ipad-mockup__camera" aria-hidden="true"></div>
-                  <div class="ipad-mockup__screen">
-                    <img src="/assets/images/roads/iPad1.webp"
-                         alt="Roads by Neil Beaver running on an iPad, showing a detailed road layout diagram"
-                         class="ipad-mockup__screenshot"
-                         width="1032" height="1376"
-                         loading="lazy" decoding="async">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="device-view device-view--phone" hidden>
-              <div class="iphone-mockup">
-                <div class="iphone-mockup__shell">
-                  <div class="iphone-mockup__screen">
-                    <img src="/assets/images/roads/iPhone1.webp"
-                         alt="Roads by Neil Beaver running on an iPhone, showing a detailed road layout diagram"
-                         class="iphone-mockup__screenshot"
-                         width="660" height="1434"
-                         loading="lazy" decoding="async">
-                  </div>
-                  <div class="iphone-mockup__home-bar" aria-hidden="true"></div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ============================================================
-         ABOUT / WHY THIS APP
-         ============================================================ -->
-    <section id="about-lessons" class="about app-view" data-app="lessons">
+  <main id="main">
+    <section class="home-hero">
       <div class="container">
+        <h1>Teaching aids for driving instructors.</h1>
+        <p class="home-hero__sub">Built by an instructor, for instructors. Two apps for the front of the car and a free written guide for your learners between lessons.</p>
+      </div>
+    </section>
 
-        <div class="about-icon-wrap">
-          <img src="/assets/images/lessons/lessons-icon.png"
-               alt="Lessons by Neil Beaver"
-               class="app-icon app-icon--lg"
-               width="120" height="120">
-        </div>
+    <section class="products">
+      <div class="container">
+        <div class="products__grid"><a class="product" href="/lessons/">
+            <img src="/assets/images/lessons/lessons-icon.png" alt="" class="product__icon" width="96" height="96">
+            <h2 class="product__name">Lessons</h2>
+            <p class="product__status">On the App Store and Google Play</p>
+            <p class="product__body">Every animated lesson briefing in one app. Nine modules covering controls, junctions, roundabouts, manoeuvres and the rest — show your learner exactly what happens, before it happens.</p>
+            <span class="product__more">Find out more</span>
+          </a><a class="product" href="/roads/">
+            <img src="/assets/images/roads/roads-icon.png" alt="" class="product__icon" width="96" height="96">
+            <h2 class="product__name">Roads</h2>
+            <p class="product__status">Coming soon</p>
+            <p class="product__body">Draw any road situation as it comes up. More than fifty pre-drawn layouts, plus Google Maps satellite imagery so you can teach the junction you are actually parked at.</p>
+            <span class="product__more">Find out more</span>
+          </a><a class="product" href="/lessons/guide/">
+            <img src="/assets/images/guide/l-plate.svg" alt="" class="product__icon" width="96" height="96">
+            <h2 class="product__name">Learn To Drive</h2>
+            <p class="product__status">Free · read on the web</p>
+            <p class="product__body">The whole syllabus written out, with diagrams — fifty-six pages your learner can revise between lessons. No app, no sign-up, nothing to install.</p>
+            <span class="product__more">Find out more</span>
+          </a></div>
+      </div>
+    </section>
 
+    <section class="about">
+      <div class="container">
         <div class="section-intro">
-          <h2>Built by a driving instructor<br />for driving instructors</h2>
-          <p>A professional teaching tool — show your learner exactly what happens, before it happens.</p>
+          <h2>Built by a driving instructor<br>for driving instructors</h2>
         </div>
-
-        <div class="cards">
-
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/>
-              </svg>
-            </div>
-            <h3>Animated diagrams</h3>
-            <p>Every lesson is animated — showing road position, routines, signals, blindspots, other road users, the lot!</p>
-          </div>
-
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="7" height="7"/>
-                <rect x="14" y="3" width="7" height="7"/>
-                <rect x="3" y="14" width="7" height="7"/>
-                <rect x="14" y="14" width="7" height="7"/>
-              </svg>
-            </div>
-            <h3>One app, every topic</h3>
-            <p>Previously sold separately. Now every component is bundled together in one big, easy-to-navigate app.</p>
-          </div>
-
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                <circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-              </svg>
-            </div>
-            <h3>Designed for instructors</h3>
-            <p>Tried and tested by ADIs and PDIs across the UK. Works on your phone or tablet for lesson briefings and debriefs.</p>
-          </div>
-
-        </div>
+        <div class="home-about__body"><p>I am a driving instructor. Every diagram in these apps started life on a notepad in the passenger seat, drawn for a learner who needed to see the thing rather than hear about it again.</p><p>The original Learn to Drive apps have been used by ADIs and PDIs across the UK, Ireland, Cyprus and Malta. These new versions are rewritten from the ground up, and they work on your phone as well as your tablet.</p></div>
       </div>
     </section>
 
-    <!-- ============================================================
-         ROADS — ABOUT
-         ============================================================ -->
-    <section id="about-roads" class="about app-view" data-app="roads" hidden>
+    <section class="faq" id="faq">
       <div class="container">
-
-        <div class="about-icon-wrap">
-          <img src="/assets/images/roads/roads-icon.png"
-               alt="Roads by Neil Beaver"
-               class="app-icon app-icon--lg"
-               width="120" height="120">
-        </div>
-
-        <div class="section-intro">
-          <h2>Built by a driving instructor<br />for driving instructors</h2>
-          <p>A professional teaching tool — any situation illustrated, in detail.</p>
-        </div>
-
-        <div class="cards">
-
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6 2 L6 22"/>
-                <path d="M18 2 L18 22"/>
-                <line x1="12" y1="2" x2="12" y2="6"/>
-                <line x1="12" y1="9" x2="12" y2="13"/>
-                <line x1="12" y1="16" x2="12" y2="20"/>
-              </svg>
-            </div>
-            <h3>Pre-drawn backgrounds</h3>
-            <p>More than 50 pre-drawn, common road situations are included for quick and detailed explanations.</p>
-          </div>
-
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <g transform="rotate(45 12 12)">
-                  <rect x="-1" y="8" width="8" height="8"/>
-                  <line x1="3" y1="8" x2="3" y2="16"/>
-                  <rect x="17" y="8" width="8" height="8"/>
-                  <line x1="21" y1="8" x2="21" y2="16"/>
-                  <line x1="7" y1="12" x2="17" y2="12"/>
-                  <circle cx="12" cy="12" r="2.5"/>
-                </g>
-              </svg>
-            </div>
-            <h3>Detailed satellite images</h3>
-            <p>Google Maps satellite images are used to provide the best quality images with the highest level of detail.</p>
-          </div>
-
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                <circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-              </svg>
-            </div>
-            <h3>Designed for instructors</h3>
-            <p>Tried and tested by ADIs and PDIs across the UK. Works on your phone or tablet, any time, any situation.</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         LESSON MODULES
-         ============================================================ -->
-    <section id="content-lessons" class="modules app-view" data-app="lessons">
-      <div class="container">
-
-        <div class="section-intro">
-          <h2>Everything your learner needs to see</h2>
-          <p>Browse available modules — tap any category to expand.</p>
-          <p>Every module is also written up in full in the free
-            <a href="/lessons/guide/">Learn To Drive guide</a>.</p>
-        </div>
-
-        <div class="modules-layout">
-
-          <div class="modules-list">
-
-            <details class="module">
-              <summary class="module__header">
-                <svg class="module__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-                  <circle cx="12" cy="12" r="9"/>
-                  <circle cx="12" cy="12" r="2.5"/>
-                  <line x1="12" y1="14.5" x2="12" y2="21"/>
-                  <line x1="3" y1="12" x2="9.5" y2="12"/>
-                  <line x1="14.5" y1="12" x2="21" y2="12"/>
-                </svg>
-                <span class="module__title">Controls</span>
-                <span class="module__count">8 topics</span>
-                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
-              </summary>
-              <ul class="module__topics">
-                <li>Cockpit Drill</li>
-                <li>Vision</li>
-                <li>Handbrake</li>
-                <li>Pedals</li>
-                <li>Clutch</li>
-                <li>Gears</li>
-                <li>Steering</li>
-                <li>Signals</li>
-              </ul>
-            </details>
-
-            <details class="module">
-              <summary class="module__header">
-                <svg class="module__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M6 2 L6 22"/>
-                  <path d="M18 2 L18 22"/>
-                  <line x1="12" y1="2" x2="12" y2="6"/>
-                  <line x1="12" y1="9" x2="12" y2="13"/>
-                  <line x1="12" y1="16" x2="12" y2="20"/>
-                </svg>
-                <span class="module__title">Position</span>
-                <span class="module__count">5 topics</span>
-                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
-              </summary>
-              <ul class="module__topics">
-                <li>Move Off &amp; Stop</li>
-                <li>Obstacles</li>
-                <li>Space &amp; Speed</li>
-                <li>Lanes</li>
-                <li>Bends</li>
-              </ul>
-            </details>
-
-            <details class="module">
-              <summary class="module__header">
-                <svg class="module__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="miter" aria-hidden="true">
-                  <polygon points="8.5,2.5 15.5,2.5 21.5,8.5 21.5,15.5 15.5,21.5 8.5,21.5 2.5,15.5 2.5,8.5"/>
-                </svg>
-                <span class="module__title">Stopping</span>
-                <span class="module__count">4 topics</span>
-                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
-              </summary>
-              <ul class="module__topics">
-                <li>Distance</li>
-                <li>Planning</li>
-                <li>Skidding</li>
-                <li>Controlled Stop</li>
-              </ul>
-            </details>
-
-            <details class="module">
-              <summary class="module__header">
-                <svg class="module__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M3 12 Q3 5 12 5 L12 2 L17 7 L12 12 L12 9 Q7 9 7 12 L7 21"/>
-                </svg>
-                <span class="module__title">Manoeuvres</span>
-                <span class="module__count">3 topics</span>
-                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
-              </summary>
-              <ul class="module__topics">
-                <li>Pull Up &amp; Reverse</li>
-                <li>Parallel Park</li>
-                <li>Bay Park</li>
-              </ul>
-            </details>
-
-            <details class="module">
-              <summary class="module__header">
-                <svg class="module__icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-                  <circle cx="12" cy="9" r="7" fill="#E8B84B"/>
-                  <line x1="12" y1="16" x2="12" y2="22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-                </svg>
-                <span class="module__title">Pedestrian Crossings</span>
-                <span class="module__count">4 topics</span>
-                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
-              </summary>
-              <ul class="module__topics">
-                <li>Zebra</li>
-                <li>Pelican</li>
-                <li>Puffin</li>
-                <li>More</li>
-              </ul>
-            </details>
-
-            <details class="module">
-              <summary class="module__header">
-                <svg class="module__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M14 22 L14 14 L22 14"/>
-                  <path d="M10 22 L10 14 L2 14"/>
-                  <path d="M14 2 L14 10 L22 10"/>
-                  <path d="M10 2 L10 10 L2 10"/>
-                </svg>
-                <span class="module__title">Junctions</span>
-                <span class="module__count">4 topics</span>
-                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
-              </summary>
-              <ul class="module__topics">
-                <li>Turn Left</li>
-                <li>Turn Right</li>
-                <li>Emerge</li>
-                <li>Crossroads</li>
-              </ul>
-            </details>
-
-            <details class="module">
-              <summary class="module__header">
-                <svg class="module__icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-                  <rect x="5" y="1" width="14" height="22" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
-                  <circle cx="12" cy="7" r="3" fill="#E8B84B"/>
-                  <circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
-                  <circle cx="12" cy="17" r="3" fill="#30A46C"/>
-                </svg>
-                <span class="module__title">Traffic Lights</span>
-                <span class="module__count">6 topics</span>
-                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
-              </summary>
-              <ul class="module__topics">
-                <li>Crossroads</li>
-                <li>Turn Left</li>
-                <li>Turn Right</li>
-                <li>T-Junction</li>
-                <li>Left Filter</li>
-                <li>Double Right</li>
-              </ul>
-            </details>
-
-            <details class="module">
-              <summary class="module__header">
-                <svg class="module__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M13.6 3.1 A9 9 0 0 1 21 12" stroke-width="2.5"/>
-                  <polyline points="18.2,8.6 21,12 21.7,7.7"/>
-                  <path d="M18.9 17.8 A9 9 0 0 1 7.5 19.8" stroke-width="2.5"/>
-                  <polyline points="11.8,19.1 7.5,19.8 10.9,22.6"/>
-                  <path d="M3.5 15.1 A9 9 0 0 1 7.5 4.2" stroke-width="2.5"/>
-                  <polyline points="5.9,8.3 7.5,4.2 3.4,5.8"/>
-                </svg>
-                <span class="module__title">Roundabouts</span>
-                <span class="module__count">5 topics</span>
-                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
-              </summary>
-              <ul class="module__topics">
-                <li>Mini</li>
-                <li>Small</li>
-                <li>Medium</li>
-                <li>Large</li>
-                <li>Spiral</li>
-              </ul>
-            </details>
-
-            <details class="module">
-              <summary class="module__header">
-                <svg class="module__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-                  <g transform="rotate(90 12 12)">
-                    <line x1="2" y1="6" x2="22" y2="6"/>
-                    <line x1="2" y1="18" x2="22" y2="18"/>
-                    <polyline points="17,2 22,6 17,10" stroke-linejoin="round"/>
-                    <polyline points="7,14 2,18 7,22" stroke-linejoin="round"/>
-                  </g>
-                </svg>
-                <span class="module__title">Dual Carriageways</span>
-                <span class="module__count">4 topics</span>
-                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
-              </summary>
-              <ul class="module__topics">
-                <li>Slip Road On</li>
-                <li>Slip Road Off</li>
-                <li>Overtaking</li>
-                <li>Right Turn</li>
-              </ul>
-            </details>
-
-          </div><!-- /.modules-list -->
-
-          <div class="device-display">
-
-            <div class="device-switcher" role="group" aria-label="Switch device preview">
-              <button class="device-switcher__btn is-active" data-device="tablet" aria-pressed="true">
-                <svg viewBox="0 0 14 18" width="11" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <rect x="1" y="1" width="12" height="16" rx="2"/>
-                  <circle cx="7" cy="14.5" r="0.8" fill="currentColor" stroke="none"/>
-                </svg>
-                Tablet
-              </button>
-              <button class="device-switcher__btn" data-device="phone" aria-pressed="false">
-                <svg viewBox="0 0 10 18" width="8" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <rect x="1" y="1" width="8" height="16" rx="2.5"/>
-                  <line x1="3.5" y1="15" x2="6.5" y2="15"/>
-                </svg>
-                Phone
-              </button>
-            </div>
-
-            <div class="device-view device-view--tablet">
-              <div class="ipad-mockup ipad-mockup--portrait">
-                <div class="ipad-mockup__shell">
-                  <div class="ipad-mockup__camera" aria-hidden="true"></div>
-                  <div class="ipad-mockup__screen">
-                    <img src="/assets/images/lessons/iPad2.webp"
-                         alt="Lessons by Neil Beaver on iPad — browsing the lesson module list"
-                         class="ipad-mockup__screenshot"
-                         width="1032" height="1376"
-                         loading="lazy" decoding="async">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="device-view device-view--phone" hidden>
-              <div class="iphone-mockup">
-                <div class="iphone-mockup__shell">
-                  <div class="iphone-mockup__screen">
-                    <img src="/assets/images/lessons/iPhone2.webp"
-                         alt="Lessons by Neil Beaver on iPhone — browsing the lesson module list"
-                         class="iphone-mockup__screenshot"
-                         width="660" height="1434"
-                         loading="lazy" decoding="async">
-                  </div>
-                  <div class="iphone-mockup__home-bar" aria-hidden="true"></div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div><!-- /.modules-layout -->
-
-      </div>
-    </section>
-
-    <!-- ============================================================
-         ROADS MODULES
-         ============================================================ -->
-    <section id="content-roads" class="modules app-view" data-app="roads" hidden>
-      <div class="container">
-
-        <div class="section-intro">
-          <h2>Everything your learner needs to see</h2>
-          <p>Browse available backgrounds — tap any category to expand.</p>
-        </div>
-
-        <div class="modules-layout">
-
-          <div class="modules-list">
-
-            <details class="module">
-              <summary class="module__header">
-                <svg class="module__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M6 2 L6 22"/>
-                  <path d="M18 2 L18 22"/>
-                  <line x1="12" y1="2" x2="12" y2="6"/>
-                  <line x1="12" y1="9" x2="12" y2="13"/>
-                  <line x1="12" y1="16" x2="12" y2="20"/>
-                </svg>
-                <span class="module__title">Basic Roads</span>
-                <span class="module__count">9 topics</span>
-                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
-              </summary>
-              <ul class="module__topics">
-                <li>Straight Road</li>
-                <li>Unmarked Road</li>
-                <li>Lanes</li>
-                <li>Bus Lanes</li>
-                <li>Left Bend</li>
-                <li>Right Bend</li>
-                <li>Sharp Left Bend</li>
-                <li>Sharp Right Bend</li>
-                <li>Pinch Points</li>
-              </ul>
-            </details>
-
-            <details class="module">
-              <summary class="module__header">
-                <svg class="module__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M14 22 L14 14 L22 14"/>
-                  <path d="M10 22 L10 14 L2 14"/>
-                  <path d="M14 2 L14 10 L22 10"/>
-                  <path d="M10 2 L10 10 L2 10"/>
-                </svg>
-                <span class="module__title">Basic Junctions</span>
-                <span class="module__count">9 topics</span>
-                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
-              </summary>
-              <ul class="module__topics">
-                <li>Side Road Left</li>
-                <li>Side Road Right</li>
-                <li>Open T-Junction</li>
-                <li>Closed T-Junction</li>
-                <li>Stop Junction</li>
-                <li>Crossroads</li>
-                <li>Staggered Crossroads One</li>
-                <li>Staggered Crossroads Two</li>
-                <li>Unmarked Crossroads</li>
-              </ul>
-            </details>
-
-            <details class="module">
-              <summary class="module__header">
-                <svg class="module__icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-                  <circle cx="12" cy="9" r="7" fill="#E8B84B"/>
-                  <line x1="12" y1="16" x2="12" y2="22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-                </svg>
-                <span class="module__title">Pedestrian Crossings</span>
-                <span class="module__count">6 topics</span>
-                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
-              </summary>
-              <ul class="module__topics">
-                <li>Zebra Crossing</li>
-                <li>Staggered Zebra Crossing</li>
-                <li>Pelican or Puffin Crossing</li>
-                <li>Staggered Crossing</li>
-                <li>Toucan Crossing</li>
-                <li>Equestrian or Pegasus Crossing</li>
-              </ul>
-            </details>
-
-            <details class="module">
-              <summary class="module__header">
-                <svg class="module__icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-                  <rect x="5" y="1" width="14" height="22" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
-                  <circle cx="12" cy="7" r="3" fill="#E8B84B"/>
-                  <circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
-                  <circle cx="12" cy="17" r="3" fill="#30A46C"/>
-                </svg>
-                <span class="module__title">Traffic Lights</span>
-                <span class="module__count">7 topics</span>
-                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
-              </summary>
-              <ul class="module__topics">
-                <li>Controlled Side Road Left</li>
-                <li>Controlled Side Road Right</li>
-                <li>Controlled T-Junction</li>
-                <li>Controlled Crossroads</li>
-                <li>Box Junction</li>
-                <li>Left Filter</li>
-                <li>Three Lanes</li>
-              </ul>
-            </details>
-
-            <details class="module">
-              <summary class="module__header">
-                <svg class="module__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M13.6 3.1 A9 9 0 0 1 21 12" stroke-width="2.5"/>
-                  <polyline points="18.2,8.6 21,12 21.7,7.7"/>
-                  <path d="M18.9 17.8 A9 9 0 0 1 7.5 19.8" stroke-width="2.5"/>
-                  <polyline points="11.8,19.1 7.5,19.8 10.9,22.6"/>
-                  <path d="M3.5 15.1 A9 9 0 0 1 7.5 4.2" stroke-width="2.5"/>
-                  <polyline points="5.9,8.3 7.5,4.2 3.4,5.8"/>
-                </svg>
-                <span class="module__title">Roundabouts</span>
-                <span class="module__count">9 topics</span>
-                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
-              </summary>
-              <ul class="module__topics">
-                <li>Roundabout Approach</li>
-                <li>Roundabout Lanes Approach</li>
-                <li>Small Roundabout</li>
-                <li>Medium Roundabout</li>
-                <li>Large Roundabout</li>
-                <li>Spiral Roundabout</li>
-                <li>Mini Roundabout</li>
-                <li>Mini Roundabout T-Junction</li>
-                <li>Double Mini Roundabout</li>
-              </ul>
-            </details>
-
-            <details class="module">
-              <summary class="module__header">
-                <svg class="module__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-                  <g transform="rotate(90 12 12)">
-                    <line x1="2" y1="6" x2="22" y2="6"/>
-                    <line x1="2" y1="18" x2="22" y2="18"/>
-                    <polyline points="17,2 22,6 17,10" stroke-linejoin="round"/>
-                    <polyline points="7,14 2,18 7,22" stroke-linejoin="round"/>
-                  </g>
-                </svg>
-                <span class="module__title">Dual Carriageway</span>
-                <span class="module__count">5 topics</span>
-                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
-              </summary>
-              <ul class="module__topics">
-                <li>Dual Carriageway</li>
-                <li>Slip Road On</li>
-                <li>Dual Carriageway Exit</li>
-                <li>Slip Road Off</li>
-                <li>Right Turn</li>
-              </ul>
-            </details>
-
-            <details class="module">
-              <summary class="module__header">
-                <svg class="module__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M3 12 Q3 5 12 5 L12 2 L17 7 L12 12 L12 9 Q7 9 7 12 L7 21"/>
-                </svg>
-                <span class="module__title">Other</span>
-                <span class="module__count">10 topics</span>
-                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
-              </summary>
-              <ul class="module__topics">
-                <li>One Way Street</li>
-                <li>Protected Right Turn</li>
-                <li>Car Park</li>
-                <li>Level Crossing</li>
-                <li>Motorway</li>
-                <li>Y-Junction</li>
-                <li>Passing Place</li>
-                <li>Cul De Sac</li>
-                <li>Left Reverse</li>
-                <li>Right Reverse</li>
-              </ul>
-            </details>
-
-          </div><!-- /.modules-list -->
-
-          <div class="device-display">
-
-            <div class="device-switcher" role="group" aria-label="Switch device preview">
-              <button class="device-switcher__btn is-active" data-device="tablet" aria-pressed="true">
-                <svg viewBox="0 0 14 18" width="11" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <rect x="1" y="1" width="12" height="16" rx="2"/>
-                  <circle cx="7" cy="14.5" r="0.8" fill="currentColor" stroke="none"/>
-                </svg>
-                Tablet
-              </button>
-              <button class="device-switcher__btn" data-device="phone" aria-pressed="false">
-                <svg viewBox="0 0 10 18" width="8" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <rect x="1" y="1" width="8" height="16" rx="2.5"/>
-                  <line x1="3.5" y1="15" x2="6.5" y2="15"/>
-                </svg>
-                Phone
-              </button>
-            </div>
-
-            <div class="device-view device-view--tablet">
-              <div class="ipad-mockup ipad-mockup--portrait">
-                <div class="ipad-mockup__shell">
-                  <div class="ipad-mockup__camera" aria-hidden="true"></div>
-                  <div class="ipad-mockup__screen">
-                    <img src="/assets/images/roads/iPad2.webp"
-                         alt="Roads by Neil Beaver on iPad — a satellite view of a roundabout approach, with a bus and a learner car ringed in red beside keep clear markings"
-                         class="ipad-mockup__screenshot"
-                         width="1032" height="1376"
-                         loading="lazy" decoding="async">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="device-view device-view--phone" hidden>
-              <div class="iphone-mockup">
-                <div class="iphone-mockup__shell">
-                  <div class="iphone-mockup__screen">
-                    <img src="/assets/images/roads/iPhone2.webp"
-                         alt="Roads by Neil Beaver on iPhone — a satellite view of a roundabout approach, with a bus and a learner car ringed in red beside keep clear markings"
-                         class="iphone-mockup__screenshot"
-                         width="660" height="1434"
-                         loading="lazy" decoding="async">
-                  </div>
-                  <div class="iphone-mockup__home-bar" aria-hidden="true"></div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div><!-- /.modules-layout -->
-
-      </div>
-    </section>
-
-    <!-- ============================================================
-         FAQ
-         ============================================================ -->
-    <section id="faq" class="faq">
-      <div class="container">
-
         <div class="section-intro section-intro--light">
           <h2>Frequently asked questions</h2>
         </div>
-
-        <div class="faq-list">
-
-          <details class="module">
-            <summary class="module__header">
-              <span class="module__title">We've been waiting… What took you so long?</span>
-              <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
-            </summary>
-            <div class="faq__answer">
-              <p>A multitude of technical complexities and the prioritisation of family and health over work. It's taken a few years to get things back on track, and I apologise for that. The new apps have been re-written from the ground up in a different programming language to allow for cross-platform compatibility. The images are the same, but not a single line of the original code remains in the new versions.</p>
-            </div>
-          </details>
-
-          <details class="module">
-            <summary class="module__header">
-              <span class="module__title">Are you going to update your old apps?</span>
-              <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
-            </summary>
-            <div class="faq__answer">
-              <p>No. These are gradually being rendered obsolete by Apple's never-ending system updates. I wanted to get these new versions made before the old ones completely disappear.</p>
-            </div>
-          </details>
-
-          <details class="module">
-            <summary class="module__header">
-              <span class="module__title">Why subscription? Your old apps only required a one-off payment.</span>
-              <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
-            </summary>
-            <div class="faq__answer">
-              <p>Yes, those were the good old days &#128513; Something I learned the hard way: as apps age, they require ongoing work — while sales steadily decline. This makes the business model unsustainable. When I first realised this, I resisted going subscription-only because I didn't want to inflict it on my customers. When I realised I was just delaying the inevitable, that's when I got things properly moving forward again.</p>
-            </div>
-          </details>
-
-          <details class="module">
-            <summary class="module__header">
-              <span class="module__title">What about Road Pad and Road Board?</span>
-              <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
-            </summary>
-            <div class="faq__answer">
-              <p>These are currently being redeveloped and are coming soon.</p>
-            </div>
-          </details>
-
-          <details class="module">
-            <summary class="module__header">
-              <span class="module__title">How can I import my saved files from Road Board to Roads?</span>
-              <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
-            </summary>
-            <div class="faq__answer">
-              <p>Have a look <a href="/import">here</a> for the full instructions.</p>
-            </div>
-          </details>
-
-          <details class="module">
-            <summary class="module__header">
-              <span class="module__title">What about Routes and DL25 — Mock Test?</span>
-              <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
-            </summary>
-            <div class="faq__answer">
-              <p>It's on my to do list to revisit these apps and see if I can bring them more up-to-date.</p>
-            </div>
-          </details>
-
-          <details class="module">
-            <summary class="module__header">
-              <span class="module__title">What about Android?</span>
-              <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
-            </summary>
-            <div class="faq__answer">
-              <p>Lessons is now available on the Google Play Store.<br/>Roads will be arriving soon.</p>
-            </div>
-          </details>
-
-          <details class="module">
-            <summary class="module__header">
-              <span class="module__title">Will my subscription work across iOS and Android?</span>
-              <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
-            </summary>
-            <div class="faq__answer">
-              <p>Unfortunately, it is not possible to make the same subscription work across the two different platforms.</p>
-            </div>
-          </details>
-        </div><!-- /.faq-list -->
-
+        <div class="modules-list"><details class="module">
+              <summary class="module__header">
+                <span class="module__title">We&#x27;ve been waiting… What took you so long?</span>
+                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
+              </summary>
+              <div class="faq__answer"><p>A multitude of technical complexities and the prioritisation of family and health over work. It&#x27;s taken a few years to get things back on track, and I apologise for that. The new apps have been re-written from the ground up in a different programming language to allow for cross-platform compatibility. The images are the same, but not a single line of the original code remains in the new versions.</p></div>
+            </details><details class="module">
+              <summary class="module__header">
+                <span class="module__title">Are you going to update your old apps?</span>
+                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
+              </summary>
+              <div class="faq__answer"><p>No. These are gradually being rendered obsolete by Apple&#x27;s never-ending system updates. I wanted to get these new versions made before the old ones completely disappear.</p></div>
+            </details><details class="module">
+              <summary class="module__header">
+                <span class="module__title">Why subscription? Your old apps only required a one-off payment.</span>
+                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
+              </summary>
+              <div class="faq__answer"><p>Yes, those were the good old days 😁 Something I learned the hard way: as apps age, they require ongoing work — while sales steadily decline. This makes the business model unsustainable. When I first realised this, I resisted going subscription-only because I didn&#x27;t want to inflict it on my customers. When I realised I was just delaying the inevitable, that&#x27;s when I got things properly moving forward again.</p></div>
+            </details><details class="module">
+              <summary class="module__header">
+                <span class="module__title">What about Road Pad and Road Board?</span>
+                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
+              </summary>
+              <div class="faq__answer"><p>These are currently being redeveloped and are coming soon.</p></div>
+            </details><details class="module">
+              <summary class="module__header">
+                <span class="module__title">How can I import my saved files from Road Board to Roads?</span>
+                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
+              </summary>
+              <div class="faq__answer"><p>Have a look <a href="/import">here</a> for the full instructions.</p></div>
+            </details><details class="module">
+              <summary class="module__header">
+                <span class="module__title">What about Routes and DL25 — Mock Test?</span>
+                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
+              </summary>
+              <div class="faq__answer"><p>It&#x27;s on my to do list to revisit these apps and see if I can bring them more up-to-date.</p></div>
+            </details><details class="module">
+              <summary class="module__header">
+                <span class="module__title">What about Android?</span>
+                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
+              </summary>
+              <div class="faq__answer"><p>Lessons is now available on the Google Play Store.</p>
+<p>Roads will be arriving soon.</p></div>
+            </details><details class="module">
+              <summary class="module__header">
+                <span class="module__title">Will my subscription work across iOS and Android?</span>
+                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
+              </summary>
+              <div class="faq__answer"><p>Unfortunately, it is not possible to make the same subscription work across the two different platforms.</p></div>
+            </details></div>
       </div>
     </section>
-
-    <!-- ============================================================
-         DOWNLOAD CTA
-         ============================================================ -->
-    <section id="download-lessons" class="download-cta app-view" data-app="lessons">
-      <div class="container download-cta-inner">
-
-        <!--
-          SCREENSHOT — DOWNLOAD SECTION (optional)
-          Add a third screenshot here for visual interest, or remove this block
-          to keep the section as text + badge only.
-
-          <img src="/assets/images/screenshot-iphone-alt.webp"
-               alt="Lessons by Neil Beaver — app screenshot"
-               class="screenshot screenshot--portrait screenshot--sm">
-        -->
-
-        <h2>Ready to transform how you teach?</h2>
-        <p>Free one month trial subscription. £3.99 per month thereafter.</p>
-
-        <!-- Both store badges — same links as the hero badges above. -->
-        <div class="badge-group badge-group--center">
-
-          <a href="https://apps.apple.com/gb/app/lessons-by-neil-beaver/id6768265585?itscg=30200&itsct=apps_box_badge&mttnsubad=6768265585"
-             class="appstore-badge">
-            <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1781222400"
-                 alt="Download Lessons by Neil Beaver on the App Store"
-                 width="120" height="40" loading="lazy" decoding="async" />
-          </a>
-
-          <a href="https://play.google.com/store/apps/details?id=com.neilbeaver.lessons"
-             class="playstore-badge">
-            <img src="/assets/images/google-play-badge.png"
-                 alt="Get Lessons by Neil Beaver on Google Play"
-                 width="646" height="250" loading="lazy" decoding="async" />
-          </a>
-
-        </div>
-
-        <p class="contact-note">Questions or feedback? <a href="#" class="js-email" data-u="ebobfbhynccf" data-d="tznvy.pbz">Send us an email</a></p>
-
-      </div>
-    </section>
-
-    <!-- ============================================================
-         ROADS — DOWNLOAD CTA
-         ============================================================ -->
-    <section id="download-roads" class="download-cta app-view" data-app="roads" hidden>
-      <div class="container download-cta-inner">
-
-        <h2>Ready to transform how you teach?</h2>
-        <p>Coming soon.</p>
-
-        <!-- Roads isn't live yet — swap this for the real Apple badge (see hero-roads above)
-             once Roads has an App Store listing. -->
-        <span class="badge badge--appstore badge--disabled" aria-label="Download on the App Store — Coming Soon">
-          <span class="badge__icon" aria-hidden="true">
-            <svg viewBox="0 0 384 512" width="20" height="20" fill="currentColor" aria-hidden="true">
-              <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
-            </svg>
-          </span>
-          <span class="badge__text">
-            <span class="badge__eyebrow">Coming Soon to</span>
-            <span class="badge__title">App Store</span>
-          </span>
-        </span>
-
-        <p class="contact-note">Questions or feedback? <a href="#" class="js-email" data-u="ebobfbhynccf" data-d="tznvy.pbz">Send us an email</a></p>
-
-      </div>
-    </section>
-
   </main>
-
-  <!-- ============================================================
-       FOOTER
-       ============================================================ -->
   <footer class="site-footer">
     <div class="container footer-inner">
-
-      <div class="footer-brand app-view" data-app="lessons">
-        <img src="/assets/images/lessons/lessons-icon.png"
-             alt=""
-             class="app-icon app-icon--sm"
-             width="32" height="32">
-        <div>
-          <p class="footer-brand__name">Lessons by Neil Beaver</p>
-          <!-- <p class="footer-brand__tagline">A driving instructor's teaching aid.</p> -->
-        </div>
+      <div class="footer-brand">
+        
+        <div><p class="footer-brand__name">Neil Beaver</p></div>
       </div>
-
-      <div class="footer-brand app-view" data-app="roads" hidden>
-        <img src="/assets/images/roads/roads-icon.png"
-             alt=""
-             class="app-icon app-icon--sm"
-             width="32" height="32">
-        <div>
-          <p class="footer-brand__name">Roads by Neil Beaver</p>
-        </div>
-      </div>
-
       <div class="footer-markets">
         <p class="footer-markets__label">Available in</p>
-        <ul class="footer-markets__list">
-          <li>&#127468;&#127463; United Kingdom</li>
-          <li>&#127470;&#127466; Ireland</li>
-          <li>&#127464;&#127486; Cyprus</li>
-          <li>&#127474;&#127481; Malta</li>
-        </ul>
+        <ul class="footer-markets__list"><li>&#127468;&#127463;&nbsp;United Kingdom</li><li>&#127470;&#127466;&nbsp;Ireland</li><li>&#127464;&#127486;&nbsp;Cyprus</li><li>&#127474;&#127481;&nbsp;Malta</li></ul>
       </div>
-
       <div class="footer-legal">
         <p>&copy; 2026 Neil Beaver. All rights reserved.</p>
-        <!-- <p><a href="#" class="js-email" data-u="ebobfbhynccf" data-d="tznvy.pbz">Send us an email</a></p> -->
         <p>
           <a href="/privacy">Privacy Policy</a>
           &nbsp;&middot;&nbsp;
           <a href="/terms">Terms of Use</a>
         </p>
       </div>
-
     </div>
   </footer>
-
-  <!-- ============================================================
-       STRUCTURED DATA (JSON-LD)
-
-       Establishes "Neil Beaver" as an entity Google can recognise, and
-       describes the Lessons app.
-
-       Roads has its own SoftwareApplication node, deliberately without an
-       `offers` block — it has no App Store listing or price yet. Add both
-       once it ships.
-
-       Validate after any edit at:
-         https://validator.schema.org/
-         https://search.google.com/test/rich-results
-       ============================================================ -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://www.neilbeaver.com/#website",
-        "url": "https://www.neilbeaver.com/",
-        "name": "Lessons & Roads by Neil Beaver",
-        "description": "Animated driving lesson diagrams and road layout teaching aids for driving instructors.",
-        "inLanguage": "en-GB",
-        "publisher": { "@id": "https://www.neilbeaver.com/#neilbeaver" }
-      },
-      {
-        "@type": "Person",
-        "@id": "https://www.neilbeaver.com/#neilbeaver",
-        "name": "Neil Beaver",
-        "jobTitle": "Driving Instructor",
-        "description": "Driving instructor and developer of teaching aid apps for driving instructors, including the Learn to Drive series, Road Board, Road Pad and the current Lessons and Roads apps.",
-        "url": "https://www.neilbeaver.com/",
-        "sameAs": [
-          "https://apps.apple.com/gb/developer/neil-beaver/id412352346"
-        ],
-        "knowsAbout": [
-          "Driving instruction",
-          "Driver training",
-          "Learning to drive",
-          "Driving lesson planning",
-          "The Highway Code",
-          "DVSA driving test standards"
-        ]
-      },
-      {
-        "@type": "SoftwareApplication",
-        "@id": "https://www.neilbeaver.com/#lessons",
-        "name": "Lessons by Neil Beaver",
-        "alternateName": "Learn to Drive",
-        "applicationCategory": "EducationalApplication",
-        "applicationSubCategory": "Driving instructor teaching aid",
-        "operatingSystem": "iOS 14.0 or later, Android",
-        "softwareVersion": "1.1",
-        "datePublished": "2026-06-12",
-        "fileSize": "39MB",
-        "inLanguage": "en-GB",
-        "description": "Animated driving lesson diagrams covering controls, position, stopping, manoeuvres, pedestrian crossings, junctions, traffic lights, roundabouts and dual carriageways. All of Neil Beaver's Learn to Drive modules bundled into one app for Android, iPhone and iPad.",
-        "url": "https://apps.apple.com/gb/app/lessons-by-neil-beaver/id6768265585",
-        "installUrl": "https://apps.apple.com/gb/app/lessons-by-neil-beaver/id6768265585",
-        "sameAs": [
-          "https://apps.apple.com/gb/app/lessons-by-neil-beaver/id6768265585",
-          "https://play.google.com/store/apps/details?id=com.neilbeaver.lessons"
-        ],
-        "screenshot": "https://www.neilbeaver.com/assets/images/og-lessons.png",
-        "author": { "@id": "https://www.neilbeaver.com/#neilbeaver" },
-        "publisher": { "@id": "https://www.neilbeaver.com/#neilbeaver" },
-        "audience": {
-          "@type": "Audience",
-          "audienceType": "Driving instructors (ADIs and PDIs)"
-        },
-        "offers": {
-          "@type": "Offer",
-          "price": "3.99",
-          "priceCurrency": "GBP",
-          "availability": "https://schema.org/InStock",
-          "url": "https://apps.apple.com/gb/app/lessons-by-neil-beaver/id6768265585",
-          "description": "Free one month trial, then £3.99 per month.",
-          "eligibleRegion": [
-            { "@type": "Country", "name": "United Kingdom" },
-            { "@type": "Country", "name": "Ireland" },
-            { "@type": "Country", "name": "Cyprus" },
-            { "@type": "Country", "name": "Malta" }
-          ],
-          "priceSpecification": {
-            "@type": "UnitPriceSpecification",
-            "price": "3.99",
-            "priceCurrency": "GBP",
-            "billingIncrement": 1,
-            "unitCode": "MON"
-          }
-        }
-      },
-      {
-        "@type": "SoftwareApplication",
-        "@id": "https://www.neilbeaver.com/#roads",
-        "name": "Roads by Neil Beaver",
-        "alternateName": ["Road Board", "Road Pad"],
-        "applicationCategory": "EducationalApplication",
-        "applicationSubCategory": "Driving instructor teaching aid",
-        "operatingSystem": "iOS",
-        "inLanguage": "en-GB",
-        "description": "The successor to Road Board and Road Pad, rebuilt as a single app. More than 50 pre-drawn road situations plus detailed satellite imagery, for explaining any road layout to a learner driver.",
-        "screenshot": "https://www.neilbeaver.com/assets/images/og-roads.png",
-        "author": { "@id": "https://www.neilbeaver.com/#neilbeaver" },
-        "publisher": { "@id": "https://www.neilbeaver.com/#neilbeaver" },
-        "audience": {
-          "@type": "Audience",
-          "audienceType": "Driving instructors (ADIs and PDIs)"
-        }
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://www.neilbeaver.com/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "We've been waiting… What took you so long?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A multitude of technical complexities and the prioritisation of family and health over work. It's taken a few years to get things back on track, and I apologise for that. The new apps have been re-written from the ground up in a different programming language to allow for cross-platform compatibility. The images are the same, but not a single line of the original code remains in the new versions."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Are you going to update your old apps?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. These are gradually being rendered obsolete by Apple's never-ending system updates. I wanted to get these new versions made before the old ones completely disappear."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Why subscription? Your old apps only required a one-off payment.",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Something I learned the hard way: as apps age, they require ongoing work — while sales steadily decline. This makes the business model unsustainable. When I first realised this, I resisted going subscription-only because I didn't want to inflict it on my customers. When I realised I was just delaying the inevitable, that's when I got things properly moving forward again."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What about Road Pad and Road Board?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "These are currently being redeveloped and are coming soon."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How can I import my saved files from Road Board to Roads?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Full step-by-step instructions are available at https://www.neilbeaver.com/import.html"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What about Routes and DL25 — Mock Test?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "It's on my to do list to revisit these apps and see if I can bring them more up-to-date."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What about Android?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Lessons is now available on the Google Play Store. Roads will be arriving soon."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Will my subscription work across iOS and Android?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Unfortunately, it is not possible to make the same subscription work across the two different platforms."
-            }
-          }
-        ]
-      }
-    ]
-  }
-  </script>
-
   <script src="/script.js"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.neilbeaver.com/#website","url":"https://www.neilbeaver.com/","name":"Neil Beaver","inLanguage":"en-GB"},{"@type":"Person","@id":"https://www.neilbeaver.com/#neil","name":"Neil Beaver","jobTitle":"Approved Driving Instructor","url":"https://www.neilbeaver.com/","knowsAbout":["Driving instruction","Learning to drive","UK driving test"]},{"@type":"SoftwareApplication","@id":"https://www.neilbeaver.com/lessons/#app","name":"Lessons by Neil Beaver","description":"Animated driving lesson briefings for driving instructors. Neil Beaver's Learn to Drive series, rebuilt as one app for Android, iPhone and iPad.","applicationCategory":"EducationalApplication","operatingSystem":"iOS, iPadOS, Android","url":"https://www.neilbeaver.com/lessons/","image":"https://www.neilbeaver.com/assets/images/og-lessons.png","author":{"@type":"Person","name":"Neil Beaver"},"offers":{"@type":"Offer","price":"3.99","priceCurrency":"GBP","eligibleRegion":["GB","IE","CY","MT"]}},{"@type":"SoftwareApplication","@id":"https://www.neilbeaver.com/roads/#app","name":"Roads by Neil Beaver","description":"Draw and demonstrate any road layout for your learner. Pre-drawn junctions and roundabouts plus Google Maps satellite imagery, on Android, iPhone and iPad.","applicationCategory":"EducationalApplication","operatingSystem":"iOS, iPadOS, Android","url":"https://www.neilbeaver.com/roads/","image":"https://www.neilbeaver.com/assets/images/og-roads.png","author":{"@type":"Person","name":"Neil Beaver"}},{"@type":"FAQPage","@id":"https://www.neilbeaver.com/#faq","mainEntity":[{"@type":"Question","name":"We've been waiting… What took you so long?","acceptedAnswer":{"@type":"Answer","text":"A multitude of technical complexities and the prioritisation of family and health over work. It's taken a few years to get things back on track, and I apologise for that. The new apps have been re-written from the ground up in a different programming language to allow for cross-platform compatibility. The images are the same, but not a single line of the original code remains in the new versions."}},{"@type":"Question","name":"Are you going to update your old apps?","acceptedAnswer":{"@type":"Answer","text":"No. These are gradually being rendered obsolete by Apple's never-ending system updates. I wanted to get these new versions made before the old ones completely disappear."}},{"@type":"Question","name":"Why subscription? Your old apps only required a one-off payment.","acceptedAnswer":{"@type":"Answer","text":"Yes, those were the good old days 😁 Something I learned the hard way: as apps age, they require ongoing work — while sales steadily decline. This makes the business model unsustainable. When I first realised this, I resisted going subscription-only because I didn't want to inflict it on my customers. When I realised I was just delaying the inevitable, that's when I got things properly moving forward again."}},{"@type":"Question","name":"What about Road Pad and Road Board?","acceptedAnswer":{"@type":"Answer","text":"These are currently being redeveloped and are coming soon."}},{"@type":"Question","name":"How can I import my saved files from Road Board to Roads?","acceptedAnswer":{"@type":"Answer","text":"Have a look here for the full instructions."}},{"@type":"Question","name":"What about Routes and DL25 — Mock Test?","acceptedAnswer":{"@type":"Answer","text":"It's on my to do list to revisit these apps and see if I can bring them more up-to-date."}},{"@type":"Question","name":"What about Android?","acceptedAnswer":{"@type":"Answer","text":"Lessons is now available on the Google Play Store. Roads will be arriving soon."}},{"@type":"Question","name":"Will my subscription work across iOS and Android?","acceptedAnswer":{"@type":"Answer","text":"Unfortunately, it is not possible to make the same subscription work across the two different platforms."}}]}]}</script>
 </body>
 </html>

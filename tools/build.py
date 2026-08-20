@@ -53,7 +53,7 @@ BRANDS = {
 # Pages outside the guide that must stay in the sitemap. Their lastmod values
 # are kept as they are so a guide rebuild does not churn every entry.
 STATIC_URLS = [
-    ('/',        '2026-08-04', 'weekly',  '1.0'),
+    ('/',        None,         'weekly',  '1.0'),
     ('/import',  '2026-08-04', 'monthly', '0.7'),
     ('/terms',   '2026-08-04', 'yearly',  '0.3'),
     ('/privacy', '2026-08-04', 'yearly',  '0.3'),
@@ -376,8 +376,12 @@ def footer(brand):
     </div>
   </footer>'''
 
+# Proves ownership of the domain to Google Search Console. It has to stay on
+# the home page, and it has to be this exact string.
+VERIFY = 'ftGvtdA16fvx6lBJQdFA9hr3gUy0wjTvugK0GFxUl-o'
+
 def head(title, desc, url, og_image, og_type='website', og_alt='',
-         noindex=False, preload=None, body_class=''):
+         noindex=False, preload=None, body_class='', verify=False):
     """Every page's <head>, so the address and the social tags cannot disagree.
 
     url is a path; it becomes the canonical and og:url against one SITE
@@ -388,13 +392,14 @@ def head(title, desc, url, og_image, og_type='website', og_alt='',
     pre = (f'\n  <link rel="preload" as="image" href="{e(preload)}" fetchpriority="high">'
            if preload else '')
     cls = f' class="{body_class}"' if body_class else ''
+    ver = f'\n  <meta name="google-site-verification" content="{VERIFY}">' if verify else ''
     return f'''<!DOCTYPE html>
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{e(title)}</title>
-  <meta name="description" content="{e(desc)}">{robots}
+  <meta name="description" content="{e(desc)}">{robots}{ver}
   <link rel="canonical" href="{SITE}{e(url)}">
 
   <meta property="og:type" content="{og_type}">
@@ -600,6 +605,103 @@ def app_page(app, apps):
       '</html>',
     ])
 
+# -------------------------------------------------------------- home page ---
+
+def faq_blocks(faq):
+    """The questions, and the same questions as FAQPage markup.
+
+    Answers are written as markdown in content/home.toml and go through the
+    guide's inline() renderer, so a link in an answer is written once rather
+    than kept in step across the visible copy and the structured data.
+    """
+    items, ld = [], []
+    for i, f in enumerate(faq):
+        ans = '\n'.join(f'<p>{inline(par, {}, "content/home.toml", "")}</p>'
+                         for par in f['a'].split('\n') if par.strip())
+        items.append(f'''<details class="module">
+              <summary class="module__header">
+                <span class="module__title">{e(f["q"])}</span>
+                <svg class="module__chevron" width="16" height="16" aria-hidden="true"><use href="#icon-chevron"/></svg>
+              </summary>
+              <div class="faq__answer">{ans}</div>
+            </details>''')
+        ld.append('{"@type":"Question","name":%s,"acceptedAnswer":'
+                  '{"@type":"Answer","text":%s}}'
+                  % (json_str(f['q']), json_str(re.sub(r'\[([^\]]+)\]\([^)]+\)',
+                                                      r'\1', f['a']))))
+    return ''.join(items), ','.join(ld)
+
+def home_page(home, apps):
+    cards = ''.join(f'''<a class="product" href="{e(p["url"])}">
+            <img src="{e(p["icon"])}" alt="" class="product__icon" width="96" height="96">
+            <h2 class="product__name">{e(p["name"])}</h2>
+            <p class="product__status">{e(p["status"])}</p>
+            <p class="product__body">{e(p["body"])}</p>
+            <span class="product__more">Find out more</span>
+          </a>''' for p in home['products'])
+
+    faq_html, faq_ld = faq_blocks(home['faq'])
+    about = ''.join(f'<p>{e(par)}</p>' for par in home['about']['body'])
+
+    graph = ('{"@type":"WebSite","@id":"%s/#website","url":"%s/","name":"Neil Beaver",'
+             '"inLanguage":"en-GB"}' % (SITE, SITE)
+             + ',{"@type":"Person","@id":"%s/#neil","name":"Neil Beaver",'
+               '"jobTitle":"Approved Driving Instructor",'
+               '"url":"%s/","knowsAbout":["Driving instruction","Learning to drive",'
+               '"UK driving test"]}' % (SITE, SITE)
+             + ''.join(',' + app_schema(a) for a in sorted(apps.values(),
+                                                           key=lambda a: a['slug']))
+             + ',{"@type":"FAQPage","@id":"%s/#faq","mainEntity":[%s]}' % (SITE, faq_ld))
+
+    return '\n'.join([
+      head(home['title'], home['description'], '/', home['og_image'],
+           verify=True),
+      '  <a class="skip-link" href="#main">Skip to content</a>',
+      '  ' + icon_sprite(),
+      header('site', '/', apps),
+      '  <main id="main">',
+      f'''    <section class="home-hero">
+      <div class="container">
+        <h1>{lines(home["hero"]["heading"])}</h1>
+        <p class="home-hero__sub">{e(home["hero"]["subheading"])}</p>
+      </div>
+    </section>
+
+    <section class="products">
+      <div class="container">
+        <div class="products__grid">{cards}</div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="container">
+        <div class="section-intro">
+          <h2>{lines(home["about"]["heading"])}</h2>
+        </div>
+        <div class="home-about__body">{about}</div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="section-intro section-intro--light">
+          <h2>{e(home["faq_heading"])}</h2>
+        </div>
+        <div class="modules-list">{faq_html}</div>
+      </div>
+    </section>''',
+      '  </main>',
+      footer('site'),
+      '  <script src="/script.js"></script>',
+      '  <script type="application/ld+json">'
+      '{"@context":"https://schema.org","@graph":[' + graph + ']}</script>',
+      '</body>',
+      '</html>',
+    ])
+
+def load_home():
+    return tomllib.load(open('content/home.toml', 'rb'))
+
 def load_apps():
     apps = {}
     if not os.path.isdir(APPS_SRC): return apps
@@ -727,14 +829,22 @@ def build_page(page, pages, tops, apps):
         '</html>',
     ])
 
+def file_date(path):
+    """A page's lastmod from its source, rather than a date typed by hand that
+    stops being true the moment the page is edited."""
+    return date.fromtimestamp(os.path.getmtime(path)).isoformat()
+
 def write_sitemap(pages, apps):
     rows = list(STATIC_URLS)
     for a in sorted(apps.values(), key=lambda a: a['slug']):
-        rows.append((f"/{a['slug']}/", str(date.today()), 'monthly', '0.9'))
+        rows.append((f"/{a['slug']}/",
+                     file_date(os.path.join(APPS_SRC, a['slug'] + '.toml')),
+                     'monthly', '0.9'))
     for p in sorted(pages.values(), key=lambda p: p['url']):
         if p['draft']: continue          # thin stubs stay out of the index
         prio = '0.8' if p['path'] == 'index' else ('0.7' if 'parent' not in p else '0.6')
         rows.append((p['url'], p.get('lastmod', str(date.today())), 'monthly', prio))
+    rows = [(u, m or file_date('content/home.toml'), c, p) for u, m, c, p in rows]
     body = '\n'.join(
         f'  <url>\n    <loc>{SITE}{u}</loc>\n    <lastmod>{m}</lastmod>\n'
         f'    <changefreq>{c}</changefreq>\n    <priority>{pr}</priority>\n  </url>'
@@ -767,9 +877,13 @@ def main():
         os.makedirs(a['slug'], exist_ok=True)
         open(os.path.join(a['slug'], 'index.html'), 'w').write(app_page(a, apps))
 
+    home = load_home()
+    open('index.html', 'w').write(home_page(home, apps))
+
     n = write_sitemap(pages, apps)
     print(f"built {written} guide pages into {OUT}/")
     print(f"built {len(apps)} app pages: {', '.join('/' + s + '/' for s in sorted(apps))}")
+    print("built the home page into index.html")
     print(f"sitemap: {n} URLs ({sum(1 for p in pages.values() if p['draft'])} drafts excluded)")
 
 if __name__ == '__main__':

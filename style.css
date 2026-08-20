@@ -184,58 +184,6 @@ a {
 }
 
 /* ============================================================
-   APP TABS (header) — switch between Lessons and Roads
-   ============================================================ */
-.app-tabs {
-  display: flex;
-  align-items: center;
-  gap: 0.375rem;
-}
-
-.app-tabs__tab {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: none;
-  border: 1px solid transparent;
-  border-radius: 100px;
-  padding: 0.375rem 0.75rem 0.375rem 0.375rem;
-  font-family: var(--font);
-  font-weight: 600;
-  font-size: 0.9375rem;
-  color: var(--color-muted);
-  cursor: pointer;
-  transition: background-color 0.15s, color 0.15s;
-}
-
-.app-tabs__tab:hover {
-  background-color: var(--color-primary-dim);
-  color: var(--color-text);
-}
-
-.app-tabs__tab.is-active {
-  background-color: var(--color-primary-dim);
-  color: var(--color-primary);
-}
-
-.app-tabs__icon {
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
-  flex-shrink: 0;
-}
-
-.app-tabs__label {
-  white-space: nowrap;
-}
-
-/* Elements toggled per-app by script.js. Some (e.g. .footer-brand) set
-   display:flex directly, which would otherwise beat the UA [hidden] rule. */
-.app-view[hidden] {
-  display: none;
-}
-
-/* ============================================================
    BUTTONS
    ============================================================ */
 .btn {
@@ -1476,6 +1424,139 @@ details.module[open] .module__chevron {
   .site-header__brand span { display: none; }
   .site-header .appstore-badge img { height: 34px; }
   .site-header .playstore-badge img { height: 51px; }
+}
+
+/* ==========================================================================
+   HOME PAGE
+
+   The site's front door: what these things are, and a card each for the two
+   apps and the guide. The apps used to share this page as tab-switched
+   sections, which is why neither of them had an address of its own.
+   ========================================================================== */
+
+.home-hero {
+  padding-block: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 4vw, 2.5rem);
+  text-align: center;
+}
+
+.home-hero h1 {
+  font-size: clamp(1.875rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  max-width: 20ch;
+  margin-inline: auto;
+}
+
+.home-hero__sub {
+  margin: 1rem auto 0;
+  max-width: 54ch;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: var(--color-muted);
+}
+
+.products {
+  padding-block: clamp(1.5rem, 4vw, 2.5rem) clamp(3rem, 7vw, 5rem);
+}
+
+.products__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+/* The whole card is the link: a product with its own page should not need
+   the reader to find the small print at the bottom of it. */
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  color: var(--color-text);
+  transition: transform 0.12s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.product:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+}
+
+.product__icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.product__name {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.product__status {
+  margin-top: 0.25rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-green);
+}
+
+.product__body {
+  margin-top: 0.75rem;
+  font-size: 0.9375rem;
+  color: var(--color-muted);
+  flex-grow: 1;
+}
+
+.product__more {
+  margin-top: 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-link);
+}
+
+.product:hover .product__more {
+  text-decoration: underline;
+}
+
+.home-about__body {
+  max-width: 62ch;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.home-about__body p {
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.home-about__body p:last-child { margin-bottom: 0; }
+
+/* The FAQ reuses .module / .modules-list from the app pages; only the answer
+   body differs, since these are paragraphs rather than a topic grid. */
+.faq__answer {
+  padding: 0.75rem 1rem 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.faq__answer p {
+  font-size: 0.9375rem;
+  color: var(--color-muted);
+  margin-bottom: 0.75rem;
+}
+
+.faq__answer p:last-child { margin-bottom: 0; }
+.faq__answer a { text-decoration: underline; }
+
+@media (min-width: 760px) {
+  .products__grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 /* ==========================================================================

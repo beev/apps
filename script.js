@@ -19,23 +19,6 @@ if (header) {
   }, { passive: true });
 }
 
-// App tabs: switch site content between Lessons and Roads
-const appTabs = document.querySelectorAll('.app-tabs__tab');
-appTabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    const app = tab.dataset.app;
-
-    appTabs.forEach(t => {
-      t.classList.toggle('is-active', t === tab);
-      t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
-    });
-
-    document.querySelectorAll('.app-view').forEach(el => {
-      el.hidden = el.dataset.app !== app;
-    });
-  });
-});
-
 // Device switcher: segmented control above each mockup
 document.querySelectorAll('.device-switcher').forEach(switcher => {
   switcher.querySelectorAll('.device-switcher__btn').forEach(btn => {
