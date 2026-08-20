@@ -8,3 +8,6 @@ __pycache__/
 
 # Source screenshots for the guide (local reference only)
 Website New Images/
+
+# Local virtualenv for the image tools (see tools/README.md)
+.venv/
