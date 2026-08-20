@@ -24,7 +24,7 @@ This is a spiral roundabout:
 
 This is not a spiral roundabout:
 
-@map[Aerial view of a roundabout whose lane markings run in concentric circles rather than spiralling outwards](https://www.google.com/maps/embed?pb=!1m11!1m8!1m3!1d279.29857648395966!2d-3.293318!3d55.942635!3m2!1i1024!2i768!4f13.1!5e1!6i20)
+@map[Aerial view of a roundabout whose lane markings run in concentric circles rather than spiralling outwards](satellite:55.942635,-3.293318,20)
 
 You can explore these images in greater detail by zooming in or out and panning around. You might have to look quite closely in order to see the difference.
 
@@ -36,7 +36,7 @@ For example, look at the black and the white cars entering from the right of the
 
 Take a look at this one:
 
-@map[Aerial view of a roundabout with dotted guide lines at each entry, for you to judge whether it spirals](https://www.google.com/maps/embed?pb=!1m11!1m8!1m3!1d558.828675473554!2d-3.308998!3d55.926581!3m2!1i1024!2i768!4f13.1!5e1!6i19)
+@map[Aerial view of a roundabout with dotted guide lines at each entry, for you to judge whether it spirals](satellite:55.926581,-3.308998,19)
 
 Spiral or not spiral?
 
