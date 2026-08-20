@@ -148,6 +148,15 @@ def main():
         if not noindex:
             indexable.add(SITE + url)
 
+    # A page whose source was deleted would otherwise stay live and unlinked,
+    # and outside every check above, since the page list is derived from source.
+    for d in sorted(os.listdir('.')):
+        if d.startswith('.') or not os.path.isdir(d): continue
+        if not os.path.isfile(os.path.join(d, 'index.html')): continue
+        if not os.path.isfile(os.path.join('content/apps', d + '.toml')):
+            problems.append(f"{d}/index.html is built but content/apps/{d}.toml "
+                            f"is gone - stale output, delete it")
+
     listed = sitemap_urls()
     if listed is None:
         problems.append("sitemap.xml missing")

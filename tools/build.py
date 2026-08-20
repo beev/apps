@@ -29,35 +29,37 @@ OUT       = 'lessons/guide'
 SRC       = 'content/guide'
 IMG_URL   = '/assets/images/guide'
 APPS_SRC  = 'content/apps'          # one .toml per app page
+PROSE_SRC = 'content/pages'         # terms, privacy, import, 404
 ICONS_SRC = 'content/icons.svg'     # <symbol>s shared by the module and card icons
 
-# The site nav, in every header. Adding an app means adding its .toml and a
-# line here; nothing else in this file needs to know the app exists.
-NAV = [('Lessons', '/lessons/'),
-       ('Roads',   '/roads/'),
-       ('Learn To Drive', f'{GUIDE_URL}/')]
+# The guide is the one nav entry that is not an app; the app entries are built
+# from content/apps at load time, so adding an app adds itself to the nav.
+GUIDE_NAV = ('Learn To Drive', f'{GUIDE_URL}/')
 
-# Who a page belongs to. The home and legal pages are the site itself; each app
-# page wears its own name and icon; the guide is Learn To Drive but sells
-# Lessons, so it carries the Lessons badges.
+# Who a page belongs to. Only the two brands that are not apps are named here:
+# the site itself, for the home and legal pages, and the guide, which is Learn
+# To Drive under the L-plate but sells Lessons and so carries its badges. An
+# app's brand is its own name and icon, read from its .toml.
 BRANDS = {
-    'site':    dict(name='Neil Beaver', icon=None, badges=None),
-    'lessons': dict(name='Lessons by Neil Beaver', badges='lessons',
-                    icon='/assets/images/lessons/lessons-icon.png'),
-    'roads':   dict(name='Roads by Neil Beaver', badges=None,
-                    icon='/assets/images/roads/roads-icon.png'),
-    'guide':   dict(name='Learn To Drive', badges='lessons',
-                    icon='/assets/images/guide/l-plate.svg'),
+    'site':  dict(name='Neil Beaver', icon=None, badges=None),
+    'guide': dict(name='Learn To Drive', badges='lessons',
+                  icon='/assets/images/guide/l-plate.svg'),
 }
+
+def brand(key, apps):
+    if key in BRANDS: return BRANDS[key]
+    a = apps[key]
+    # Header badges are for an app you can actually get; an unreleased app
+    # would only be repeating its hero's Coming Soon pills up here.
+    return dict(name=a['name'], icon=a['icon'],
+                badges=a['slug'] if a.get('store') else None)
 
 # Pages outside the guide that must stay in the sitemap. Their lastmod values
 # are kept as they are so a guide rebuild does not churn every entry.
-STATIC_URLS = [
-    ('/',        None,         'weekly',  '1.0'),
-    ('/import',  '2026-08-04', 'monthly', '0.7'),
-    ('/terms',   '2026-08-04', 'yearly',  '0.3'),
-    ('/privacy', '2026-08-04', 'yearly',  '0.3'),
-]
+# How often each prose page is worth recrawling. Everything else in the sitemap
+# is derived from what was built.
+PROSE_FREQ = {'import': ('monthly', '0.7'), 'terms': ('yearly', '0.3'),
+              'privacy': ('yearly', '0.3')}
 
 # ---------------------------------------------------------------- content ---
 
@@ -138,6 +140,7 @@ def img_tag(alt, src, page_path):
 
 LIST_RE = re.compile(r'^(?:([-•])|(\d+)\.)\s+(.*)$')
 MAP_RE  = re.compile(r'^@map\[([^\]]*)\]\(([^)]+)\)$')
+NOTE_RE = re.compile(r'^@note (.+)$')          # a call-out box
 
 def map_embed(title, url):
     """A Google Maps embed behind a click-to-load button.
@@ -225,7 +228,12 @@ def render(body, pages, where, page_path):
         s = line.strip()
         m = LIST_RE.match(s)
         mm = MAP_RE.match(s)
-        if mm:
+        mn = NOTE_RE.match(s)
+        if mn:
+            flush_para(); flush_list()
+            out.append('<div class="prose-note"><p>'
+                       + inline(mn.group(1), pages, where, page_path) + '</p></div>')
+        elif mm:
             flush_para(); flush_list()
             out.append(map_embed(mm.group(1), mm.group(2)))
         elif s.startswith('### '):
@@ -326,8 +334,13 @@ def badges_for(app, group_class='', lazy=True, link_ids=False):
 
 # ------------------------------------------------------------------ chrome ---
 
-def header(brand, current, apps):
-    b = BRANDS[brand]
+def nav_items(apps):
+    return [(a['short_name'], f"/{a['slug']}/")
+            for a in sorted(apps.values(), key=lambda a: a['slug'])] + [GUIDE_NAV]
+
+def header(brand_key, current, apps):
+    b = brand(brand_key, apps)
+    NAV = nav_items(apps)
     ic = (f'<img src="{b["icon"]}" alt="" width="32" height="32" '
           'class="app-icon app-icon--sm">') if b['icon'] else ''
     # The longest matching prefix wins, so a guide page marks Learn To Drive
@@ -350,8 +363,8 @@ def header(brand, current, apps):
 MARKETS = [('&#127468;&#127463;', 'United Kingdom'), ('&#127470;&#127466;', 'Ireland'),
            ('&#127464;&#127486;', 'Cyprus'), ('&#127474;&#127481;', 'Malta')]
 
-def footer(brand):
-    b = BRANDS[brand]
+def footer(brand_key, apps):
+    b = brand(brand_key, apps)
     ic = (f'<img src="{b["icon"]}" alt="" width="32" height="32" '
           'class="app-icon app-icon--sm">') if b['icon'] else ''
     markets = ''.join(f'<li>{f}&nbsp;{n}</li>' for f, n in MARKETS)
@@ -579,7 +592,7 @@ def app_page(app, apps):
       <div class="container">
         <div class="section-intro">
           <h2>{e(mods["heading"])}</h2>
-          <p>Browse available modules — tap any category to expand.</p>
+          <p>{e(mods["intro"])}</p>
         </div>
         <div class="modules-layout">
           <div class="modules-list">{"".join(items)}</div>
@@ -597,7 +610,7 @@ def app_page(app, apps):
       </div>
     </section>''',
       '  </main>',
-      footer(slug),
+      footer(slug, apps),
       '  <script src="/script.js"></script>',
       '  <script type="application/ld+json">'
       '{"@context":"https://schema.org","@graph":[' + app_schema(app) + ']}</script>',
@@ -691,7 +704,7 @@ def home_page(home, apps):
       </div>
     </section>''',
       '  </main>',
-      footer('site'),
+      footer('site', apps),
       '  <script src="/script.js"></script>',
       '  <script type="application/ld+json">'
       '{"@context":"https://schema.org","@graph":[' + graph + ']}</script>',
@@ -701,6 +714,54 @@ def home_page(home, apps):
 
 def load_home():
     return tomllib.load(open('content/home.toml', 'rb'))
+
+# ------------------------------------------------------------- prose pages ---
+
+def prose_page(page, apps):
+    """Terms, privacy, the import guide and 404: a column of text under the
+    shared chrome. They were hand-written HTML carrying their own copy of the
+    header and footer, which is why a change to either used to mean five edits.
+    """
+    body, _ = render(page['body'], {}, f"content/pages/{page['path']}.md", '')
+    url = '/' + page['path'] if page['path'] != '404' else '/404'
+    updated = (f'<p class="last-updated">Last updated: {e(page["updated"])}</p>'
+               if page.get('updated') else '')
+    return '\n'.join([
+      head(page['seo_title'] + ' | Neil Beaver', page['description'], url,
+           '/assets/images/og-lessons.png', og_type='article',
+           noindex=page.get('noindex') == 'true'),
+      '  <a class="skip-link" href="#main">Skip to content</a>',
+      '  ' + icon_sprite(),
+      header(page['brand'], url, apps),
+      '  <main id="main">',
+      '    <section class="prose-page">',
+      '      <div class="container">',
+      '        <a href="/" class="prose-back">'
+      '<svg width="16" height="16" aria-hidden="true" style="transform:rotate(90deg)">'
+      '<use href="#icon-chevron"/></svg>Back</a>',
+      f'        <h1>{e(page["title"])}</h1>',
+      f'        {updated}',
+      body,
+      '      </div>',
+      '    </section>',
+      '  </main>',
+      footer(page['brand'], apps),
+      '  <script src="/script.js"></script>',
+      '</body>',
+      '</html>',
+    ])
+
+def load_prose():
+    pages = []
+    if not os.path.isdir(PROSE_SRC): return pages
+    for f in sorted(os.listdir(PROSE_SRC)):
+        if not f.endswith('.md'): continue
+        raw = open(os.path.join(PROSE_SRC, f)).read()
+        _, fm, body = raw.split('---\n', 2)
+        meta = dict(re.findall(r'^(\w+): (.*)$', fm, re.M))
+        meta['body'] = body.strip()
+        pages.append(meta)
+    return pages
 
 def load_apps():
     apps = {}
@@ -822,7 +883,7 @@ def build_page(page, pages, tops, apps):
         siblings_nav(page, pages, tops),
         '    </main>',
         '  </div>',
-        footer('guide'),
+        footer('guide', apps),
         '  <script src="/script.js"></script>',
         f'  {crumb_ld}',
         '</body>',
@@ -834,8 +895,14 @@ def file_date(path):
     stops being true the moment the page is edited."""
     return date.fromtimestamp(os.path.getmtime(path)).isoformat()
 
-def write_sitemap(pages, apps):
-    rows = list(STATIC_URLS)
+def write_sitemap(pages, apps, prose):
+    rows = [('/', file_date('content/home.toml'), 'weekly', '1.0')]
+    for pg in prose:
+        if pg.get('noindex') == 'true': continue
+        freq, prio = PROSE_FREQ.get(pg['path'], ('yearly', '0.3'))
+        rows.append(('/' + pg['path'],
+                     file_date(os.path.join(PROSE_SRC, pg['path'] + '.md')),
+                     freq, prio))
     for a in sorted(apps.values(), key=lambda a: a['slug']):
         rows.append((f"/{a['slug']}/",
                      file_date(os.path.join(APPS_SRC, a['slug'] + '.toml')),
@@ -844,7 +911,6 @@ def write_sitemap(pages, apps):
         if p['draft']: continue          # thin stubs stay out of the index
         prio = '0.8' if p['path'] == 'index' else ('0.7' if 'parent' not in p else '0.6')
         rows.append((p['url'], p.get('lastmod', str(date.today())), 'monthly', prio))
-    rows = [(u, m or file_date('content/home.toml'), c, p) for u, m, c, p in rows]
     body = '\n'.join(
         f'  <url>\n    <loc>{SITE}{u}</loc>\n    <lastmod>{m}</lastmod>\n'
         f'    <changefreq>{c}</changefreq>\n    <priority>{pr}</priority>\n  </url>'
@@ -880,10 +946,15 @@ def main():
     home = load_home()
     open('index.html', 'w').write(home_page(home, apps))
 
-    n = write_sitemap(pages, apps)
+    prose = load_prose()
+    for pg in prose:
+        open(pg['out'], 'w').write(prose_page(pg, apps))
+
+    n = write_sitemap(pages, apps, prose)
     print(f"built {written} guide pages into {OUT}/")
     print(f"built {len(apps)} app pages: {', '.join('/' + s + '/' for s in sorted(apps))}")
     print("built the home page into index.html")
+    print(f"built {len(prose)} prose pages: {', '.join(p['out'] for p in prose)}")
     print(f"sitemap: {n} URLs ({sum(1 for p in pages.values() if p['draft'])} drafts excluded)")
 
 if __name__ == '__main__':

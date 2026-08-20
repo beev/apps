@@ -36,6 +36,7 @@ icon = "instructors"
 body = "Tried and tested by ADIs and PDIs across the UK. Works on your phone or tablet, any time, any situation."
 
 [modules]
+intro = "Browse available backgrounds — tap any category to expand."
 heading = "Everything your learner needs to see"
 tablet = { src = "/assets/images/roads/iPad2.webp", alt = "Roads by Neil Beaver on iPad — a satellite view of a roundabout approach, with a bus and a learner car ringed in red beside keep clear markings", width = 1032, height = 1376 }
 phone = { src = "/assets/images/roads/iPhone2.webp", alt = "Roads by Neil Beaver on iPhone — a satellite view of a roundabout approach, with a bus and a learner car ringed in red beside keep clear markings", width = 660, height = 1434 }

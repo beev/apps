@@ -46,6 +46,7 @@ icon = "instructors"
 body = "Tried and tested by ADIs and PDIs across the UK. Works on your phone or tablet for lesson briefings and debriefs."
 
 [modules]
+intro = "Browse available modules — tap any category to expand."
 heading = "Everything your learner needs to see"
 tablet = { src = "/assets/images/lessons/iPad2.webp", alt = "Lessons by Neil Beaver on iPad — browsing the lesson module list", width = 1032, height = 1376 }
 phone = { src = "/assets/images/lessons/iPhone2.webp", alt = "Lessons by Neil Beaver on iPhone — browsing the lesson module list", width = 660, height = 1434 }
