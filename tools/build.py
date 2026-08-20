@@ -764,6 +764,10 @@ def load_prose():
         raw = open(os.path.join(PROSE_SRC, f)).read()
         _, fm, body = raw.split('---\n', 2)
         meta = dict(re.findall(r'^(\w+): (.*)$', fm, re.M))
+        # A value may be quoted so it can contain a colon, which bare YAML
+        # would read as a nested key.
+        meta = {k: v[1:-1] if len(v) > 1 and v[0] == v[-1] == '"' else v
+                for k, v in meta.items()}
         meta['body'] = body.strip()
         pages.append(meta)
     return pages

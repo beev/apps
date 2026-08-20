@@ -4,7 +4,7 @@ path: privacy
 out: privacy.html
 brand: site
 seo_title: Privacy Policy — Neil Beaver apps
-description: Privacy policy for apps by Neil Beaver and this website. No personal data is collected: no analytics, no tracking, no cookies.
+description: "Privacy policy for apps by Neil Beaver and this website. No personal data is collected: no analytics, no tracking, no cookies."
 updated: August 2026
 ---
 

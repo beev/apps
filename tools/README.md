@@ -40,6 +40,17 @@ structured data all follow from that file. An app with no `[store]` table gets
 The one thing not derived is its card on the home page: those are written by
 hand in `content/home.toml`, because the order and the wording are editorial.
 
+## Deployment
+
+Pushing `main` publishes: GitHub Pages serves the repo as-is at
+www.neilbeaver.com. `.nojekyll` at the root stops Pages running Jekyll over
+the repository, which matters because `content/` holds *sources*, not output -
+markdown with front matter that Jekyll would try to parse and render. It once
+failed a deploy over a single unquoted colon in a description. Nothing here
+needs Jekyll: every page is already built by `tools/build.py`.
+
+Front matter values may be wrapped in double quotes when they contain a colon.
+
 ## URLs
 
 Addresses are written without `.html`, and with a trailing slash when the page
