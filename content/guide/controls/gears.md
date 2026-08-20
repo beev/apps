@@ -51,4 +51,4 @@ The *2* and *1* are there to enable manual selection of these gears. This could 
 
 In most situations, the driver will only require the Park, Drive and Reverse settings. Park to park, Drive to drive (forward), and Reverse to reverse. It's as simple as that!
 
-Neutral is required only when the car needs to roll freely. For example, if the car needs to be towed it is necessary to first select neutral.
+Neutral is required when the car needs to roll freely. For example, if the car needs to be towed it is necessary to first select neutral. It is also used by some when waiting but not parking, such as at traffic lights, with the handbrake applied.

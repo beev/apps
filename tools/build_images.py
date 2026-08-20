@@ -18,6 +18,14 @@ import csv, os, subprocess, struct, sys
 OUT_ROOT = 'assets/images/guide'
 QUALITY  = '90'          # flat-colour line art; artefacts show up early here
 
+# Sources to take at @4x instead of @2x. The blindspot diagram is only 240x330
+# at @1x, which displays far too small for a drawing this detailed, so it ships
+# at the @4x pixel size and displays at 480x660.
+SRC_OVERRIDE = {
+    ('controls/zones-of-vision', 'blindspots.png'):
+        'Website Learn To Drive/Images/Controls/Vision/Blindspots@4x.png',
+}
+
 def dims(path):
     with open(path, 'rb') as f: head = f.read(32)
     if head[:8] == b'\x89PNG\r\n\x1a\n':
@@ -35,7 +43,7 @@ def main():
     manifest, total_in, total_out, failed = [], 0, 0, []
 
     for r in rows:
-        src = r['src2x'] or r['src']
+        src = SRC_OVERRIDE.get((r['page'], r['ref'])) or r['src2x'] or r['src']
         if not os.path.exists(src):
             failed.append((r['page'], r['ref'], 'source missing')); continue
 
