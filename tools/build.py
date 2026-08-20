@@ -32,10 +32,10 @@ IMG_URL   = '/assets/images/guide'
 # Pages outside the guide that must stay in the sitemap. Their lastmod values
 # are kept as they are so a guide rebuild does not churn every entry.
 STATIC_URLS = [
-    ('/',             '2026-08-04', 'weekly',  '1.0'),
-    ('/import.html',  '2026-08-04', 'monthly', '0.7'),
-    ('/terms.html',   '2026-08-04', 'yearly',  '0.3'),
-    ('/privacy.html', '2026-08-04', 'yearly',  '0.3'),
+    ('/',        '2026-08-04', 'weekly',  '1.0'),
+    ('/import',  '2026-08-04', 'monthly', '0.7'),
+    ('/terms',   '2026-08-04', 'yearly',  '0.3'),
+    ('/privacy', '2026-08-04', 'yearly',  '0.3'),
 ]
 
 # ---------------------------------------------------------------- content ---
