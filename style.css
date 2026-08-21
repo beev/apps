@@ -2,6 +2,13 @@
    CSS CUSTOM PROPERTIES
    ============================================================ */
 :root {
+  /* The site is light-only. Without this, Chrome and Brave on Android apply
+     Auto Dark Theme, repainting the page and inverting flat vector images —
+     which turned Apple's black App Store badge into a white blank. "only
+     light" is the documented opt-out; plain "light" is not, and still gets
+     auto-darkened. */
+  color-scheme: only light;
+
   --color-primary:       #1A3A5C;
   --color-link:          #0B61D6;
   --color-primary-dim:   rgba(26, 58, 92, 0.08);
