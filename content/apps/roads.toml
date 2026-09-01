@@ -8,7 +8,18 @@ icon        = "/assets/images/roads/roads-icon.png"
 og_image    = "/assets/images/og-roads.png"
 title       = "Roads by Neil Beaver — Road Layout Teaching Aid"
 description = "Draw and demonstrate any road layout for your learner. Pre-drawn junctions and roundabouts plus Google Maps satellite imagery, on Android, iPhone and iPad."
-shipped     = false
+shipped     = true
+
+[store]
+# No `google` key yet: Roads is not on Google Play, so build.py renders the
+# Coming Soon pill for that half of the pair. Adding the key ships the badge.
+apple = "https://apps.apple.com/gb/app/roads-by-neil-beaver/id6776587782?itscg=30200&itsct=apps_box_badge&mttnsubad=6776587782"
+apple_badge = "https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1786492800"
+
+[offer]
+price = "3.99"
+currency = "GBP"
+regions = ["GB", "IE", "CY", "MT"]
 
 [hero]
 heading = "Any situation, any time."
@@ -78,4 +89,4 @@ topics = ["One Way Street", "Protected Right Turn", "Car Park", "Level Crossing"
 
 [cta]
 heading = "Ready to transform how you teach?"
-lead = "Coming soon."
+lead = "Free one month trial subscription. £3.99 per month thereafter."

@@ -285,29 +285,31 @@ APPLE_GLYPH = ('<svg viewBox="0 0 384 512" width="20" height="20" fill="currentC
 PLAY_GLYPH = ('<svg viewBox="0 0 512 512" width="20" height="20" fill="currentColor" '
     'aria-hidden="true"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c17.4-9.8 17.4-36 0-46.7l-1.2.9zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>')
 
-def store_badges(app, group_class='', lazy=True, link_ids=False):
-    """Apple and Google badges for an app that has shipped.
-
-    Apple's artwork is served from their CDN; Google's is self-hosted because
-    their brand guidelines require it, and it bakes in its own clear space,
-    which is why it renders taller - see .playstore-badge in style.css.
-    """
+def apple_badge(app, lazy=True, link_id=False):
+    """Apple's artwork, served from their CDN as their guidelines require."""
     st = app['store']
-    ld = ' id="appstore-link"' if link_ids else ''
-    lp = ' id="play-link"' if link_ids else ''
+    ld = ' id="appstore-link"' if link_id else ''
     load = ' loading="lazy"' if lazy else ''
-    return f'''<div class="badge-group{group_class}">
-          <a href="{e(st['apple'])}" class="appstore-badge"{ld}>
+    return f'''<a href="{e(st['apple'])}" class="appstore-badge"{ld}>
             <img src="{e(st['apple_badge'])}"
                  alt="Download {e(app['name'])} on the App Store"
                  width="120" height="40"{load} decoding="async">
-          </a>
-          <a href="{e(st['google'])}" class="playstore-badge"{lp}>
+          </a>'''
+
+def play_badge(app, lazy=True, link_id=False):
+    """Google's artwork, self-hosted because their brand guidelines require it.
+
+    It bakes in its own clear space, which is why it renders taller - see
+    .playstore-badge in style.css.
+    """
+    st = app['store']
+    lp = ' id="play-link"' if link_id else ''
+    load = ' loading="lazy"' if lazy else ''
+    return f'''<a href="{e(st['google'])}" class="playstore-badge"{lp}>
             <img src="/assets/images/google-play-badge.png"
                  alt="Get {e(app['name'])} on Google Play"
                  width="646" height="250"{load} decoding="async">
-          </a>
-        </div>'''
+          </a>'''
 
 def soon_badge(store, glyph, cls):
     return (f'<span class="badge badge--{cls} badge--disabled" '
@@ -317,19 +319,25 @@ def soon_badge(store, glyph, cls):
             '<span class="badge__eyebrow">Coming Soon to</span>'
             f'<span class="badge__title">{e(store)}</span></span></span>')
 
-def soon_badges(group_class=''):
-    """Non-interactive pills for an app with no store listing yet.
-
-    Swap these for store_badges() by giving the app a [store] table in its
-    .toml - nothing else needs changing.
-    """
-    return (f'<div class="badge-group{group_class}">'
-            + soon_badge('App Store', APPLE_GLYPH, 'appstore')
-            + soon_badge('Google Play', PLAY_GLYPH, 'play') + '</div>')
-
 def badges_for(app, group_class='', lazy=True, link_ids=False):
-    return (store_badges(app, group_class, lazy, link_ids) if app.get('store')
-            else soon_badges(group_class))
+    """One badge per store: live artwork where the app has a listing, a
+    non-interactive "Coming Soon" pill where it has not shipped there yet.
+
+    The two halves are independent, so an app that reaches one store before
+    the other - as Roads did - needs only the key it has in its [store] table.
+    Adding the other key later turns that pill into a live badge and nothing
+    else needs changing. A pill is a <span>, so it carries no id: #play-link
+    and #appstore-link exist only where there is a link to point at.
+    """
+    st = app.get('store') or {}
+    apple = (apple_badge(app, lazy, link_ids) if st.get('apple')
+             else soon_badge('App Store', APPLE_GLYPH, 'appstore'))
+    play = (play_badge(app, lazy, link_ids) if st.get('google')
+            else soon_badge('Google Play', PLAY_GLYPH, 'play'))
+    return f'''<div class="badge-group{group_class}">
+          {apple}
+          {play}
+        </div>'''
 
 # ------------------------------------------------------------------ chrome ---
 

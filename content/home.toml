@@ -16,8 +16,8 @@ faq_heading = "Frequently asked questions"
 name    = "Neil Beaver"
 heading = "Professional teaching aids\nfor driving instructors"
 
-# The three things the site is for. Order is deliberate: the shipped app
-# first, then the one coming, then the free guide.
+# The three things the site is for. Order is deliberate: the app on both
+# stores first, then the one still to reach Google Play, then the free guide.
 [[products]]
 name   = "Lessons"
 full   = "Lessons by Neil Beaver"
@@ -31,7 +31,7 @@ name   = "Roads"
 full   = "Roads by Neil Beaver"
 url    = "/roads/"
 icon   = "/assets/images/roads/roads-icon.png"
-status = "Coming soon"
+status = "On the App Store"
 body   = "Draw any road situation as it comes up. More than fifty pre-drawn layouts, plus Google Maps satellite imagery so you can teach the junction you are actually parked at."
 
 [[products]]
@@ -65,7 +65,7 @@ a = "Yes, those were the good old days 😁 Something I learned the hard way: as
 
 [[faq]]
 q = "What about Road Pad and Road Board?"
-a = "These are currently being redeveloped and are coming soon."
+a = "Road Pad and Road Board have now been replaced by the new app Roads. The old apps have been retired as they are obsolete and I don't want people to pay for an app that is no longer supported and will not continue working indefinitely."
 
 [[faq]]
 q = "How can I import my saved files from Road Board to Roads?"
