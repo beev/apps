@@ -82,6 +82,14 @@ a {
   padding-inline: var(--gap);
 }
 
+/* .site-header is sticky at 60px tall (see .header-inner); without this,
+   jumping straight to an in-page anchor (a direct link, a QR code) lands
+   the section flush under the viewport top and the header covers its
+   first ~60px. Scrolling there gradually doesn't show the problem. */
+section[id] {
+  scroll-margin-top: 60px;
+}
+
 .section-intro {
   text-align: center;
   max-width: 620px;
@@ -963,6 +971,32 @@ details.module[open] .module__chevron {
 }
 
 /* ============================================================
+   NEWSLETTER (Brevo embed, styled to match the rest of the site)
+   ============================================================ */
+.newsletter {
+  background-color: var(--color-bg);
+  padding-block: clamp(3rem, 8vw, 5rem);
+}
+
+/* The Brevo embed itself is edited directly below (button color/radius,
+   font stack, placeholder color, title size) rather than overridden here —
+   its markup is inline-styled, and fighting inline styles with !important
+   is worse than just fixing the source. This class is the one addition the
+   embed needs: visually-hidden labels for the name fields, matching the
+   email field's real <label> rather than relying on placeholder text alone. */
+.newsletter .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ============================================================
    FOOTER
    ============================================================ */
 .site-footer {
@@ -1610,6 +1644,48 @@ details.module[open] .module__chevron {
 }
 .prose-back:hover {
   color: var(--color-primary);
+}
+
+/* ============================================================
+   CONFIRMATION PAGES (newsletter opt-in: /thanks, /subscribed)
+   ============================================================ */
+.confirm-page {
+  padding-block: clamp(4rem, 12vw, 7rem);
+  text-align: center;
+}
+
+.confirm-page .container {
+  max-width: 460px;
+}
+
+.confirm-page__icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1.25rem;
+  border-radius: 50%;
+  background-color: rgba(48, 164, 108, 0.12);
+  color: var(--color-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirm-page h1 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.confirm-page p {
+  color: var(--color-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.confirm-page .btn {
+  margin-top: 1.25rem;
 }
 
 /* A call-out box, written as "@note ..." in content/pages/*.md. Only the
