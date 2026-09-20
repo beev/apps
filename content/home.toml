@@ -31,7 +31,7 @@ name   = "Roads"
 full   = "Roads by Neil Beaver"
 url    = "/roads/"
 icon   = "/assets/images/roads/roads-icon.png"
-status = "On the App Store"
+status = "On the App Store and Google Play"
 body   = "Draw any road situation as it comes up. More than fifty pre-drawn layouts, plus Google Maps satellite imagery so you can teach the junction you are actually parked at."
 
 [[products]]
