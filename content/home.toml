@@ -76,9 +76,5 @@ q = "What about Routes and DL25 — Mock Test?"
 a = "It's on my to do list to revisit these apps and see if I can bring them more up-to-date."
 
 [[faq]]
-q = "What about Android?"
-a = "Lessons is now available on the Google Play Store.\nRoads will be arriving soon."
-
-[[faq]]
 q = "Will my subscription work across iOS and Android?"
 a = "Unfortunately, it is not possible to make the same subscription work across the two different platforms."
