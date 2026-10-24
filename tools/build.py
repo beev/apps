@@ -332,6 +332,12 @@ def badges_for(app, group_class='', lazy=True, link_ids=False):
     st = app.get('store') or {}
     apple = (apple_badge(app, lazy, link_ids) if st.get('apple')
              else soon_badge('App Store', APPLE_GLYPH, 'appstore'))
+    # An app that is iOS-only by design (platforms = ["ios"]) shows no Google
+    # Play badge at all, rather than a "Coming Soon" pill promising one.
+    if 'android' not in app.get('platforms', ['ios', 'android']):
+        return f'''<div class="badge-group{group_class}">
+          {apple}
+        </div>'''
     play = (play_badge(app, lazy, link_ids) if st.get('google')
             else soon_badge('Google Play', PLAY_GLYPH, 'play'))
     return f'''<div class="badge-group{group_class}">
@@ -342,8 +348,11 @@ def badges_for(app, group_class='', lazy=True, link_ids=False):
 # ------------------------------------------------------------------ chrome ---
 
 def nav_items(apps):
+    # `order` in an app's .toml sets its place in the nav (Lessons, Roads, DL25);
+    # apps without one fall to the end, alphabetically.
     return [(a['short_name'], f"/{a['slug']}/")
-            for a in sorted(apps.values(), key=lambda a: a['slug'])] + [GUIDE_NAV]
+            for a in sorted(apps.values(),
+                            key=lambda a: (a.get('order', 99), a['slug']))] + [GUIDE_NAV]
 
 def header(brand_key, current, apps):
     b = brand(brand_key, apps)
@@ -372,11 +381,28 @@ def header(brand_key, current, apps):
     </div>
   </header>'''
 
-MARKETS = [('&#127468;&#127463;', 'United Kingdom'), ('&#127470;&#127466;', 'Ireland'),
-           ('&#127464;&#127486;', 'Cyprus'), ('&#127474;&#127481;', 'Malta')]
+# ISO code -> (flag, short name for the hero, full name for the footer).
+COUNTRIES = {
+    'GB': ('&#127468;&#127463;', 'UK', 'United Kingdom'),
+    'IE': ('&#127470;&#127466;', 'Ireland', 'Ireland'),
+    'CY': ('&#127464;&#127486;', 'Cyprus', 'Cyprus'),
+    'MT': ('&#127474;&#127481;', 'Malta', 'Malta'),
+    'BM': ('&#127463;&#127474;', 'Bermuda', 'Bermuda'),
+    'VG': ('&#127483;&#127468;', 'British Virgin Islands', 'British Virgin Islands'),
+    'KY': ('&#127472;&#127486;', 'Cayman Islands', 'Cayman Islands'),
+    'MS': ('&#127474;&#127480;', 'Montserrat', 'Montserrat'),
+    'TC': ('&#127481;&#127464;', 'Turks and Caicos Islands', 'Turks and Caicos Islands'),
+}
+DEFAULT_REGIONS = ['GB', 'IE', 'CY', 'MT']
+
+def regions_of(app):
+    """The countries an app is sold in: its [offer] regions, else the usual four."""
+    return ((app or {}).get('offer') or {}).get('regions', DEFAULT_REGIONS)
 
 def footer(brand_key, apps):
     b = brand(brand_key, apps)
+    MARKETS = [(COUNTRIES[r][0], COUNTRIES[r][2])
+               for r in regions_of(apps.get(brand_key))]
     sq = ' app-icon--square' if b.get('square') else ''
     ic = (f'<img src="{b["icon"]}" alt="" width="32" height="32" '
           f'class="app-icon app-icon--sm{sq}">') if b['icon'] else ''
@@ -462,6 +488,11 @@ def device_display(mock, first=False):
     """
     t, ph = mock['tablet'], mock['phone']
     prio = ' fetchpriority="high" decoding="async"' if first else ' loading="lazy" decoding="async"'
+    # landscape = true for an app that is used on its side (DL25's marking
+    # sheet): the same frames, turned.
+    ls = mock.get('landscape')
+    ipad_cls  = 'ipad-mockup--landscape' if ls else 'ipad-mockup--portrait'
+    iphone_cls = 'iphone-mockup iphone-mockup--landscape' if ls else 'iphone-mockup'
     return f'''<div class="device-display">
             <div class="device-switcher" role="group" aria-label="Switch device preview">
               <button class="device-switcher__btn is-active" data-device="tablet" aria-pressed="true">
@@ -480,7 +511,7 @@ def device_display(mock, first=False):
               </button>
             </div>
             <div class="device-view device-view--tablet">
-              <div class="ipad-mockup ipad-mockup--portrait">
+              <div class="ipad-mockup {ipad_cls}">
                 <div class="ipad-mockup__shell">
                   <div class="ipad-mockup__camera" aria-hidden="true"></div>
                   <div class="ipad-mockup__screen">
@@ -492,7 +523,7 @@ def device_display(mock, first=False):
               </div>
             </div>
             <div class="device-view device-view--phone" hidden>
-              <div class="iphone-mockup">
+              <div class="{iphone_cls}">
                 <div class="iphone-mockup__shell">
                   <div class="iphone-mockup__screen">
                     <img src="{e(ph['src'])}" alt="{e(ph['alt'])}"
@@ -521,7 +552,8 @@ def app_schema(app):
              f'"name":{json_str(app["name"])}',
              f'"description":{json_str(app["description"])}',
              '"applicationCategory":"EducationalApplication"',
-             '"operatingSystem":"iOS, iPadOS, Android"',
+             '"operatingSystem":"%s"' % ('iOS, iPadOS, Android'
+                 if 'android' in app.get('platforms', ['ios', 'android']) else 'iOS, iPadOS'),
              f'"url":"{SITE}/{app["slug"]}/"',
              f'"image":"{SITE}{app["og_image"]}"',
              '"author":{"@type":"Person","name":"Neil Beaver"}']
@@ -537,7 +569,8 @@ def json_str(x):
 
 def app_page(app, apps):
     slug, url = app['slug'], f'/{app["slug"]}/'
-    hero, about, mods, cta = app['hero'], app['about'], app['modules'], app['cta']
+    hero, about, cta = app['hero'], app['about'], app['cta']
+    mods = app.get('modules')       # an app with no module list (DL25) omits the section
 
     cards = ''.join(f'''<div class="card">
             <div class="card__icon" aria-hidden="true">{icon(c["icon"], "", 24)}</div>
@@ -546,7 +579,7 @@ def app_page(app, apps):
           </div>''' for c in about['cards'])
 
     items = []
-    for m in mods['list']:
+    for m in (mods['list'] if mods else []):
         topics = ''.join(f'<li>{e(t)}</li>' for t in m['topics'])
         # The nine Lessons modules are the nine guide sections, so each one
         # can point at the written version of itself.
@@ -565,8 +598,22 @@ def app_page(app, apps):
             </details>''')
 
     markets = ''.join(f'<span class="market">{f}&thinsp;{n}</span>'
-                      for f, n in [('&#127468;&#127463;', 'UK'), ('&#127470;&#127466;', 'Ireland'),
-                                   ('&#127464;&#127486;', 'Cyprus'), ('&#127474;&#127481;', 'Malta')])
+                      for f, n in [COUNTRIES[r][:2] for r in regions_of(app)])
+
+    modules_html = f'''
+
+    <section class="modules">
+      <div class="container">
+        <div class="section-intro">
+          <h2>{e(mods["heading"])}</h2>
+          <p>{e(mods["intro"])}</p>
+        </div>
+        <div class="modules-layout">
+          <div class="modules-list">{"".join(items)}</div>
+          {device_display(mods)}
+        </div>
+      </div>
+    </section>''' if mods else ''
 
     return '\n'.join([
       head(app['title'], app['description'], url, app['og_image'],
@@ -599,20 +646,7 @@ def app_page(app, apps):
         </div>
         <div class="cards">{cards}</div>
       </div>
-    </section>
-
-    <section class="modules">
-      <div class="container">
-        <div class="section-intro">
-          <h2>{e(mods["heading"])}</h2>
-          <p>{e(mods["intro"])}</p>
-        </div>
-        <div class="modules-layout">
-          <div class="modules-list">{"".join(items)}</div>
-          {device_display(mods)}
-        </div>
-      </div>
-    </section>
+    </section>{modules_html}
 
     <section class="download-cta">
       <div class="container download-cta-inner">
@@ -658,14 +692,21 @@ def faq_blocks(faq):
     return ''.join(items), ','.join(ld)
 
 def home_page(home, apps):
-    cards = ''.join(f'''<a class="product" href="{e(p["url"])}">
+    # A product with no page yet (soon = true) is a plain card: no link, no
+    # "Find out more", and a muted status, until its page exists.
+    def card(p):
+        soon = p.get('soon')
+        tag, href = ('div', '') if soon else ('a', f' href="{e(p["url"])}"')
+        cls = 'product product--soon' if soon else 'product'
+        more = '' if soon else '\n            <span class="product__more">Find out more</span>'
+        return f'''<{tag} class="{cls}"{href}>
             <img src="{e(p["icon"])}" alt="" width="96" height="96"
                  class="product__icon{" product__icon--square" if p.get("square") else ""}">
             <h2 class="product__name">{e(p["name"])}</h2>
             <p class="product__status">{e(p["status"])}</p>
-            <p class="product__body">{e(p["body"])}</p>
-            <span class="product__more">Find out more</span>
-          </a>''' for p in home['products'])
+            <p class="product__body">{e(p["body"])}</p>{more}
+          </{tag}>'''
+    cards = ''.join(card(p) for p in home['products'])
 
     faq_html, faq_ld = faq_blocks(home['faq'])
     about = ''.join(f'<p>{e(par)}</p>' for par in home['about']['body'])

@@ -2,6 +2,7 @@
 # Structure lives in tools/build.py; only what differs per app is here.
 
 slug        = "lessons"
+order       = 1
 name        = "Lessons by Neil Beaver"
 short_name  = "Lessons"
 icon        = "/assets/images/lessons/lessons-icon.png"

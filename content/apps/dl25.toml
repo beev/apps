@@ -1,0 +1,70 @@
+# DL25 - Mock Test by Neil Beaver - the content of /dl25/.
+# Structure lives in tools/build.py; only what differs per app is here.
+# iOS only, so platforms leaves Android out and no Google Play badge is drawn.
+# No [modules]: the app has features rather than lessons, so those are cards.
+
+slug        = "dl25"
+order       = 3
+platforms   = ["ios"]
+name        = "DL25 - Mock Test"
+short_name  = "DL25"
+icon        = "/assets/images/dl25/dl25-icon.png"
+# Placeholder: the site-wide card, until there is a 1200x630 og-dl25.png.
+og_image    = "/assets/images/og-lessons.png"
+title       = "DL25 - Mock Test — Driving Test Records for Instructors"
+description = "Keep a record of all your pupils' mock tests and driving tests. One tap to add a fault, automatic totals, statistics, and results sent by email — on iPhone and iPad."
+shipped     = true
+
+[store]
+apple = "https://apps.apple.com/gb/app/dl25-mock-test/id1463397859"
+apple_badge = "https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us"
+
+[offer]
+price = "3.99"
+currency = "GBP"
+regions = ["GB", "BM", "VG", "KY", "MS", "TC"]
+
+[hero]
+heading = "Every test, on record."
+subheading = "Keep a record of all your pupils' tests — mock tests and the real thing. A simple DL25 for your iPhone or iPad: one tap to add a fault, and the total is counted for you."
+landscape = true
+tablet = { src = "/assets/images/dl25/iPad1.webp", alt = "DL25 - Mock Test running on an iPad, showing a Driving Test Report marking sheet with faults ticked", width = 1400, height = 1050 }
+phone = { src = "/assets/images/dl25/iPhone1.webp", alt = "DL25 - Mock Test running on an iPhone, showing a Driving Test Report marking sheet", width = 1200, height = 552 }
+
+[about]
+heading = "Built by a driving instructor\nfor driving instructors"
+subheading = "Record tests, then save, edit and share."
+
+[[about.cards]]
+title = "Simple to mark"
+icon = "play"
+body = "One tap to add a fault, double tap to remove it. The total faults are counted automatically at the end of the test."
+
+[[about.cards]]
+title = "Edit after saving"
+icon = "layers"
+body = "Tests can be edited once saved. Just hit the Total Faults button to save again when you have finished tinkering."
+
+[[about.cards]]
+title = "Notes for your pupil"
+icon = "instructors"
+body = "Add notes to a test and, if you like, send them to your pupil along with their completed DL25."
+
+[[about.cards]]
+title = "Send results by email"
+icon = "road"
+body = "Email test results in one go. Automatically copy yourself in, and automatically include explanatory text with each email."
+
+[[about.cards]]
+title = "Sort your records"
+icon = "junctions"
+body = "Sort saved tests by date or by candidate name, so any pupil's history is quick to find."
+
+[[about.cards]]
+title = "Statistics"
+icon = "controls"
+body = "Statistics across all your test records, filtered by mock test or actual test."
+
+[cta]
+heading = "Ready to keep better records?"
+lead = "£3.99 one-off purchase on the App Store. For iPhone and iPad."

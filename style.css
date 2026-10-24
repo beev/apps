@@ -542,6 +542,24 @@ section[id] {
   border-radius: 100px;
 }
 
+/* An iPhone on its side (DL25). The screenshot already carries its own
+   status area, so the side buttons and home bar are dropped. */
+.iphone-mockup--landscape .iphone-mockup__shell {
+  width: min(460px, 88vw);
+  border-radius: 34px;
+  padding: 10px 14px;
+}
+
+.iphone-mockup--landscape .iphone-mockup__shell::before,
+.iphone-mockup--landscape .iphone-mockup__shell::after,
+.iphone-mockup--landscape .iphone-mockup__home-bar {
+  display: none;
+}
+
+.iphone-mockup--landscape .iphone-mockup__screen {
+  border-radius: 22px;
+}
+
 /* ============================================================
    IPAD MOCKUP
    ============================================================ */
@@ -651,7 +669,8 @@ section[id] {
 
 .hero-markets__countries {
   display: inline-flex;
-  gap: 0.875rem;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.875rem;
 }
 
 .market {
@@ -1577,8 +1596,23 @@ details.module[open] .module__chevron {
 .faq__answer p:last-child { margin-bottom: 0; }
 .faq__answer a { text-decoration: underline; }
 
+/* A product with no page yet: a card, but not a link, so no hover lift. */
+.product--soon:hover {
+  transform: none;
+  box-shadow: var(--shadow-sm);
+  border-color: var(--color-border);
+}
+
+.product--soon .product__status {
+  color: var(--color-muted);
+}
+
+/* Six columns so the first three cards take two each, and the two below take
+   three each: a row of three, then a row of two. */
 @media (min-width: 760px) {
-  .products__grid { grid-template-columns: repeat(3, 1fr); }
+  .products__grid { grid-template-columns: repeat(6, 1fr); }
+  .product { grid-column: span 2; }
+  .product:nth-child(n+4) { grid-column: span 3; }
 }
 
 /* ==========================================================================

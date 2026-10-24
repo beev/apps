@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DL25 - Mock Test — Driving Test Records for Instructors</title>
+  <meta name="description" content="Keep a record of all your pupils&#x27; mock tests and driving tests. One tap to add a fault, automatic totals, statistics, and results sent by email — on iPhone and iPad.">
+  <link rel="canonical" href="https://www.neilbeaver.com/dl25/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Neil Beaver">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:url" content="https://www.neilbeaver.com/dl25/">
+  <meta property="og:title" content="DL25 - Mock Test — Driving Test Records for Instructors">
+  <meta property="og:description" content="Keep a record of all your pupils&#x27; mock tests and driving tests. One tap to add a fault, automatic totals, statistics, and results sent by email — on iPhone and iPad.">
+  <meta property="og:image" content="https://www.neilbeaver.com/assets/images/og-lessons.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="DL25 - Mock Test running on an iPad, showing a Driving Test Report marking sheet with faults ticked">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DL25 - Mock Test — Driving Test Records for Instructors">
+  <meta name="twitter:description" content="Keep a record of all your pupils&#x27; mock tests and driving tests. One tap to add a fault, automatic totals, statistics, and results sent by email — on iPhone and iPad.">
+  <meta name="twitter:image" content="https://www.neilbeaver.com/assets/images/og-lessons.png">
+
+  <meta name="theme-color" content="#1A3A5C">
+  <link rel="preload" as="image" href="/assets/images/dl25/iPad1.webp" fetchpriority="high">
+  <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="icon-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,6 8,10 12,6"/></symbol>
+  <symbol id="icon-controls" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/> <circle cx="12" cy="12" r="2.5"/> <line x1="12" y1="14.5" x2="12" y2="21"/> <line x1="3" y1="12" x2="9.5" y2="12"/> <line x1="14.5" y1="12" x2="21" y2="12"/></symbol>
+  <symbol id="icon-crossings" viewBox="0 0 24 24"><circle cx="12" cy="9" r="7" fill="#E8B84B"/> <line x1="12" y1="16" x2="12" y2="22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></symbol>
+  <symbol id="icon-dual-carriageway" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><g transform="rotate(90 12 12)"> <line x1="2" y1="6" x2="22" y2="6"/> <line x1="2" y1="18" x2="22" y2="18"/> <polyline points="17,2 22,6 17,10" stroke-linejoin="round"/> <polyline points="7,14 2,18 7,22" stroke-linejoin="round"/> </g></symbol>
+  <symbol id="icon-instructors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/> <circle cx="9" cy="7" r="4"/> <path d="M23 21v-2a4 4 0 0 0-3-3.87"/> <path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="icon-junctions" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 22 L14 14 L22 14"/> <path d="M10 22 L10 14 L2 14"/> <path d="M14 2 L14 10 L22 10"/> <path d="M10 2 L10 10 L2 10"/></symbol>
+  <symbol id="icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/> <rect x="14" y="3" width="7" height="7"/> <rect x="3" y="14" width="7" height="7"/> <rect x="14" y="14" width="7" height="7"/></symbol>
+  <symbol id="icon-manoeuvres" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12 Q3 5 12 5 L12 2 L17 7 L12 12 L12 9 Q7 9 7 12 L7 21"/></symbol>
+  <symbol id="icon-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/> <polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="icon-road" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 L6 22"/> <path d="M18 2 L18 22"/> <line x1="12" y1="2" x2="12" y2="6"/> <line x1="12" y1="9" x2="12" y2="13"/> <line x1="12" y1="16" x2="12" y2="20"/></symbol>
+  <symbol id="icon-roundabouts" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.6 3.1 A9 9 0 0 1 21 12" stroke-width="2.5"/> <polyline points="18.2,8.6 21,12 21.7,7.7"/> <path d="M18.9 17.8 A9 9 0 0 1 7.5 19.8" stroke-width="2.5"/> <polyline points="11.8,19.1 7.5,19.8 10.9,22.6"/> <path d="M3.5 15.1 A9 9 0 0 1 7.5 4.2" stroke-width="2.5"/> <polyline points="5.9,8.3 7.5,4.2 3.4,5.8"/></symbol>
+  <symbol id="icon-satellite" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(45 12 12)"> <rect x="-1" y="8" width="8" height="8"/> <line x1="3" y1="8" x2="3" y2="16"/> <rect x="17" y="8" width="8" height="8"/> <line x1="21" y1="8" x2="21" y2="16"/> <line x1="7" y1="12" x2="17" y2="12"/> <circle cx="12" cy="12" r="2.5"/> </g></symbol>
+  <symbol id="icon-stopping" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="miter"><polygon points="8.5,2.5 15.5,2.5 21.5,8.5 21.5,15.5 15.5,21.5 8.5,21.5 2.5,15.5 2.5,8.5"/></symbol>
+  <symbol id="icon-traffic-lights" viewBox="0 0 24 24"><rect x="5" y="1" width="14" height="22" rx="3" fill="none" stroke="currentColor" stroke-width="2"/> <circle cx="12" cy="7" r="3" fill="#E8B84B"/> <circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.4"/> <circle cx="12" cy="17" r="3" fill="#30A46C"/></symbol>
+</svg>
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <div class="header-inner__start"><a class="site-header__brand" href="/"><img src="/assets/images/dl25/dl25-icon.png" alt="" width="32" height="32" class="app-icon app-icon--sm"><span>DL25 - Mock Test</span></a></div>
+      <nav class="site-nav" aria-label="Site"><a href="/lessons/">Lessons</a><a href="/roads/">Roads</a><a href="/dl25/" aria-current="page">DL25</a><a href="/lessons/guide/">Learn To Drive</a></nav>
+      <div class="header-inner__end"></div>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <h1 class="hero-heading">Every test, on record.</h1>
+          <p class="hero-subheading">Keep a record of all your pupils&#x27; tests — mock tests and the real thing. A simple DL25 for your iPhone or iPad: one tap to add a fault, and the total is counted for you.</p>
+          <div class="badge-group">
+          <a href="https://apps.apple.com/gb/app/dl25-mock-test/id1463397859" class="appstore-badge" id="appstore-link">
+            <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us"
+                 alt="Download DL25 - Mock Test on the App Store"
+                 width="120" height="40" decoding="async">
+          </a>
+        </div>
+          <p class="hero-markets">Available in:&ensp;<span class="hero-markets__countries"><span class="market">&#127468;&#127463;&thinsp;UK</span><span class="market">&#127463;&#127474;&thinsp;Bermuda</span><span class="market">&#127483;&#127468;&thinsp;British Virgin Islands</span><span class="market">&#127472;&#127486;&thinsp;Cayman Islands</span><span class="market">&#127474;&#127480;&thinsp;Montserrat</span><span class="market">&#127481;&#127464;&thinsp;Turks and Caicos Islands</span></span></p>
+        </div>
+        <div class="hero-device"><div class="device-display">
+            <div class="device-switcher" role="group" aria-label="Switch device preview">
+              <button class="device-switcher__btn is-active" data-device="tablet" aria-pressed="true">
+                <svg viewBox="0 0 14 18" width="11" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="1" y="1" width="12" height="16" rx="2"/>
+                  <circle cx="7" cy="14.5" r="0.8" fill="currentColor" stroke="none"/>
+                </svg>
+                Tablet
+              </button>
+              <button class="device-switcher__btn" data-device="phone" aria-pressed="false">
+                <svg viewBox="0 0 10 18" width="8" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="1" y="1" width="8" height="16" rx="2.5"/>
+                  <line x1="3.5" y1="15" x2="6.5" y2="15"/>
+                </svg>
+                Phone
+              </button>
+            </div>
+            <div class="device-view device-view--tablet">
+              <div class="ipad-mockup ipad-mockup--landscape">
+                <div class="ipad-mockup__shell">
+                  <div class="ipad-mockup__camera" aria-hidden="true"></div>
+                  <div class="ipad-mockup__screen">
+                    <img src="/assets/images/dl25/iPad1.webp" alt="DL25 - Mock Test running on an iPad, showing a Driving Test Report marking sheet with faults ticked"
+                         class="ipad-mockup__screenshot"
+                         width="1400" height="1050" fetchpriority="high" decoding="async">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="device-view device-view--phone" hidden>
+              <div class="iphone-mockup iphone-mockup--landscape">
+                <div class="iphone-mockup__shell">
+                  <div class="iphone-mockup__screen">
+                    <img src="/assets/images/dl25/iPhone1.webp" alt="DL25 - Mock Test running on an iPhone, showing a Driving Test Report marking sheet"
+                         class="iphone-mockup__screenshot"
+                         width="1200" height="552" loading="lazy" decoding="async">
+                  </div>
+                  <div class="iphone-mockup__home-bar" aria-hidden="true"></div>
+                </div>
+              </div>
+            </div>
+          </div></div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="container">
+        <div class="about-icon-wrap">
+          <img src="/assets/images/dl25/dl25-icon.png" alt="DL25 - Mock Test" class="app-icon app-icon--lg" width="120" height="120">
+        </div>
+        <div class="section-intro">
+          <h2>Built by a driving instructor<br>for driving instructors</h2>
+          <p>Record tests, then save, edit and share.</p>
+        </div>
+        <div class="cards"><div class="card">
+            <div class="card__icon" aria-hidden="true"><svg class="" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-play"/></svg></div>
+            <h3>Simple to mark</h3>
+            <p>One tap to add a fault, double tap to remove it. The total faults are counted automatically at the end of the test.</p>
+          </div><div class="card">
+            <div class="card__icon" aria-hidden="true"><svg class="" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-layers"/></svg></div>
+            <h3>Edit after saving</h3>
+            <p>Tests can be edited once saved. Just hit the Total Faults button to save again when you have finished tinkering.</p>
+          </div><div class="card">
+            <div class="card__icon" aria-hidden="true"><svg class="" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-instructors"/></svg></div>
+            <h3>Notes for your pupil</h3>
+            <p>Add notes to a test and, if you like, send them to your pupil along with their completed DL25.</p>
+          </div><div class="card">
+            <div class="card__icon" aria-hidden="true"><svg class="" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-road"/></svg></div>
+            <h3>Send results by email</h3>
+            <p>Email test results in one go. Automatically copy yourself in, and automatically include explanatory text with each email.</p>
+          </div><div class="card">
+            <div class="card__icon" aria-hidden="true"><svg class="" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-junctions"/></svg></div>
+            <h3>Sort your records</h3>
+            <p>Sort saved tests by date or by candidate name, so any pupil&#x27;s history is quick to find.</p>
+          </div><div class="card">
+            <div class="card__icon" aria-hidden="true"><svg class="" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-controls"/></svg></div>
+            <h3>Statistics</h3>
+            <p>Statistics across all your test records, filtered by mock test or actual test.</p>
+          </div></div>
+      </div>
+    </section>
+
+    <section class="download-cta">
+      <div class="container download-cta-inner">
+        <h2>Ready to keep better records?</h2>
+        <p>£3.99 one-off purchase on the App Store. For iPhone and iPad.</p>
+        <div class="badge-group badge-group--center">
+          <a href="https://apps.apple.com/gb/app/dl25-mock-test/id1463397859" class="appstore-badge">
+            <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us"
+                 alt="Download DL25 - Mock Test on the App Store"
+                 width="120" height="40" loading="lazy" decoding="async">
+          </a>
+        </div>
+        <p class="contact-note">Questions or feedback? <a href="#" class="js-email" data-u="ebobfbhynccf" data-d="tznvy.pbz">Send us an email</a></p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/images/dl25/dl25-icon.png" alt="" width="32" height="32" class="app-icon app-icon--sm">
+        <div><p class="footer-brand__name">DL25 - Mock Test</p></div>
+      </div>
+      <div class="footer-markets">
+        <p class="footer-markets__label">Available in</p>
+        <ul class="footer-markets__list"><li>&#127468;&#127463;&nbsp;United Kingdom</li><li>&#127463;&#127474;&nbsp;Bermuda</li><li>&#127483;&#127468;&nbsp;British Virgin Islands</li><li>&#127472;&#127486;&nbsp;Cayman Islands</li><li>&#127474;&#127480;&nbsp;Montserrat</li><li>&#127481;&#127464;&nbsp;Turks and Caicos Islands</li></ul>
+      </div>
+      <div class="footer-legal">
+        <p>&copy; 2026 Neil Beaver. All rights reserved.</p>
+        <p>
+          <a href="/privacy">Privacy Policy</a>
+          &nbsp;&middot;&nbsp;
+          <a href="/terms">Terms of Use</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script src="/script.js"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","@id":"https://www.neilbeaver.com/dl25/#app","name":"DL25 - Mock Test","description":"Keep a record of all your pupils' mock tests and driving tests. One tap to add a fault, automatic totals, statistics, and results sent by email — on iPhone and iPad.","applicationCategory":"EducationalApplication","operatingSystem":"iOS, iPadOS","url":"https://www.neilbeaver.com/dl25/","image":"https://www.neilbeaver.com/assets/images/og-lessons.png","author":{"@type":"Person","name":"Neil Beaver"},"offers":{"@type":"Offer","price":"3.99","priceCurrency":"GBP","eligibleRegion":["GB","BM","VG","KY","MS","TC"]}}]}</script>
+</body>
+</html>

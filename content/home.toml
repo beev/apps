@@ -35,6 +35,23 @@ status = "On the App Store and Google Play"
 body   = "Draw any road situation as it comes up. More than fifty pre-drawn layouts, plus Google Maps satellite imagery so you can teach the junction you are actually parked at."
 
 [[products]]
+name   = "Routes"
+full   = "Routes by Neil Beaver"
+soon   = true
+url    = "/routes/"
+icon   = "/assets/images/routes/routes-icon.png"
+status = "Coming soon to Apple and Android"
+body   = "Record all your lesson routes."
+
+[[products]]
+name   = "DL25 — Mock Test"
+full   = "DL25 - Mock Test by Neil Beaver"
+url    = "/dl25/"
+icon   = "/assets/images/dl25/dl25-icon.png"
+status = "On the App Store · iPhone and iPad"
+body   = "Keep a record of all your pupils' tests, mock and real. One tap to add a fault, automatic totals, statistics, and results sent straight to your pupil by email."
+
+[[products]]
 name   = "Learn To Drive"
 full   = "Learn To Drive — the guide"
 url    = "/lessons/guide/"
@@ -73,7 +90,7 @@ a = "Have a look [here](/import) for the full instructions."
 
 [[faq]]
 q = "What about Routes and DL25 — Mock Test?"
-a = "It's on my to do list to revisit these apps and see if I can bring them more up-to-date."
+a = "[DL25 — Mock Test](/dl25/) is available now on iPhone and iPad. Routes is coming soon."
 
 [[faq]]
 q = "Will my subscription work across iOS and Android?"
